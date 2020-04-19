@@ -1062,6 +1062,59 @@ var AframeBlocks =
   "colour": 90,
   "tooltip": "",
   "helpUrl": "https://aframe.io"
+},
+{
+  "type": "primitive",
+  "message0": "%1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "DROPDOWN",
+      "options": [
+        [
+          "Box",
+          "box"
+        ],
+        [
+          "Plane",
+          "plane"
+        ],
+        [
+          "Cone",
+          "cone"
+        ],
+        [
+          "Octahedron",
+          "octahedron"
+        ],
+        [
+          "Circle",
+          "circle"
+        ],
+        [
+          "Ring",
+          "ring"
+        ],
+        [
+          "Sphere",
+          "sphere"
+        ],
+        [
+          "Cylinder",
+          "cylinder"
+        ]
+      ]
+    },
+    {
+      "type": "input_statement",
+      "name": "Name"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
 }];
 
 htmlBlocks = htmlBlocks.concat(AframeBlocks);

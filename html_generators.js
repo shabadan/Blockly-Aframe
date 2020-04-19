@@ -358,3 +358,13 @@ HtmlGenerator['import_model_obj'] = function(block) {
   var code = '<a-assets>\n<a-asset-item id="tree" src="'+text_name+'"></a-asset-item>\n </a-assets>\n  <a-obj-model src="#tree" mtl=""></a-obj-model>\n'
   return code;
 };
+
+HtmlGenerator['primitive'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var dropdown_name = block.getFieldValue('DROPDOWN');
+  // TODO: Assemble JavaScript into code variable.
+  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
+    var code = '<a-'+ dropdown_name +' color="tomato" position="0 2 -5" depth="4" height="4" width="4" "></a-'+ dropdown_name + '>\n';
+    
+  return code;
+};
