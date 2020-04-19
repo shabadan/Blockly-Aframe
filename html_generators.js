@@ -322,3 +322,39 @@ HtmlGenerator['body_attributes'] = function(block) {
   var code = '<body' + value_name + '>\n' + statements_content + '</body>\n';
   return code;
 };
+
+HtmlGenerator['import_aframe'] = function(block) {
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<script src="'+text_name+'"></script>\n';
+  return code;
+};
+
+HtmlGenerator['scene_create'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-scene>\n'+ statements_content +   '</a-scene>\n';
+  return code;
+};
+
+HtmlGenerator['add_box'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-box color="red" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>\n';
+  return code;
+};
+
+HtmlGenerator['import_model_gltf'] = function(block) {
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-assets>\n<a-asset-item id="tree" src="'+text_name+'"></a-asset-item>\n </a-assets>\n  <a-entity gltf-model="#tree"></a-entity>\n'
+  return code;
+};
+
+HtmlGenerator['import_model_obj'] = function(block) {
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-assets>\n<a-asset-item id="tree" src="'+text_name+'"></a-asset-item>\n </a-assets>\n  <a-obj-model src="#tree" mtl=""></a-obj-model>\n'
+  return code;
+};

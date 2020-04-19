@@ -981,7 +981,90 @@ var htmlBlocks =
   "colour": 0,
   "tooltip": "",
   "helpUrl": "http://www.w3schools.com/tags/tag_html.asp"
+},
+{
+  "type": "import_aframe",
+  "message0": "import url %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "https://aframe.io/releases/1.0.4/aframe.min.js"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": "https://aframe.io"
+},
+{
+  "type": "scene_create",
+  "message0": "crea scena %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "add_box",
+  "message0": "add box %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
 }];
+
+
+var AframeBlocks =
+[{
+  "type": "import_model_gltf",
+  "message0": "gltf model url %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "https://3d.simulmech.com/VR/Aframe-blockly/japanese_classroom/scene.gltf"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": "https://aframe.io"
+},
+{
+  "type": "import_model_obj",
+  "message0": "obj model url %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "https://3d.simulmech.com/VR/Aframe-blockly/Radeghieri_appartamento_ristrutturato.obj"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": "https://aframe.io"
+}];
+
+htmlBlocks = htmlBlocks.concat(AframeBlocks);
 
 if (Msg && Msg.blocks) {
   // Update jsons with translations
