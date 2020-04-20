@@ -981,8 +981,11 @@ var htmlBlocks =
   "colour": 0,
   "tooltip": "",
   "helpUrl": "http://www.w3schools.com/tags/tag_html.asp"
-},
-{
+}];
+
+
+var AframeBlocks =
+[{
   "type": "import_aframe",
   "message0": "import url %1",
   "args0": [
@@ -990,6 +993,38 @@ var htmlBlocks =
       "type": "field_input",
       "name": "NAME",
       "text": "https://aframe.io/releases/1.0.4/aframe.min.js"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": "https://aframe.io"
+},
+{
+  "type": "import_inspector",
+  "message0": "Import Inspector %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": "https://aframe.io"
+},
+{
+  "type": "import_extra",
+  "message0": "Import A-Frame Extra %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"
     }
   ],
   "previousStatement": null,
@@ -1013,13 +1048,81 @@ var htmlBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+
 {
-  "type": "add_box",
-  "message0": "add box %1",
+  "type": "camera_3d",
+  "message0": "Camera 3D %1",
   "args0": [
     {
       "type": "input_statement",
-      "name": "NAME"
+      "name": "CAMERA3D"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 195,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "wasd_fps",
+  "message0": "WASD (FPS) %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "WASD",
+      "options": [
+        [
+          "True",
+          "true"
+        ],
+        [
+          "False",
+          "false"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 195,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "assets_list",
+  "message0": "Define assets %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "assetslist"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 195,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "asset_item",
+  "message0": "define asset item %1 id: %2 src: %3",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_input",
+      "name": "IDNAME",
+      "text": "default"
+    },
+    {
+      "type": "field_input",
+      "name": "URL",
+      "text": "default"
     }
   ],
   "previousStatement": null,
@@ -1027,11 +1130,30 @@ var htmlBlocks =
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
-}];
+},
 
+{
+  "type": "gltf_entity",
+  "message0": "gltf asset id: %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "IDNAME",
+      "text": "default"
+    },
+    {
+      "type": "input_statement",
+      "name": "CONTENT"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
 
-var AframeBlocks =
-[{
+{
   "type": "import_model_gltf",
   "message0": "gltf model url %1",
   "args0": [
@@ -1047,6 +1169,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": "https://aframe.io"
 },
+
 {
   "type": "import_model_obj",
   "message0": "obj model url %1",
@@ -1063,6 +1186,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": "https://aframe.io"
 },
+
 {
   "type": "primitive",
   "message0": "%1 %2 %3",
@@ -1119,6 +1243,66 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+
+{
+  "type": "primitive_child",
+  "message0": "%1 %2 Child %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "DROPDOWN",
+      "options": [
+        [
+          "Box",
+          "box"
+        ],
+        [
+          "Plane",
+          "plane"
+        ],
+        [
+          "Cone",
+          "cone"
+        ],
+        [
+          "Octahedron",
+          "octahedron"
+        ],
+        [
+          "Circle",
+          "circle"
+        ],
+        [
+          "Ring",
+          "ring"
+        ],
+        [
+          "Sphere",
+          "sphere"
+        ],
+        [
+          "Cylinder",
+          "cylinder"
+        ]
+      ]
+    },
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    },
+  
+    {
+      "type": "input_statement",
+      "name": "CHILD"
+    },
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 195,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
 {
   "type": "color3d",
   "message0": "Color = %1",
@@ -1135,7 +1319,25 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
- {
+
+{
+  "type": "color3dHEX",
+  "message0": "Color: #  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "COLOR3DHEX",
+      "text": "ff0000"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+
+{
   "type": "position3d",
   "message0": "Position = X: %1 Y: %2 Z: %3",
   "args0": [
@@ -1161,6 +1363,61 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+
+{
+  "type": "rotation3d",
+  "message0": "Rotation = X: %1 Y: %2 Z: %3",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "Rot_X",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "Rot_Y",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "Rot_Z",
+      "text": "0"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+
+{
+  "type": "scale3d",
+  "message0": "Scale = X: %1 Y: %2 Z: %3",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "SCAL_X",
+      "text": "1"
+    },
+    {
+      "type": "field_input",
+      "name": "SCAL_Y",
+      "text": "1"
+    },
+    {
+      "type": "field_input",
+      "name": "SCAL_Z",
+      "text": "1"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
 {
   "type": "width3d",
   "message0": "width:  %1",
@@ -1177,6 +1434,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+
  {
   "type": "height3d",
   "message0": "height:  %1",
@@ -1193,6 +1451,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+
  {
   "type": "depth3d",
   "message0": "depth:  %1",
@@ -1209,6 +1468,71 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+
+{
+  "type": "radius3d",
+  "message0": "Radius =  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "RADIUS",
+      "text": "1"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+
+{
+  "type": "segments-radial3d",
+  "message0": "Segment-Radial =  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "SEGMENTS-RADIAL",
+      "text": "1"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+
+{
+  "type": "side3d",
+  "message0": "Side: %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "SIDE",
+      "options": [
+        [
+          "FRONT",
+          "front"
+        ],
+        [
+          "BACK",
+          "back"
+        ],
+        [
+          "DOUBLE",
+          "double"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
 {
   "type": "video360",
   "message0": "Video URL: %1",
