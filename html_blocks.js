@@ -1065,7 +1065,7 @@ var AframeBlocks =
 },
 {
   "type": "primitive",
-  "message0": "%1 %2",
+  "message0": "%1 %2 %3",
   "args0": [
     {
       "type": "field_dropdown",
@@ -1107,9 +1107,119 @@ var AframeBlocks =
     },
     {
       "type": "input_statement",
-      "name": "Name"
+      "name": "NAME"
+    },
+    {
+      "type": "input_dummy"
     }
   ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "color3d",
+  "message0": "Color = %1",
+  "args0": [
+    {
+      "type": "field_colour",
+      "name": "COLOR3D",
+      "colour": "#ff0000"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ {
+  "type": "position3d",
+  "message0": "Position = X: %1 Y: %2 Z: %3",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "Pos_X",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "Pos_Y",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "Pos_Z",
+      "text": "0"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "width3d",
+  "message0": "width:  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "width",
+      "text": "0"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ {
+  "type": "height3d",
+  "message0": "height:  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "height",
+      "text": "0"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ {
+  "type": "depth3d",
+  "message0": "depth:  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "depth",
+      "text": "0"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "video360",
+  "message0": "Video URL: %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "https://www.youtube.com/watch?v=diBozKDxVLI"
+    }
+  ],
+  "inputsInline": false,
   "previousStatement": null,
   "nextStatement": null,
   "colour": 230,

@@ -338,13 +338,6 @@ HtmlGenerator['scene_create'] = function(block) {
   return code;
 };
 
-HtmlGenerator['add_box'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '<a-box color="red" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>\n';
-  return code;
-};
-
 HtmlGenerator['import_model_gltf'] = function(block) {
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
@@ -362,9 +355,71 @@ HtmlGenerator['import_model_obj'] = function(block) {
 HtmlGenerator['primitive'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var dropdown_name = block.getFieldValue('DROPDOWN');
+  var statements_content = HtmlGenerator.statementToCode(block, 'NAME');    
   // TODO: Assemble JavaScript into code variable.
-  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
-    var code = '<a-'+ dropdown_name +' color="tomato" position="0 2 -5" depth="4" height="4" width="4" "></a-'+ dropdown_name + '>\n';
+    //var code = '<a-'+ dropdown_name +' '+statements_content.trim()+'></a-'+ dropdown_name + '>\n'; //depth="4" height="4" width="4"
+    var code = '<a-'+ dropdown_name +' '+statements_content+'></a-'+ dropdown_name + '>\n'; //depth="4" height="4" width="4"
+  return code;
+};
+
+HtmlGenerator['color3d'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var colour_color3d = block.getFieldValue('COLOR3D');
+  // TODO: Assemble JavaScript into code variable.
+    var code = ' color="'+ colour_color3d +'"';
     
+  return code;
+};
+
+HtmlGenerator['position3d'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var text_pos_x = block.getFieldValue('Pos_X');
+  var text_pos_y = block.getFieldValue('Pos_Y');
+  var text_pos_z = block.getFieldValue('Pos_Z');
+  // TODO: Assemble JavaScript into code variable.
+
+  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
+    var code = ' position="'+ text_pos_x +' '+text_pos_y+' '+text_pos_z+'"'; //position="0 1 -1"
+    
+  return code;
+};
+
+HtmlGenerator['depth3d'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var text_depth = block.getFieldValue('depth');
+  // TODO: Assemble JavaScript into code variable.
+
+  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
+    var code = ' depth="'+ text_depth +'"'; //position="0 1 -1"
+    
+  return code;
+};
+
+HtmlGenerator['height3d'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var text_height = block.getFieldValue('height');
+  // TODO: Assemble JavaScript into code variable.
+
+  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
+    var code = ' height="'+ text_height +'"'; //position="0 1 -1"
+    
+  return code;
+};
+
+HtmlGenerator['width3d'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var text_width = block.getFieldValue('width');
+  // TODO: Assemble JavaScript into code variable.
+
+  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
+    var code = ' width="'+ text_width +'"'; //position="0 1 -1"
+    
+  return code;
+};
+
+HtmlGenerator['video360'] = function(block) {
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable. 
+  var code = '<a-videosphere src="'+text_name+'" autoplay="true""></a-videosphere> ';
   return code;
 };
