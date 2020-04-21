@@ -1246,7 +1246,7 @@ var AframeBlocks =
 
 {
   "type": "primitive_child",
-  "message0": "%1 %2 Child %3",
+  "message0": "%1 Options: %2 Child %3",
   "args0": [
     {
       "type": "field_dropdown",
@@ -1302,6 +1302,82 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+
+
+ {
+  "type": "primitive_option_child",
+  "message0": "%1 : %2 Child %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "DROPDOWN",
+      "options": [
+        [
+          "Box",
+          "box"
+        ],
+        [
+          "Plane",
+          "plane"
+        ],
+        [
+          "Cone",
+          "cone"
+        ],
+        [
+          "Octahedron",
+          "octahedron"
+        ],
+        [
+          "Circle",
+          "circle"
+        ],
+        [
+          "Ring",
+          "ring"
+        ],
+        [
+          "Sphere",
+          "sphere"
+        ],
+        [
+          "Cylinder",
+          "cylinder"
+        ],
+      ]
+    },
+    {
+      "type": "input_value",
+      "name": "VALUE"
+    },
+    {
+      "type": "input_statement",
+      "name": "CHILD"
+    },
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 195,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+ 
+{
+  "type": "Options_Primitive",
+  "message0": "Options: %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "OPTIONS"
+    }
+  ],
+  "output": null,
+  "colour": 195,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
 
 {
   "type": "color3d",

@@ -428,6 +428,35 @@ HtmlGenerator['primitive_child'] = function(block) {
   return code;
 };
 
+HtmlGenerator['primitive_option_child'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var dropdown_name = block.getFieldValue('DROPDOWN');
+  var value_text = HtmlGenerator.valueToCode(block, 'VALUE', HtmlGenerator.ORDER_ATOMIC);
+  //var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
+  var statements_child = HtmlGenerator.statementToCode(block, 'CHILD');
+  // TODO: Assemble JavaScript into code variable.
+    var code = '<a-'+ dropdown_name +' '+value_text+' >'+statements_child+'</a-'+ dropdown_name + '>\n'; 
+    
+  return code;
+};
+
+
+HtmlGenerator['Options_Primitive'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var statements_option = HtmlGenerator.statementToCode(block, 'OPTIONS');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ''+ statements_option+'';
+  return [code, HtmlGenerator.ORDER_NONE];
+};
+/*
+tmlGenerator['onclick'] = function(block) {
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var code = ' onclick="' + statements_name.trim() + '"';
+  return [code, HtmlGenerator.ORDER_NONE];
+};
+*/
+
+
 HtmlGenerator['color3d'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var colour_color3d = block.getFieldValue('COLOR3D');
