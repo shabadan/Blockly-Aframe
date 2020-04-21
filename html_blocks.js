@@ -1625,7 +1625,135 @@ var AframeBlocks =
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
-}];
+},
+
+{
+  "type": "animation_options",
+  "message0": "Animation =  %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "ANIMATION_OPTION"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "animation_propety",
+  "message0": "Property: %1 from:  X: %2 Y: %3 Z: %4 to:  X: %5 Y: %6 Z: %7 loop:  %8 dir:  %9 dur:  %10 easing:  %11",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "Option",
+      "options": [
+        [
+          "Position",
+          "position"
+        ],
+          [
+           "Rotation",
+           "rotation"   
+          ],
+        [
+          "Scale",
+          "scale"
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "FROM_X",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "FROM_Y",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "FROM_Z",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "TO_X",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "TO_Y",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "TO_Z",
+      "text": "0"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "LOOP",
+      "options": [
+        [
+          "true",
+          "true"
+        ],
+        [
+          "fasle",
+          "false"
+        ]
+      ]
+    },
+    {
+      "type": "field_dropdown",
+      "name": "DIR",
+      "options": [
+        [
+          "alternate",
+          "alternate"
+        ],
+        [
+          "false",
+          "false"
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "DUR",
+      "text": "3000"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "EASING",
+      "options": [
+        [
+          "easeInOutCubic",
+          "easeInOutCubic"
+        ],
+        [
+          "linear",    
+          "easeInOutCubic",
+          "easeInOutElastic"
+            
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+ 
+];
 
 htmlBlocks = htmlBlocks.concat(AframeBlocks);
 

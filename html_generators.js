@@ -580,9 +580,38 @@ HtmlGenerator['side3d'] = function(block) {
   return code;
 };
 
+
+
 HtmlGenerator['video360'] = function(block) {
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable. 
   var code = '<a-videosphere src="'+text_name+'" autoplay="true""></a-videosphere> ';
+  return code;
+};
+
+HtmlGenerator['animation_options'] = function(block) {
+  var statements_animation = HtmlGenerator.statementToCode(block, 'ANIMATION_OPTION');
+  // TODO: Assemble JavaScript into code variable. 
+  var code = ' animation = "'+statements_animation+'"';
+  return code;
+};
+
+
+
+
+HtmlGenerator['animation_propety'] = function(block) {
+  var dropdown_option = block.getFieldValue('Option');
+  var text_from_x = block.getFieldValue('FROM_X');
+  var text_from_y = block.getFieldValue('FROM_Y');
+  var text_from_z = block.getFieldValue('FROM_Z');
+  var text_to_x = block.getFieldValue('TO_X');
+  var text_to_y = block.getFieldValue('TO_Y');
+  var text_to_z = block.getFieldValue('TO_Z');
+  var dropdown_loop = block.getFieldValue('LOOP');
+  var dropdown_dir = block.getFieldValue('DIR');
+  var text_dur = block.getFieldValue('DUR');
+  var dropdown_easing = block.getFieldValue('EASING');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n property:'+dropdown_option+'; \n from:' +text_from_x+' '+text_from_y+' '+text_from_z+';\n to:' +text_to_x+' '+text_to_y+' '+text_to_z+';\n loop:' +dropdown_loop+';\n dir:'+dropdown_dir+';\n dur:' +text_dur+ ';\n easing: '+dropdown_easing+';';
   return code;
 };
