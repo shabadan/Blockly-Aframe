@@ -381,6 +381,7 @@ HtmlGenerator['asset_item'] = function(block) {
   var text_idname = block.getFieldValue('IDNAME');
   var text_url = block.getFieldValue('URL');
   // TODO: Assemble JavaScript into code variable.
+  text_url = FileDB.getData(text_url);
   var code = '<a-asset-item id="'+text_idname+'" src="'+text_url+'"></a-asset-item>\n';
   return code;
 };

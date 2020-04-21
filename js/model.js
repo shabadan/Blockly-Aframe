@@ -70,6 +70,7 @@ function FileSelectHandler(e) {
 	// process all File objects
 	for (var i = 0, f; f = files[i]; i++) {
 		ParseFile(f);
+		//SaveFile2LocalStorage(file)
 	}
 
 }
@@ -89,6 +90,35 @@ function ParseFile(file) {
         continue;
       }
 */
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+			/*
+          // Render thumbnail.
+          var span = document.createElement('span');
+          span.innerHTML = ['<img class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+			document.getElementById('list').insertBefore(span, null);
+			*/
+			var filename = escape(theFile.name);
+		  if (FileDB.setData(filename, URL.createObjectURL(theFile))) {
+			  Output(escape(theFile.name));
+		  }
+		  //modeldb.AllocateNewSolid(theFile.name, e.target.result, );
+		         
+        };
+      })(file);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(file);
+	
+	
+}
+
+
+function SaveFile2LocalStorage(file) {
       var reader = new FileReader();
 
       // Closure to capture the file information.
