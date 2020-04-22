@@ -1227,6 +1227,61 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+ 
+{
+  "type": "asset_video",
+  "message0": "define asset image %1 id: %2 src: %3 loop: %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_input",
+      "name": "IDNAME",
+      "text": "default"
+    },
+    {
+      "type": "field_input",
+      "name": "URL",
+      "text": "default"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "Loop",
+      "checked": true
+    }  
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+{
+  "type": "asset_img",
+  "message0": "define asset image %1 id: %2 src: %3",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_input",
+      "name": "IDNAME",
+      "text": "default"
+    },
+    {
+      "type": "field_input",
+      "name": "URL",
+      "text": "default"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},  
 
 {
   "type": "gltf_entity",

@@ -431,6 +431,26 @@ HtmlGenerator['asset_item'] = function(block) {
   return code;
 };
 
+HtmlGenerator['asset_img'] = function(block) {
+  var text_idname = block.getFieldValue('IDNAME');
+  var text_url = block.getFieldValue('URL');
+  // TODO: Assemble JavaScript into code variable.
+  text_url = FileDB.getData(text_url);
+  var code = '<img id="'+text_idname+'" src="'+text_url+'">\n';
+  return code;
+};
+
+
+HtmlGenerator['asset_video'] = function(block) {
+  var text_idname = block.getFieldValue('IDNAME');
+  var text_url = block.getFieldValue('URL');
+  var checkbox_loop = block.getFieldValue('Loop') == 'TRUE';
+  // TODO: Assemble JavaScript into code variable.
+  text_url = FileDB.getData(text_url);
+  var code = '<video id="'+text_idname+'" src="'+text_url+'" loop="'+checkbox_loop+'">\n';
+  return code;
+};
+
 HtmlGenerator['gltf_entity'] = function(block) {
   var text_idname = block.getFieldValue('IDNAME');
   var statements_content = HtmlGenerator.statementToCode(block, 'CONTENT');
@@ -655,7 +675,7 @@ HtmlGenerator['videosphere360'] = function(block) {
   var text_360_src = block.getFieldValue('360_SRC');
   var statements_360_option = HtmlGenerator.statementToCode(block, '360_Option');
   // TODO: Assemble JavaScript into code variable.
-  var code =  '<a-videosphere src="'+text_360_src+'"'+statements_360_option+'></a-videosphere>"\n';
+  var code =  '<a-videosphere src="'+text_360_src+'"'+statements_360_option+'></a-videosphere>\n';
   return code;
 };
 
@@ -789,7 +809,7 @@ HtmlGenerator['Texture3D'] = function(block) {
 HtmlGenerator['Texture3D'] = function(block) {
   var text_texture_src = block.getFieldValue('TEXTURE_SRC')
   // TODO: Assemble JavaScript into code variable.
-  var code =  '\nsrc="'+text_texture_src+'"\n';
+  var code =  '\nsrc="#'+text_texture_src+'"\n';
   return code;
 };
 
@@ -803,21 +823,21 @@ HtmlGenerator['Texture3D_repeat'] = function(block) {
 HtmlGenerator['Texture_NormalMap3D'] = function(block) {
   var text_texture_src = block.getFieldValue('NORMALMAP_SRC')
   // TODO: Assemble JavaScript into code variable.
-  var code =  'normal-map ="'+text_texture_src+'"\n';
+  var code =  'normal-map ="#'+text_texture_src+'"\n';
   return code;
 };
 
 HtmlGenerator['Texture3D_NormalMap_repeat'] = function(block) {
   var text_texture_r1 = block.getFieldValue('TEXTURE_R1');
   var text_texture_r2 = block.getFieldValue('TEXTURE_R2');
-      var code =  'normal-map-repeat = "'+text_texture_r1+' '+text_texture_r2+'"\n';
+      var code =  'normal-map-repeat ="'+text_texture_r1+' '+text_texture_r2+'"\n';
   return code;
 };
 
 HtmlGenerator['Texture3D_normal_scale'] = function(block) {
   var text_texture_r1 = block.getFieldValue('TEXTURE_R1');
   var text_texture_r2 = block.getFieldValue('TEXTURE_R2');
-      var code =  'normal-map-repeat = "'+text_texture_r1+' '+text_texture_r2+'"\n';
+      var code =  'normal-scale = "'+text_texture_r1+' '+text_texture_r2+'"\n';
   return code;
 };
 
