@@ -360,14 +360,60 @@ HtmlGenerator['camera_3d'] = function(block) {
   return code;
 };
 
+HtmlGenerator['camera_3d_child'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var dropdown_name = block.getFieldValue('DROPDOWN');
+  var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
+  var statements_child = HtmlGenerator.statementToCode(block, 'CHILD');
+  // TODO: Assemble JavaScript into code variable.
+    var code = '<a-'+ dropdown_name +' '+statements_content+'>'+statements_child+'</a-'+ dropdown_name + '>\n'; 
+    
+  return code;
+};
+
+HtmlGenerator['camera_3d_option_child'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var dropdown_name = block.getFieldValue('DROPDOWN');
+  var value_text = HtmlGenerator.valueToCode(block, 'VALUE', HtmlGenerator.ORDER_ATOMIC);
+  //var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
+  var statements_child = HtmlGenerator.statementToCode(block, 'CHILD');
+  // TODO: Assemble JavaScript into code variable.
+    var code = '<a-'+ dropdown_name +' '+value_text+' >'+statements_child+'</a-'+ dropdown_name + '>\n'; 
+    
+  return code;
+};
+
+
+HtmlGenerator['cursor3d'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var colour_color3d = block.getFieldValue('CURSOR3D');
+  // TODO: Assemble JavaScript into code variable.
+    var code = '<a-cursor color="'+ colour_color3d +'"></a-cursor>';
+    
+  return code;
+};
+
+HtmlGenerator['cursor3dHEX'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var text_width = block.getFieldValue('CURSOR3DHEX');
+  // TODO: Assemble JavaScript into code variable.
+
+  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
+    var code = '<a-cursor color= "#'+ text_width +'"></a-cursor>'; //position="0 1 -1"
+    
+  return code;
+};
+
+
 HtmlGenerator['wasd_fps'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var dropdown_wasd = block.getFieldValue('WASD');
   // TODO: Assemble JavaScript into code variable.
-    var code = 'wasd-controls="'+ dropdown_wasd +'"'; //depth="4" height="4" width="4"
+    var code = ' wasd-controls-enabled="'+ dropdown_wasd +'"'; //depth="4" height="4" width="4"
     
   return code;
 };
+
 
 HtmlGenerator['assets_list'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
@@ -517,6 +563,18 @@ HtmlGenerator['scale3d'] = function(block) {
   return code;
 };
 
+HtmlGenerator['posrotscale_3d'] = function(block) {
+  var dropdown_posrotscale = block.getFieldValue('POSROTSCALE');
+  var text_posrotscale_x = block.getFieldValue('POSROTSCALE_X');
+  var text_posrotscale_y = block.getFieldValue('POSROTSCALE_Y');
+  var text_posrotscale_z = block.getFieldValue('POSROTSCALE_Z');
+    // TODO: Assemble JavaScript into code variable.
+    var code =''+dropdown_posrotscale+'= "'+ text_posrotscale_x +' '+ text_posrotscale_y+' '+text_posrotscale_z+'" '; 
+    
+  return code;
+};
+
+
 HtmlGenerator['depth3d'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var text_depth = block.getFieldValue('depth');
@@ -572,6 +630,18 @@ HtmlGenerator['segments-radial3d'] = function(block) {
   return code;
 };
 
+HtmlGenerator['dimension_3d'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var dropdown_dimension = block.getFieldValue('DIMENSION');
+  var text_dimension_value = block.getFieldValue('DIMENSION_VALUE');
+  // TODO: Assemble JavaScript into code variable.
+
+  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
+    var code =''+dropdown_dimension+'= '+ text_dimension_value +''; 
+    
+  return code;
+};
+
 HtmlGenerator['side3d'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var dropdown_side = block.getFieldValue('SIDE');
@@ -615,4 +685,96 @@ HtmlGenerator['animation_propety'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = '\n property:'+dropdown_option+'; \n from:' +text_from_x+' '+text_from_y+' '+text_from_z+';\n to:' +text_to_x+' '+text_to_y+' '+text_to_z+';\n loop:' +dropdown_loop+';\n dir:'+dropdown_dir+';\n dur:' +text_dur+ ';\n easing: '+dropdown_easing+';';
   return code;
+};
+
+
+HtmlGenerator['animation_property'] = function(block) {
+  var dropdown_option = block.getFieldValue('Option');
+  var text_from_x = block.getFieldValue('FROM_X');
+  var text_from_y = block.getFieldValue('FROM_Y');
+  var text_from_z = block.getFieldValue('FROM_Z');
+  var text_to_x = block.getFieldValue('TO_X');
+  var text_to_y = block.getFieldValue('TO_Y');
+  var text_to_z = block.getFieldValue('TO_Z');
+  var dropdown_loop = block.getFieldValue('LOOP');
+  var dropdown_dir = block.getFieldValue('DIR');
+  var text_dur = block.getFieldValue('DUR');
+  var dropdown_easing = block.getFieldValue('EASING');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n property:'+dropdown_option+'; \n from:' +text_from_x+' '+text_from_y+' '+text_from_z+';\n to:' +text_to_x+' '+text_to_y+' '+text_to_z+';\n loop:' +dropdown_loop+';\n dir:'+dropdown_dir+';\n dur:' +text_dur+ ';\n easing: '+dropdown_easing+';';
+  return code;
+};
+
+HtmlGenerator['animation_property_property'] = function(block) {
+  var dropdown_property = block.getFieldValue('property');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n property:'+dropdown_property+';\n';
+  return code;
+};
+
+HtmlGenerator['animation_property_from'] = function(block) { 
+  var text_from_x = block.getFieldValue('FROM_X');
+  var text_from_y = block.getFieldValue('FROM_Y');
+  var text_from_z = block.getFieldValue('FROM_Z');
+  // TODO: Assemble JavaScript into code variable.
+ var code = ' from:'+ text_from_x +' '+text_from_y+' '+text_from_z+';\n'; 
+    
+  return code;
+};
+
+HtmlGenerator['animation_property_to'] = function(block) {
+
+  var text_to_x = block.getFieldValue('TO_X');
+  var text_to_y = block.getFieldValue('TO_Y');
+  var text_to_z = block.getFieldValue('TO_Z');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ' to:'+ text_to_x +' '+text_to_y+' '+text_to_z+';\n'; 
+    
+  return code;
+};
+
+HtmlGenerator['animation_property_loop'] = function(block) {
+    var dropdown_loop = block.getFieldValue('LOOP');
+  // TODO: Assemble JavaScript into code variable.
+    var code = ' loop: '+ dropdown_loop +';\n'; 
+    
+  return code;
+};
+
+HtmlGenerator['animation_property_dir'] = function(block) {
+  var dropdown_dir = block.getFieldValue('DIR');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ' dir: '+ dropdown_dir +';\n';
+  return code;
+};
+
+HtmlGenerator['animation_property_dur'] = function(block) {
+  var text_dur = block.getFieldValue('DUR');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ' dur: '+ text_dur +';\n';
+  return code;
+};
+
+HtmlGenerator['animation_property_liner'] = function(block) {
+  var dropdown_eas = block.getFieldValue('EAS');
+     // TODO: Assemble JavaScript into code variable.
+    var code = ' easing:'+ dropdown_eas +';'; return code;
+};
+
+HtmlGenerator['animation_property_easeIn'] = function(block) {
+  var dropdown_eas = block.getFieldValue('EAS');
+     // TODO: Assemble JavaScript into code variable.
+    var code = ' easing:'+ dropdown_eas +';'; return code;
+};
+
+HtmlGenerator['animation_property_easeOut'] = function(block) {
+  var dropdown_eas = block.getFieldValue('EAS');
+     // TODO: Assemble JavaScript into code variable.
+    var code = ' easing:'+ dropdown_eas +';'; return code;
+};
+
+HtmlGenerator['animation_property_easeInOut'] = function(block) {
+  var dropdown_eas = block.getFieldValue('EAS');
+     // TODO: Assemble JavaScript into code variable.
+    var code = ' easing:'+ dropdown_eas +';'; return code;
 };

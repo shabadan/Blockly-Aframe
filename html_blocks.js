@@ -1063,7 +1063,102 @@ var AframeBlocks =
   "colour": 195,
   "tooltip": "",
   "helpUrl": ""
+},{
+  "type": "camera_3d_child",
+  "message0": "%1 Options: %2 Child %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "DROPDOWN",
+      "options": [
+        [
+          "Camera",
+          "camera"
+        ]
+      ]
+    },
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    },
+  
+    {
+      "type": "input_statement",
+      "name": "CHILD"
+    },
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 195,
+  "tooltip": "",
+  "helpUrl": ""
 },
+ 
+{
+  "type": "camera_3d_option_child",
+  "message0": "%1 : %2 Child %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "DROPDOWN",
+      "options": [
+        [
+          "Camera",
+          "camera"
+        ]
+      ]
+    },
+    {
+      "type": "input_value",
+      "name": "VALUE"
+    },
+    {
+      "type": "input_statement",
+      "name": "CHILD"
+    },
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 195,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+
+
+{
+  "type": "cursor3d",
+  "message0": "Cursor  %1",
+  "args0": [
+    {
+      "type": "field_colour",
+      "name": "CURSOR3D",
+      "colour": "#ff0000"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "cursor3dHEX",
+  "message0": "Cursor #  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "CURSOR3DHEX",
+      "text": "ff0000"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
 
 {
   "type": "wasd_fps",
@@ -1090,6 +1185,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+
 
 {
   "type": "assets_list",
@@ -1494,6 +1590,53 @@ var AframeBlocks =
   "helpUrl": ""
 },
 
+  
+{
+  "type": "posrotscale_3d",
+  "message0": "%1 X :  %2 Y :  %3 Z :  %4",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "POSROTSCALE",
+      "options": [
+        [
+          "Position",
+          "position"
+        ],
+        [
+          "Rotation",
+          "rotation"
+        ],
+        [
+          "Scale",
+          "scale"
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "POSROTSCALE_X",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "POSROTSCALE_Y",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "POSROTSCALE_Z",
+      "text": "0"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+ 
 {
   "type": "width3d",
   "message0": "width:  %1",
@@ -1579,6 +1722,49 @@ var AframeBlocks =
   "helpUrl": ""
 }, 
 
+{
+  "type": "dimension_3d",
+  "message0": "%1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "DIMENSION",
+      "options": [
+        [
+          "width",
+          "width"
+        ],
+        [
+          "height",
+          "height"
+        ],
+        [
+          "depth",
+          "depth"
+        ],
+       [
+          "radius",
+          "radius"
+        ],
+        [
+          "segments-radial",
+          "segments-radial"
+        ]
+      ]    
+    },
+    {
+      "type": "field_input",
+      "name": "DIMENSION_VALUE",
+      "text": "0"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+ 
 {
   "type": "side3d",
   "message0": "Side: %1",
@@ -1752,6 +1938,464 @@ var AframeBlocks =
   "helpUrl": ""
 },
 
+ {
+  "type": "animation_property",
+  "message0": "Property: %1 From:  X: %2 Y: %3 Z: %4 to:  X: %5 Y: %6 Z: %7 Loop:  %8 Direction:  %9 Duration:  %10 Easing:  %11",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "Option",
+      "options": [
+        [
+          "Position",
+          "position"
+        ],
+          [
+           "Rotation",
+           "rotation"   
+          ],
+        [
+          "Scale",
+          "scale"
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "FROM_X",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "FROM_Y",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "FROM_Z",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "TO_X",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "TO_Y",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "TO_Z",
+      "text": "0"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "LOOP",
+      "options": [
+        [
+          "true",
+          "true"
+        ],
+        [
+          "fasle",
+          "false"
+        ]
+      ]
+    },
+    {
+      "type": "field_dropdown",
+      "name": "DIR",
+      "options": [
+        [
+          "Normal",
+          "normal"
+        ],
+        [
+          "Alternate",
+          "alternate"
+        ],
+        [
+          "Reverse",
+          "reverse"
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "DUR",
+      "text": "3000"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "EASING",
+      "options": [
+            [
+          "Linear",    
+          "linear"
+            
+        ],
+        [
+          "EaseInOutCubic",
+          "easeInOutCubic"
+        ],
+      
+        [
+          "EaseInOutElastic",    
+          "easeInOutElastic",            
+        ]  
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "animation_property_property",
+  "message0": "Property :  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "property",
+      "options": [
+        [
+          "Position",
+          "position"
+        ],
+        [
+          "Rotation",
+          "rotation"
+        ],
+        [
+          "Scale",
+          "scale"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "animation_property_from",
+  "message0": "From:  X:  %1 Y:  %2 Z:  %3",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "FROM_X",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "FROM_Y",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "FROM_Z",
+      "text": "0"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+{
+  "type": "animation_property_to",
+  "message0": "To:  X:  %1 Y:  %2 Z:  %3",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TO_X",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "TO_Y",
+      "text": "0"
+    },
+    {
+      "type": "field_input",
+      "name": "TO_Z",
+      "text": "0"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+ {
+  "type": "animation_property_loop",
+  "message0": "Loop: %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "LOOP",
+      "options": [
+        [
+          "True",
+          "true"
+        ],
+        [
+          "False",
+          "false"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+{
+  "type": "animation_property_dir",
+  "message0": "Direction:  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "DIR",
+      "options": [
+        [
+          "Normal",
+          "normal"
+        ],
+        [
+          "Alternate",
+          "alternate"
+        ],
+        [
+          "Reverse",
+          "reverse"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+ 
+{
+  "type": "animation_property_dur",
+  "message0": "Duration :  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "DUR",
+      "text": "0"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+ {
+  "type": "animation_property_liner",
+  "message0": "Easing:  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "EAS",
+      "options": [
+        [
+          "Linear",
+          "linear"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+ {
+  "type": "animation_property_easeIn",
+  "message0": "Easing in:  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "EAS",
+      "options": [
+        [
+          "Quad",
+          "easeInQuad"
+        ],
+          [
+          "Cubic",
+          "easeInCubic"
+        ],
+        [
+          "Quart",
+          "easeInQuart"
+        ],
+        [
+          "Quint",
+          "easeInQuint"
+        ],
+        [
+          "Sine",
+          "easeInSine"
+        ],
+        [
+          "Expo",
+          "easeInExpo"
+        ],
+          [
+          "Circ",
+          "easeInCirc"
+        ], 
+          [
+          "Back",
+          "easeInBack"
+        ],
+         [
+          "Elastic",
+          "easeInElastic"
+        ]  
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+ {
+  "type": "animation_property_easeOut",
+  "message0": "Easing Out:  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "EAS",
+      "options": [
+        [
+          "Quad",
+          "easeOutQuad"
+        ],
+          [
+          "Cubic",
+          "easeOutCubic"
+        ],
+        [
+          "Quart",
+          "easeOutQuart"
+        ],
+        [
+          "Quint",
+          "easeOutQuint"
+        ],
+        [
+          "Sine",
+          "easeOutSine"
+        ],
+        [
+          "Expo",
+          "easeOutExpo"
+        ],
+          [
+          "Circ",
+          "easeOutCirc"
+        ], 
+          [
+          "Back",
+          "easeOutBack"
+        ],
+         [
+          "Elastic",
+          "easeOutElastic"
+        ]  
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+ {
+  "type": "animation_property_easeInOut",
+  "message0": "Easing In Out:  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "EAS",
+      "options": [
+        [
+          "Quad",
+          "easeInOutQuad"
+        ],
+          [
+          "Cubic",
+          "easeInOutCubic"
+        ],
+        [
+          "Quart",
+          "easeInOutQuart"
+        ],
+        [
+          "Quint",
+          "easeInOutQuint"
+        ],
+        [
+          "Sine",
+          "easeInOutSine"
+        ],
+        [
+          "Expo",
+          "easeInOutExpo"
+        ],
+          [
+          "Circ",
+          "easeInOutCirc"
+        ], 
+          [
+          "Back",
+          "easeInOutBack"
+        ],
+         [
+          "Elastic",
+          "easeInOutElastic"
+        ]  
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+}  
+ 
  
 ];
 

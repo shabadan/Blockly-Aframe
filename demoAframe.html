@@ -575,6 +575,8 @@
          <category name="Scene" color="#5C81A6">
           <block type="scene_create"></block>
 		  <block type="camera_3d"></block>
+          <block type="camera_3d_child"></block>
+          <block type="camera_3d_option_child"></block>
           <block type="primitive"></block>
           <block type="primitive_child"></block>
           <block type=primitive_option_child></block>
@@ -587,15 +589,22 @@
           <block type="position3d"></block>
           <block type="rotation3d"></block>
           <block type="wasd_fps"></block>
+           <block type="cursor3d"></block>
+          <block type="cursor3dHEX"></block>
          </category>
 		 
 		 <category name="Options" colour="#5C81A6"> 
           <block type="primitive"></block>
 		  <block type="color3d"></block>
           <block type="color3dHEX"></block>
+          
+          <block type="posrotscale_3d"></block>
           <block type="position3d"></block>
           <block type="rotation3d"></block>
           <block type="scale3d"></block>
+          
+          
+          <block type="dimension_3d"></block>
           <block type="width3d"></block>   
           <block type="height3d"></block> 
           <block type="depth3d"></block>
@@ -604,12 +613,22 @@
           <block type="side3d"></block>
         </category>
         
-        <category name="Animation" colour="#5C81A6"> 
+          <category name="Animation" colour="#5C81A6"> 
             <block type="animation_options"></block>
-            <block type="animation_propety"></block>
-		</category>
+            <block type="animation_property"></block>
+            <block type="animation_property_property"></block>
+            <block type="animation_property_from"></block>
+            <block type="animation_property_to"></block>
+            <block type="animation_property_loop"></block>
+            <block type="animation_property_dir"></block>
+            <block type="animation_property_dur"></block>
+            <block type="animation_property_liner"></block>
+            <block type="animation_property_easeIn"></block>
+            <block type="animation_property_easeOut"></block>
+            <block type="animation_property_easeInOut"></block>
+
+        </category>
 		
-		animation_options
 		
 		<category name="Assets" colour="#5C81A6"> 
 		  <block type="assets_list"></block>
