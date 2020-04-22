@@ -398,8 +398,7 @@ HtmlGenerator['cursor3dHEX'] = function(block) {
   var text_width = block.getFieldValue('CURSOR3DHEX');
   // TODO: Assemble JavaScript into code variable.
 
-  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
-    var code = '<a-cursor color= "#'+ text_width +'"></a-cursor>'; //position="0 1 -1"
+    var code = '<a-cursor color= "#'+ text_width +'"></a-cursor>';
     
   return code;
 };
@@ -459,8 +458,7 @@ HtmlGenerator['primitive'] = function(block) {
   var dropdown_name = block.getFieldValue('DROPDOWN');
   var statements_content = HtmlGenerator.statementToCode(block, 'NAME');    
   // TODO: Assemble JavaScript into code variable.
-    //var code = '<a-'+ dropdown_name +' '+statements_content.trim()+'></a-'+ dropdown_name + '>\n'; //depth="4" height="4" width="4"
-    var code = '<a-'+ dropdown_name +' '+statements_content+'></a-'+ dropdown_name + '>\n'; //depth="4" height="4" width="4"
+    var code = '<a-'+ dropdown_name +' '+statements_content+'></a-'+ dropdown_name + '>\n'; 
   return code;
 };
 
@@ -653,10 +651,11 @@ HtmlGenerator['side3d'] = function(block) {
 
 
 
-HtmlGenerator['video360'] = function(block) {
-  var text_name = block.getFieldValue('NAME');
-  // TODO: Assemble JavaScript into code variable. 
-  var code = '<a-videosphere src="'+text_name+'" autoplay="true""></a-videosphere> ';
+HtmlGenerator['videosphere360'] = function(block) {
+  var text_360_src = block.getFieldValue('360_SRC');
+  var statements_360_option = HtmlGenerator.statementToCode(block, '360_Option');
+  // TODO: Assemble JavaScript into code variable.
+  var code =  '<a-videosphere src="'+text_360_src+'"'+statements_360_option+'></a-videosphere>"\n';
   return code;
 };
 
@@ -777,4 +776,59 @@ HtmlGenerator['animation_property_easeInOut'] = function(block) {
   var dropdown_eas = block.getFieldValue('EAS');
      // TODO: Assemble JavaScript into code variable.
     var code = ' easing:'+ dropdown_eas +';'; return code;
+};
+/*
+HtmlGenerator['Texture3D'] = function(block) {
+  var text_texture_src = block.getFieldValue('TEXTURE_SRC');
+  var statements_texture_option = HtmlGenerator.statementToCode(block, 'TEXTURE_OPTION');
+  // TODO: Assemble JavaScript into code variable.
+  var code =  'src="'+text_texture_src+'"\n'+statements_texture_option+'\n';
+  return code;
+};
+*/
+HtmlGenerator['Texture3D'] = function(block) {
+  var text_texture_src = block.getFieldValue('TEXTURE_SRC')
+  // TODO: Assemble JavaScript into code variable.
+  var code =  '\nsrc="'+text_texture_src+'"\n';
+  return code;
+};
+
+HtmlGenerator['Texture3D_repeat'] = function(block) {
+  var text_texture_r1 = block.getFieldValue('TEXTURE_R1');
+  var text_texture_r2 = block.getFieldValue('TEXTURE_R2');
+      var code =  'repeat ="'+text_texture_r1+' '+text_texture_r2+'"\n';
+  return code;
+};
+
+HtmlGenerator['Texture_NormalMap3D'] = function(block) {
+  var text_texture_src = block.getFieldValue('NORMALMAP_SRC')
+  // TODO: Assemble JavaScript into code variable.
+  var code =  'normal-map ="'+text_texture_src+'"\n';
+  return code;
+};
+
+HtmlGenerator['Texture3D_NormalMap_repeat'] = function(block) {
+  var text_texture_r1 = block.getFieldValue('TEXTURE_R1');
+  var text_texture_r2 = block.getFieldValue('TEXTURE_R2');
+      var code =  'normal-map-repeat = "'+text_texture_r1+' '+text_texture_r2+'"\n';
+  return code;
+};
+
+HtmlGenerator['Texture3D_normal_scale'] = function(block) {
+  var text_texture_r1 = block.getFieldValue('TEXTURE_R1');
+  var text_texture_r2 = block.getFieldValue('TEXTURE_R2');
+      var code =  'normal-map-repeat = "'+text_texture_r1+' '+text_texture_r2+'"\n';
+  return code;
+};
+
+HtmlGenerator['texture3d_roughness'] = function(block) {
+  var text_texture_r1 = block.getFieldValue('TEXTURE_R1');
+  var code =  'roughness  = "'+text_texture_r1+'"\n';
+  return code;
+};
+
+HtmlGenerator['texture3d_opacity'] = function(block) {
+  var text_texture_r1 = block.getFieldValue('TEXTURE_R1');
+  var code =  'opacity  = "'+text_texture_r1+'"\n';
+  return code;
 };

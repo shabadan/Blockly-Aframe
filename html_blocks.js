@@ -1796,24 +1796,28 @@ var AframeBlocks =
 },
 
 {
-  "type": "video360",
-  "message0": "Video URL: %1",
+  "type": "videosphere360",
+  "message0": "Video360 src: %1 %2",
   "args0": [
     {
       "type": "field_input",
-      "name": "NAME",
-      "text": "https://www.youtube.com/watch?v=diBozKDxVLI"
+      "name": "360_SRC",
+      "text": "url video"
+    },
+    {
+      "type": "input_statement",
+      "name": "360_Option"
     }
   ],
-  "inputsInline": false,
-  "previousStatement": null,
-  "nextStatement": null,
+   "previousStatement": null,
+  "nextStatement": null,    
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
 },
-
+ 
 {
+ 
   "type": "animation_options",
   "message0": "Animation =  %1",
   "args0": [
@@ -2394,9 +2398,165 @@ var AframeBlocks =
   "colour": 0,
   "tooltip": "",
   "helpUrl": ""
-}  
+}, 
  
+/*
+{
+  "type": "Texture3D",
+  "message0": "Texture = src: %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TEXTURE_SRC",
+      "text": "url texture"
+    },
+    {
+      "type": "input_statement",
+      "name": "TEXTURE_OPTION"
+    }
+  ],
+   "previousStatement": null,
+  "nextStatement": null,    
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+*/ 
+
+{
+  "type": "Texture3D",
+  "message0": "Texture src= %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TEXTURE_SRC",
+      "text": "default"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "Texture3D_repeat",
+  "message0": "repeat  %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TEXTURE_R1",
+      "text": "1"
+    },
+    {
+      "type": "field_input",
+      "name": "TEXTURE_R2",
+      "text": "1"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
  
+{
+  "type": "Texture_NormalMap3D",
+  "message0": "Normal Map src= %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NORMALMAP_SRC",
+      "text": "default"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+{
+  "type": "Texture3D_NormalMap_repeat",
+  "message0": "Normal Map Repeat  %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TEXTURE_R1",
+      "text": "1"
+    },
+    {
+      "type": "field_input",
+      "name": "TEXTURE_R2",
+      "text": "1"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+
+{
+  "type": "Texture3D_normal_scale",
+  "message0": "Normal Scale  %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TEXTURE_R1",
+      "text": "1"
+    },
+    {
+      "type": "field_input",
+      "name": "TEXTURE_R2",
+      "text": "1"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},  
+ 
+{
+  "type": "texture3d_roughness",
+  "message0": "Roughness  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TEXTURE_R1",
+      "text": "0.5"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "texture3d_opacity",
+  "message0": "Opacity  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TEXTURE_R1",
+      "text": "0.5"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+}
 ];
 
 htmlBlocks = htmlBlocks.concat(AframeBlocks);
