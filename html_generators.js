@@ -447,7 +447,7 @@ HtmlGenerator['asset_video'] = function(block) {
   var checkbox_loop = block.getFieldValue('Loop') == 'TRUE';
   // TODO: Assemble JavaScript into code variable.
   text_url = FileDB.getData(text_url);
-  var code = '<video id="'+text_idname+'" src="'+text_url+'" loop="'+checkbox_loop+'">\n';
+  var code = '<video id="'+text_idname+'" src="'+text_url+'" autoplay loop="'+checkbox_loop+'">\n';
   return code;
 };
 
@@ -675,7 +675,7 @@ HtmlGenerator['videosphere360'] = function(block) {
   var text_360_src = block.getFieldValue('360_SRC');
   var statements_360_option = HtmlGenerator.statementToCode(block, '360_Option');
   // TODO: Assemble JavaScript into code variable.
-  var code =  '<a-videosphere src="'+text_360_src+'"'+statements_360_option+'></a-videosphere>\n';
+  var code =  '<a-videosphere src="#'+text_360_src+'"'+statements_360_option+'></a-videosphere>\n';
   return code;
 };
 

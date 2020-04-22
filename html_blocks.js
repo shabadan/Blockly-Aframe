@@ -1230,7 +1230,7 @@ var AframeBlocks =
  
 {
   "type": "asset_video",
-  "message0": "define asset image %1 id: %2 src: %3 loop: %4",
+  "message0": "define asset video %1 id: %2 src: %3 loop: %4",
   "args0": [
     {
       "type": "input_dummy"
