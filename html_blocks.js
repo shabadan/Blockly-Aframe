@@ -2903,7 +2903,23 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
-
+{
+  "type": "inspector_code_load",
+  "message0": "Inspector data:  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "INSPECTOR_COPY",
+      "text": "Write Code to load"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}
 
 
 ];

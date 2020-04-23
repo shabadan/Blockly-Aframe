@@ -721,7 +721,7 @@ HtmlGenerator['dimension_3d'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
 
   //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
-    var code =''+dropdown_dimension+'= '+ text_dimension_value +''; 
+    var code =' '+dropdown_dimension+'= "'+ text_dimension_value +'"'; 
     
   return code;
 };
@@ -931,6 +931,13 @@ HtmlGenerator['imgsrc'] = function(block) {
   var text_texture_src = block.getFieldValue('SRC')
   // TODO: Assemble JavaScript into code variable.
   var code =  '\nsrc="#'+text_texture_src+'"\n';
+  return code;
+};
+
+HtmlGenerator['inspector_code_load'] = function(block) {
+  var text_inspector_copy = block.getFieldValue('INSPECTOR_COPY');
+  // TODO: Assemble JavaScript into code variable.
+   var code =  '\n<!----Inspector code load------>\n'+text_inspector_copy+'\n<!---------->\n';
   return code;
 };
     
