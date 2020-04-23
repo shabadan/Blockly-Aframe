@@ -1090,13 +1090,25 @@ var AframeBlocks =
       "name": "TYPE_LIGHT",
       "options": [
         [
-          "ambient",
+          "Ambient",
           "ambient"
         ],
         [
-          "directional",
+          "Directional",
           "directional"
-        ]
+        ],
+        [
+          "Hemisphere",
+          "hemisphere"
+        ],
+        [
+          "Point",
+          "point"
+        ],
+        [
+          "Spot",
+          "spot"
+        ]     
       ]
     }
   ],
@@ -1510,7 +1522,7 @@ var AframeBlocks =
       "type": "field_dropdown",
       "name": "DROPDOWN",
       "options": [
-        [
+   [
           "Box",
           "box"
         ],
@@ -1541,6 +1553,30 @@ var AframeBlocks =
         [
           "Cylinder",
           "cylinder"
+        ],          
+        [
+          "Tetrahedron",
+          "tetrahedron"
+        ],
+        [
+          "Torus",
+          "torus"
+        ],
+         [
+          "TorusKnot",
+          "torusKnot"
+        ],
+        [
+          "Triangle",
+          "triangle"
+        ],
+        [
+          "Dodecahedron",
+          "dodecahedron"
+        ],
+         [
+          "Icosahedron",
+          "icosahedron"
         ]
       ]
     },
@@ -1567,7 +1603,7 @@ var AframeBlocks =
       "type": "field_dropdown",
       "name": "DROPDOWN",
       "options": [
-        [
+  [
           "Box",
           "box"
         ],
@@ -1598,6 +1634,30 @@ var AframeBlocks =
         [
           "Cylinder",
           "cylinder"
+        ],          
+        [
+          "Tetrahedron",
+          "tetrahedron"
+        ],
+        [
+          "Torus",
+          "torus"
+        ],
+         [
+          "TorusKnot",
+          "torusKnot"
+        ],
+        [
+          "Triangle",
+          "triangle"
+        ],
+        [
+          "Dodecahedron",
+          "dodecahedron"
+        ],
+         [
+          "Icosahedron",
+          "icosahedron"
         ]
       ]
     },
@@ -1658,7 +1718,31 @@ var AframeBlocks =
         [
           "Cylinder",
           "cylinder"
+        ],          
+        [
+          "Tetrahedron",
+          "tetrahedron"
         ],
+        [
+          "Torus",
+          "torus"
+        ],
+         [
+          "TorusKnot",
+          "torusKnot"
+        ],
+        [
+          "Triangle",
+          "triangle"
+        ],
+        [
+          "Dodecahedron",
+          "dodecahedron"
+        ],
+         [
+          "Icosahedron",
+          "icosahedron"
+        ]  
       ]
     },
     {
