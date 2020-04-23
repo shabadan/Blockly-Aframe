@@ -2722,6 +2722,37 @@ var AframeBlocks =
 },
 
 {
+  "type": "Texture3d_link",
+  "message0": "Texture from %1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "LINK",
+      "options": [
+        [
+          "Asset",
+          "#"
+        ],
+        [
+          "Link",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "SRC_NAME",
+      "text": "default"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 120,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+
+{
   "type": "Texture3D_repeat",
   "message0": "repeat  %1 %2",
   "args0": [

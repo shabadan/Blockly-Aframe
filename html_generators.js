@@ -871,6 +871,14 @@ HtmlGenerator['Texture3D'] = function(block) {
   return code;
 };
 
+HtmlGenerator['Texture3d_link'] = function(block) {
+  var dropdown_link = block.getFieldValue('LINK');
+  var text_texture_src = block.getFieldValue('SRC_NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code =  '\nsrc="'+dropdown_link+''+text_texture_src+'"\n';
+  return code;
+};
+
 HtmlGenerator['Texture3D_repeat'] = function(block) {
   var text_texture_r1 = block.getFieldValue('TEXTURE_R1');
   var text_texture_r2 = block.getFieldValue('TEXTURE_R2');
