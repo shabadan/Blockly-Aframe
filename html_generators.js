@@ -360,6 +360,14 @@ HtmlGenerator['camera_3d'] = function(block) {
   return code;
 };
 
+HtmlGenerator['light_3d'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var statements_content = HtmlGenerator.statementToCode(block, 'LIGHT3D');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-light'+ statements_content +   '></a-light>\n';
+  return code;
+};
+
 HtmlGenerator['camera_3d_child'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var dropdown_name = block.getFieldValue('DROPDOWN');
@@ -403,7 +411,40 @@ HtmlGenerator['cursor3dHEX'] = function(block) {
   return code;
 };
 
+HtmlGenerator['camera_cursor'] = function(block) {
+  var checkbox_cursorevisibile = block.getFieldValue('CURSOREVISIBILE') == 'TRUE';
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'cursor-visible="'+ checkbox_cursorevisibile +'"\n';
+    
+  return code;
+};
 
+HtmlGenerator['camera_cursor_color'] = function(block) {
+  var colour_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'cursor-color="'+ colour_name +'"\n';
+    
+  return code;
+};
+
+HtmlGenerator['camera_cursor_scale'] = function(block) {
+  var text_scale = block.getFieldValue('SCALE');
+  // TODO: Assemble JavaScript into code variable.
+ var code = 'cursor-scale="'+ text_scale +'"\n';
+    
+  return code;
+};
+
+
+HtmlGenerator['camera_cursor_opacity'] = function(block) {
+  var text_opacity = block.getFieldValue('OPACITY');
+  // TODO: Assemble JavaScript into code variable.
+ var code = 'cursor-opacity="'+ text_opacity +'"\n';
+    
+  return code;
+};
+
+    
 HtmlGenerator['wasd_fps'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var dropdown_wasd = block.getFieldValue('WASD');
@@ -456,6 +497,14 @@ HtmlGenerator['gltf_entity'] = function(block) {
   var statements_content = HtmlGenerator.statementToCode(block, 'CONTENT');
   // TODO: Assemble JavaScript into code variable.
   var code = '<a-entity gltf-model="#'+text_idname+'" '+statements_content+'></a-entity>\n';
+  return code;
+};
+
+HtmlGenerator['a-entity'] = function(block) {
+  var text_idname = block.getFieldValue('IDNAME');
+  var statements_content = HtmlGenerator.statementToCode(block, 'CONTENT');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-entity id="'+text_idname+'" '+statements_content+'></a-entity>\n';
   return code;
 };
 
@@ -797,15 +846,7 @@ HtmlGenerator['animation_property_easeInOut'] = function(block) {
      // TODO: Assemble JavaScript into code variable.
     var code = ' easing:'+ dropdown_eas +';'; return code;
 };
-/*
-HtmlGenerator['Texture3D'] = function(block) {
-  var text_texture_src = block.getFieldValue('TEXTURE_SRC');
-  var statements_texture_option = HtmlGenerator.statementToCode(block, 'TEXTURE_OPTION');
-  // TODO: Assemble JavaScript into code variable.
-  var code =  'src="'+text_texture_src+'"\n'+statements_texture_option+'\n';
-  return code;
-};
-*/
+
 HtmlGenerator['Texture3D'] = function(block) {
   var text_texture_src = block.getFieldValue('TEXTURE_SRC')
   // TODO: Assemble JavaScript into code variable.
@@ -852,3 +893,27 @@ HtmlGenerator['texture3d_opacity'] = function(block) {
   var code =  'opacity  = "'+text_texture_r1+'"\n';
   return code;
 };
+
+HtmlGenerator['a-sky'] = function(block) {
+  var statements_name = HtmlGenerator.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code =  '<a-sky '+statements_name+'></a-sky>\n';
+  return code;
+};
+
+HtmlGenerator['a_sky_explor'] = function(block) {
+  var dropdown_explo = block.getFieldValue('EXPLO');
+  var statements_name = HtmlGenerator.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code =  '<a-sky '+statements_name+' '+dropdown_explo+'></a-sky>\n';
+  return code;
+};
+
+
+HtmlGenerator['imgsrc'] = function(block) {
+  var text_texture_src = block.getFieldValue('SRC')
+  // TODO: Assemble JavaScript into code variable.
+  var code =  '\nsrc="#'+text_texture_src+'"\n';
+  return code;
+};
+    

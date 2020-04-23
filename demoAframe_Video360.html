@@ -575,8 +575,11 @@
          <category name="Scene" color="#5C81A6">
           <block type="scene_create"></block>
 		  <block type="camera_3d"></block>
+          <block type="light_3d"></block>
           <block type="camera_3d_child"></block>
           <block type="camera_3d_option_child"></block>
+          <block type="a-sky"></block>
+          <block type="a_sky_explor"></block>
           <block type="primitive"></block>
           <block type="primitive_child"></block>
           <block type=primitive_option_child></block>
@@ -585,19 +588,37 @@
 		  <block type="import_model_obj"></block>
          </category>
 		 
-		 <category name="3D Camera" color="#5C81A6">
+		 <category name="Light Option" color="#5C81A6">
+		 <block type="position3d"></block>
+          <block type="rotation3d"></block>
+           <block type="color3d"></block>
+          <block type="color3dHEX"></block>
+		 </category>
+		 
+		 <category name="3D Camera Option" color="#5C81A6">
+         
+         <category name="Options" color="#5C81A6">
           <block type="position3d"></block>
           <block type="rotation3d"></block>
           <block type="wasd_fps"></block>
-           <block type="cursor3d"></block>
+           <block type="camera_cursor"></block>
+           <block type="camera_cursor_color"></block>
+           <block type="camera_cursor_scale"></block>
+           <block type="camera_cursor_opacity"></block>
+           </category>
+           
+           <category name="Child" color="#5C81A6">
+          <block type="cursor3d"></block>
           <block type="cursor3dHEX"></block>
+           </category>
+           
          </category>
 		 
-		 <category name="Options" colour="#5C81A6"> 
+		 <category name="Scene Options" colour="#5C81A6"> 
           <block type="primitive"></block>
 		  <block type="color3d"></block>
           <block type="color3dHEX"></block>
-          
+          <block type="imgsrc"></block>
           <block type="posrotscale_3d"></block>
           <block type="position3d"></block>
           <block type="rotation3d"></block>
@@ -648,9 +669,14 @@
 		</category>
 		
 		<category name="Entity" colour="#5C81A6"> 
+		    <block type="a-entity"></block>
 			<block type="gltf_entity"></block>
 		</category>
 		
+		<category name="Entity Options" colour="#5C81A6">
+       
+        </category> 
+        
         <category name="Video" colour="#5C81A6">
         <block type="videosphere360"></block>
         </category>

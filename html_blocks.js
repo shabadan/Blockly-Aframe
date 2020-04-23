@@ -1063,7 +1063,25 @@ var AframeBlocks =
   "colour": 195,
   "tooltip": "",
   "helpUrl": ""
-},{
+},
+ 
+{
+  "type": "light_3d",
+  "message0": "Light  %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "LIGHT3D"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 195,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+ 
+{
   "type": "camera_3d_child",
   "message0": "%1 Options: %2 Child %3",
   "args0": [
@@ -1074,7 +1092,11 @@ var AframeBlocks =
         [
           "Camera",
           "camera"
-        ]
+        ],
+         [
+          "Light",
+          "light"
+        ],
       ]
     },
     {
@@ -1105,7 +1127,11 @@ var AframeBlocks =
         [
           "Camera",
           "camera"
-        ]
+        ],
+         [
+          "Light",
+          "light"
+        ],  
       ]
     },
     {
@@ -1159,6 +1185,78 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 }, 
+ 
+{
+  "type": "camera_cursor",
+  "message0": "Cursor Visible %1",
+  "args0": [
+    {
+      "type": "field_checkbox",
+      "name": "CURSOREVISIBILE",
+      "checked": true
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+{
+  "type": "camera_cursor_color",
+  "message0": "Cursor Color %1",
+  "args0": [
+    {
+      "type": "field_colour",
+      "name": "NAME",
+      "colour": "#ff0000"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "camera_cursor_opacity",
+  "message0": "Cursor Opacity %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "OPACITY",
+      "text": "0.5"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+ 
+{
+  "type": "camera_cursor_scale",
+  "message0": "Cursor Scale %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "SCALE",
+      "text": "1"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},  
 
 {
   "type": "wasd_fps",
@@ -1304,6 +1402,28 @@ var AframeBlocks =
   "helpUrl": ""
 },
 
+{
+  "type": "a-entity",
+  "message0": "Entity id: %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "IDNAME",
+      "text": "default"
+    },
+    {
+      "type": "input_statement",
+      "name": "CONTENT"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+ 
+ 
 {
   "type": "import_model_gltf",
   "message0": "gltf model url %1",
@@ -2454,30 +2574,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 }, 
- 
-/*
-{
-  "type": "Texture3D",
-  "message0": "Texture = src: %1 %2",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "TEXTURE_SRC",
-      "text": "url texture"
-    },
-    {
-      "type": "input_statement",
-      "name": "TEXTURE_OPTION"
-    }
-  ],
-   "previousStatement": null,
-  "nextStatement": null,    
-  "colour": 230,
-  "tooltip": "",
-  "helpUrl": ""
-},
 
-*/ 
 
 {
   "type": "Texture3D",
@@ -2611,7 +2708,76 @@ var AframeBlocks =
   "colour": 120,
   "tooltip": "",
   "helpUrl": ""
-}
+},
+ 
+{
+  "type": "a-sky",
+  "message0": "Sky %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+ {
+  "type": "a_sky_explor",
+  "message0": "Sky Explorable %1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "EXPLO",
+      "options": [
+        [
+          "True",
+          "radius=\"20\""
+        ],
+        [
+          "False",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+
+{
+  "type": "imgsrc",
+  "message0": "src= %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "SRC",
+      "text": "default"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+
+
 ];
 
 htmlBlocks = htmlBlocks.concat(AframeBlocks);
