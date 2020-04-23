@@ -1082,6 +1082,50 @@ var AframeBlocks =
 }, 
  
 {
+  "type": "light3d_type",
+  "message0": "Type = %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "TYPE_LIGHT",
+      "options": [
+        [
+          "ambient",
+          "ambient"
+        ],
+        [
+          "directional",
+          "directional"
+        ]
+      ]
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+{
+  "type": "light3d_intenity",
+  "message0": "intensity %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "LIGHT3DINTESITY",
+      "text": "0.5"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},  
+ 
+{
   "type": "camera_3d_child",
   "message0": "%1 Options: %2 Child %3",
   "args0": [

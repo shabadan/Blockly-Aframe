@@ -368,6 +368,23 @@ HtmlGenerator['light_3d'] = function(block) {
   return code;
 };
 
+HtmlGenerator['light3d_type'] = function(block) {
+  var dropdown_type_light = block.getFieldValue('TYPE_LIGHT');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'type= "'+ dropdown_type_light +'"\n';
+  return code;
+};
+
+HtmlGenerator['light3d_intenity']  = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var text_light_intensity = block.getFieldValue('LIGHT3DINTESITY');
+  // TODO: Assemble JavaScript into code variable.
+
+    var code = 'intensity = "'+ text_light_intensity +'"\n';
+    
+  return code;
+};
+
 HtmlGenerator['camera_3d_child'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var dropdown_name = block.getFieldValue('DROPDOWN');
