@@ -1522,7 +1522,7 @@ var AframeBlocks =
       "type": "field_dropdown",
       "name": "DROPDOWN",
       "options": [
-   [
+        [
           "Box",
           "box"
         ],
@@ -1603,7 +1603,7 @@ var AframeBlocks =
       "type": "field_dropdown",
       "name": "DROPDOWN",
       "options": [
-  [
+        [
           "Box",
           "box"
         ],
