@@ -985,7 +985,42 @@ var htmlBlocks =
 
 
 var AframeBlocks =
-[{
+[
+{
+  "type": "import_script",
+  "message0": "Import:  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "IMPORT",
+      "options": [
+        [
+          "A-Frame",
+          "https://aframe.io/releases/1.0.4/aframe.min.js"
+        ],
+        [
+          "Inspector",
+          "https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
+        ],
+        [
+          "Event",
+          "https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"
+        ],
+        [
+          "Extra",
+          "https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": ""
+},
+    
+{
   "type": "import_aframe",
   "message0": "import url %1",
   "args0": [
@@ -1017,6 +1052,25 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": "https://aframe.io"
 },
+ 
+{
+  "type": "import_event",
+  "message0": "Import A-Frame Event %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME",
+      "text": "https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": "https://aframe.io"
+},
+
+
 {
   "type": "import_extra",
   "message0": "Import A-Frame Extra %1",
@@ -1032,7 +1086,8 @@ var AframeBlocks =
   "colour": 90,
   "tooltip": "",
   "helpUrl": "https://aframe.io"
-},
+}, 
+ 
 {
   "type": "scene_create",
   "message0": "crea scena %1",
@@ -1893,7 +1948,7 @@ var AframeBlocks =
   "helpUrl": ""
 },
 
-  
+/*  
 {
   "type": "posrotscale_3d",
   "message0": "%1 X :  %2 Y :  %3 Z :  %4",
@@ -1938,7 +1993,55 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
- 
+*/
+{
+  "type": "posrotscale_3d_",
+  "message0": "%1 %2 X : %3 Y : %4 Z : %5",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "POSROTSCALE",
+      "options": [
+        [
+          "Position",
+          "position"
+        ],
+        [
+          "Rotation",
+          "rotation"
+        ],
+        [
+          "Scale",
+          "scale"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "POSROTSCALE_X",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "POSROTSCALE_Y",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "POSROTSCALE_Z",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},    
  
 {
   "type": "width3d",
@@ -2950,7 +3053,219 @@ var AframeBlocks =
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
-}
+},
+ 
+{
+  "type": "event_set_name",
+  "message0": "Event-Set: %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "EVENTNAME",
+      "text": "name"
+    },
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+
+{
+  "type": "input_color",
+  "message0": "%1",
+  "args0": [
+    {
+      "type": "field_colour",
+      "name": "COLOR_INPUT",
+      "colour": "#ff0000"
+    }
+  ],
+  "output": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "input_text",
+  "message0": "%1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TEXT_INPUT",
+      "text": "text"
+    }
+  ],
+  "output": "String",
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+{
+  "type": "input_number",
+  "message0": "%1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NUMBER_VALUE",
+      "text": "0"
+    }
+  ],
+  "output": "Number",
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": ""
+}, 
+
+{
+  "type": "event_type",
+  "message0": "Event: %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "EVENT_TYPE",
+      "options": [
+        [
+          "Mouseenter",
+          "mouseenter"
+        ],
+        [
+          "Mouseleave",
+          "mouseleave"
+        ],
+        [
+          "Click",
+          "click"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+{
+  "type": "event_target",
+  "message0": "Target:  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "NAME_TARGET",
+      "text": "target name"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "",
+  "helpUrl": ""
+},
+ 
+{
+  "type": "event_material",
+  "message0": "Material %1 %2 %3",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "option",
+      "options": [
+        [
+          "color",
+          "color"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "MATERIAL_INPUT"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "",
+  "helpUrl": ""
+},
+{
+  "type": "event_visible",
+  "message0": "Visible:  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "Visible",
+      "options": [
+        [
+          "True",
+          "true"
+        ],
+        [
+          "False",
+          "false"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "entity_cursor",
+  "message0": "entityCursor",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "event_position",
+  "message0": "Position:  %1 X : %2 Y : %3 Z : %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "X",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "Y",
+      "check": "Number"
+    },
+    {
+      "type": "input_value",
+      "name": "Z",
+      "check": "Number"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "",
+  "helpUrl": ""
+}    
 
 
 ];

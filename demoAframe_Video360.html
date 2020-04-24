@@ -568,8 +568,10 @@
 	  <sep></sep>
       <category name="AFrame">
         <category name="Import" colour="#5C81A6">
+          <block type= "import_script"></block>
           <block type="import_aframe"></block>
           <block type="import_inspector"></block>
+          <block type="import_event"></block>
           <block type="import_extra"></block>
           <block type="inspector_code_load"></block>
          </category>
@@ -589,40 +591,13 @@
 		  <block type="import_model_obj"></block>
          </category>
 		 
-		 <category name="Light Option" color="#5C81A6">
-		 <block type="position3d"></block>
-          <block type="rotation3d"></block>
-           <block type="color3d"></block>
-          <block type="color3dHEX"></block>
-          <block type="light3d_type"></block>
-          <block type="light3d_intenity"></block>
-		 </category>
-		 
-		 <category name="3D Camera Option" color="#5C81A6">
-         
-         <category name="Options" color="#5C81A6">
-          <block type="position3d"></block>
-          <block type="rotation3d"></block>
-          <block type="wasd_fps"></block>
-           <block type="camera_cursor"></block>
-           <block type="camera_cursor_color"></block>
-           <block type="camera_cursor_scale"></block>
-           <block type="camera_cursor_opacity"></block>
-           </category>
-           
-           <category name="Child" color="#5C81A6">
-          <block type="cursor3d"></block>
-          <block type="cursor3dHEX"></block>
-           </category>
-           
-         </category>
-		 
 		 <category name="Scene Options" colour="#5C81A6"> 
           <block type="primitive"></block>
 		  <block type="color3d"></block>
           <block type="color3dHEX"></block>
           <block type="imgsrc"></block>
-          <block type="posrotscale_3d"></block>
+          <!--<block type="posrotscale_3d"></block>-->
+          <block type="posrotscale_3d_"></block>
           <block type="position3d"></block>
           <block type="rotation3d"></block>
           <block type="scale3d"></block>
@@ -636,6 +611,37 @@
           <block type="segments-radial3d"></block>
           <block type="side3d"></block>
         </category>
+		 
+        <category name="3D Camera Option" color="#5C81A6">
+         
+         <category name="Options" color="#5C81A6">
+          <block type="position3d"></block>
+          <block type="rotation3d"></block>
+          <block type="wasd_fps"></block>
+           <block type="camera_cursor"></block>
+           <block type="camera_cursor_color"></block>
+           <block type="camera_cursor_scale"></block>
+           <block type="camera_cursor_opacity"></block>
+           </category>
+		 
+	 
+           <category name="Child" color="#5C81A6">
+          <block type="cursor3d"></block>
+          <block type="cursor3dHEX"></block>
+           </category>
+           
+         </category>
+		 
+       	 <category name="Light Option" color="#5C81A6">
+		 <block type="position3d"></block>
+          <block type="rotation3d"></block>
+           <block type="color3d"></block>
+          <block type="color3dHEX"></block>
+          <block type="light3d_type"></block>
+          <block type="light3d_intenity"></block>
+		 </category>
+		 
+		
         
           <category name="Animation" colour="#5C81A6"> 
             <block type="animation_options"></block>
@@ -684,6 +690,24 @@
         <category name="Video" colour="#5C81A6">
         <block type="videosphere360"></block>
         </category>
+        
+         <category name="Event" colour="#5C81A6"> 
+            <block type="event_set_name"></block>
+            <block type="event_type"></block>
+            <block type="event_target"></block>
+            <block type="event_position"></block>
+            <block type="event_material"></block>
+            <block type="event_visible"></block>
+            <block type="entity_cursor"></block>
+        </category>
+        
+        <category name="Input" colour="#5C81A6"> 
+            <block type="input_text"></block>
+            <block type="input_number"></block>
+            <block type="input_color"></block>
+            
+        </category>
+        
 	  </category>
     </xml>
 

@@ -323,6 +323,13 @@ HtmlGenerator['body_attributes'] = function(block) {
   return code;
 };
 
+HtmlGenerator['import_script'] = function(block) {
+  var dropdown_import = block.getFieldValue('IMPORT');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<script src="'+dropdown_import+'"></script>\n';
+  return code;
+};
+
 HtmlGenerator['import_aframe'] = function(block) {
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
@@ -331,6 +338,13 @@ HtmlGenerator['import_aframe'] = function(block) {
 };
 
 HtmlGenerator['import_inspector'] = function(block) {
+  var text_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<script src="'+text_name+'"></script>\n';
+  return code;
+};
+
+HtmlGenerator['import_event'] = function(block) {
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
   var code = '<script src="'+text_name+'"></script>\n';
@@ -579,13 +593,6 @@ HtmlGenerator['Options_Primitive'] = function(block) {
   var code = ''+ statements_option+'';
   return [code, HtmlGenerator.ORDER_NONE];
 };
-/*
-tmlGenerator['onclick'] = function(block) {
-  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
-  var code = ' onclick="' + statements_name.trim() + '"';
-  return [code, HtmlGenerator.ORDER_NONE];
-};
-*/
 
 
 HtmlGenerator['color3d'] = function(block) {
@@ -647,6 +654,7 @@ HtmlGenerator['scale3d'] = function(block) {
   return code;
 };
 
+/*
 HtmlGenerator['posrotscale_3d'] = function(block) {
   var dropdown_posrotscale = block.getFieldValue('POSROTSCALE');
   var text_posrotscale_x = block.getFieldValue('POSROTSCALE_X');
@@ -657,7 +665,18 @@ HtmlGenerator['posrotscale_3d'] = function(block) {
     
   return code;
 };
+*/
 
+HtmlGenerator['posrotscale_3d_'] = function(block) {
+  var dropdown_posrotscale = block.getFieldValue('POSROTSCALE');
+  var text_posrotscale_x = HtmlGenerator.valueToCode(block, 'POSROTSCALE_X', HtmlGenerator.ORDER_ATOMIC);
+  var text_posrotscale_y = HtmlGenerator.valueToCode(block, 'POSROTSCALE_Y', HtmlGenerator.ORDER_ATOMIC);
+  var text_posrotscale_z = HtmlGenerator.valueToCode(block, 'POSROTSCALE_Z', HtmlGenerator.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code =''+dropdown_posrotscale+'= "'+ text_posrotscale_x +' '+ text_posrotscale_y+' '+text_posrotscale_z+'" '; 
+    
+  return code;
+};
 
 HtmlGenerator['depth3d'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
@@ -930,7 +949,7 @@ HtmlGenerator['a_sky_explor'] = function(block) {
   var dropdown_explo = block.getFieldValue('EXPLO');
   var statements_name = HtmlGenerator.statementToCode(block, 'NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code =  '<a-sky '+statements_name+' '+dropdown_explo+'></a-sky>\n';
+  var code = '<a-sky '+statements_name+' '+dropdown_explo+'></a-sky>\n';
   return code;
 };
 
@@ -938,14 +957,98 @@ HtmlGenerator['a_sky_explor'] = function(block) {
 HtmlGenerator['imgsrc'] = function(block) {
   var text_texture_src = block.getFieldValue('SRC')
   // TODO: Assemble JavaScript into code variable.
-  var code =  '\nsrc="#'+text_texture_src+'"\n';
+  var code = '\nsrc="#'+text_texture_src+'"\n';
   return code;
 };
 
 HtmlGenerator['inspector_code_load'] = function(block) {
   var text_inspector_copy = block.getFieldValue('INSPECTOR_COPY');
   // TODO: Assemble JavaScript into code variable.
-   var code =  '\n<!----Inspector code load------>\n'+text_inspector_copy+'\n<!---------->\n';
+   var code = '\n<!----Inspector code load------>\n'+text_inspector_copy+'\n<!---------->\n';
   return code;
 };
-    
+
+
+HtmlGenerator['input_color'] = function(block) {
+  var colour_name = block.getFieldValue('COLOR_INPUT');
+  // TODO: Assemble JavaScript into code variable.
+  var code = colour_name;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, HtmlGenerator.ORDER_NONE];
+};
+
+
+HtmlGenerator['input_text'] = function(block) {
+  var text_value = block.getFieldValue('TEXT_INPUT');
+  // TODO: Assemble JavaScript into code variable.
+  var code = text_value;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, HtmlGenerator.ORDER_NONE];
+};
+
+HtmlGenerator['input_number'] = function(block) {
+  var number_value = block.getFieldValue('NUMBER_VALUE');
+  // TODO: Assemble JavaScript into code variable.
+  var code = number_value;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, HtmlGenerator.ORDER_NONE];
+};
+
+
+HtmlGenerator['event_set_name'] = function(block) {
+  var text_eventname = block.getFieldValue('EVENTNAME');
+  var statements_name = HtmlGenerator.statementToCode(block, 'NAME');
+   var code = '\nevent-set__'+text_eventname+'="'+statements_name+'"\n';
+  return code;
+};
+
+HtmlGenerator['event_type'] = function(block) {
+  var dropdown_event_type = block.getFieldValue('EVENT_TYPE');
+   var code = '\n_event : '+dropdown_event_type+';\n';
+  return code;
+};
+
+HtmlGenerator['event_target'] = function(block) {
+  var text_name_target = block.getFieldValue('NAME_TARGET');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '_target = #'+text_name_target+';\n';
+  return code;
+};
+
+HtmlGenerator['event_material'] = function(block) {
+  var dropdown_option = block.getFieldValue('option');
+  var value_material_input = HtmlGenerator.valueToCode(block, 'MATERIAL_INPUT', HtmlGenerator.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'material.'+dropdown_option+' : '+value_material_input+';\n';
+  return code;
+};
+
+HtmlGenerator['event_visible'] = function(block) {
+  var dropdown_visible = block.getFieldValue('Visible');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'visible: '+dropdown_visible+';\n';
+  return code;
+};
+
+HtmlGenerator['event_position'] = function(block) {
+  var dropdown_visible = block.getFieldValue('Visible');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'visible: '+dropdown_visible+';\n';
+  return code;
+};
+
+
+HtmlGenerator['entity_cursor'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-entity cursor position="0 0 -1"\ngeometry="primitive: sphere; radius: 0.005"\nmaterial="color: #000000; shader: flat;\nopacity: 0.5">\n</a-entity>\n';
+  return code;
+};
+
+HtmlGenerator['event_position'] = function(block) {
+  var value_x = HtmlGenerator.valueToCode(block, 'X', HtmlGenerator.ORDER_ATOMIC);
+  var value_y = HtmlGenerator.valueToCode(block, 'Y', HtmlGenerator.ORDER_ATOMIC);
+  var value_z = HtmlGenerator.valueToCode(block, 'Z', HtmlGenerator.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = ' position: '+value_x+' '+value_y+' '+value_z+';\n';
+  return code;
+};
