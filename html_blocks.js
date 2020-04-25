@@ -1194,7 +1194,7 @@ var AframeBlocks =
  
 {
   "type": "camera_3d_child",
-  "message0": "%1 Options: %2 Child %3",
+  "message0": "%1 %2 Options: %3 %4 Child %5",
   "args0": [
     {
       "type": "field_dropdown",
@@ -1210,11 +1210,16 @@ var AframeBlocks =
         ],
       ]
     },
+     {
+      "type": "input_dummy"
+    },  
     {
       "type": "input_statement",
       "name": "NAME"
+    }, 
+    {
+      "type": "input_dummy"
     },
-  
     {
       "type": "input_statement",
       "name": "CHILD"
@@ -1571,6 +1576,104 @@ var AframeBlocks =
 
 {
   "type": "primitive",
+  "message0": "%1 ID: %2 %3 Visible %4 %5 %6 %7",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "DROPDOWN",
+      "options": [
+        [
+          "Box",
+          "box"
+        ],
+        [
+          "Plane",
+          "plane"
+        ],
+        [
+          "Cone",
+          "cone"
+        ],
+        [
+          "Octahedron",
+          "octahedron"
+        ],
+        [
+          "Circle",
+          "circle"
+        ],
+        [
+          "Ring",
+          "ring"
+        ],
+        [
+          "Sphere",
+          "sphere"
+        ],
+        [
+          "Cylinder",
+          "cylinder"
+        ],          
+        [
+          "Tetrahedron",
+          "tetrahedron"
+        ],
+        [
+          "Torus",
+          "torus"
+        ],
+         [
+          "TorusKnot",
+          "torusKnot"
+        ],
+        [
+          "Triangle",
+          "triangle"
+        ],
+        [
+          "Dodecahedron",
+          "dodecahedron"
+        ],
+         [
+          "Icosahedron",
+          "icosahedron"
+        ]
+      ]
+    }, 
+    {
+      "type": "field_input",
+      "name": "IDNAME",
+      "text": "primitive_name"
+    },
+     {
+      "type": "input_dummy"
+    },   
+    {
+      "type": "field_checkbox",
+      "name": "VISIBLE",
+      "checked": true
+    },
+    {
+      "type": "input_dummy"
+    }, 
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    },
+    {
+      "type": "input_dummy"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+    
+/*
+{
+  "type": "primitive",
   "message0": "%1 %2 %3",
   "args0": [
     {
@@ -1650,9 +1753,11 @@ var AframeBlocks =
   "helpUrl": ""
 },
 
+*/    
+
 {
   "type": "primitive_child",
-  "message0": "%1 Options: %2 Child %3",
+  "message0": "%1 ID: %2 %3 Visible %4 %5 Options: %6 Child %7",
   "args0": [
     {
       "type": "field_dropdown",
@@ -1717,6 +1822,22 @@ var AframeBlocks =
       ]
     },
     {
+      "type": "field_input",
+      "name": "IDNAME",
+      "text": "primitive_name"
+    },
+    {
+      "type": "input_dummy"
+    },  
+     {
+      "type": "field_checkbox",
+      "name": "VISIBLE",
+      "checked": true
+    },
+    {
+      "type": "input_dummy"
+    },  
+    {
       "type": "input_statement",
       "name": "NAME"
     },
@@ -1736,7 +1857,7 @@ var AframeBlocks =
 
  {
   "type": "primitive_option_child",
-  "message0": "%1 : %2 Child %3",
+  "message0": "%1 ID: %2 %3 Visible %4 %5 %6 Child %7",
   "args0": [
     {
       "type": "field_dropdown",
@@ -1800,6 +1921,22 @@ var AframeBlocks =
         ]  
       ]
     },
+    {
+      "type": "field_input",
+      "name": "IDNAME",
+      "text": "primitive_name"
+    },
+     {
+      "type": "input_dummy"
+    },  
+    {
+      "type": "field_checkbox",
+      "name": "VISIBLE",
+      "checked": true
+    },
+     {
+      "type": "input_dummy"
+    },  
     {
       "type": "input_value",
       "name": "VALUE"
@@ -3265,8 +3402,49 @@ var AframeBlocks =
   "colour": 270,
   "tooltip": "",
   "helpUrl": ""
-}    
-
+},
+ 
+{
+  "type": "entity_cursor_vr",
+  "message0": "Cursor %1 VR HEADSET %2 %3 Color:  %4 %5 Radius: %6 %7",
+  "args0": [
+    {
+      "type": "input_dummy",
+      "align": "CENTRE"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "VR_MODE",
+      "checked": false
+    },
+    {
+      "type": "input_dummy",
+      "align": "CENTRE"
+    },
+    {
+      "type": "field_colour",
+      "name": "NAME",
+      "colour": "#ff0000"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "RADIUS_VALUE",
+      "check": "Number"
+    },
+    {
+      "type": "input_statement",
+      "name": "ANIMATION"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 270,
+  "tooltip": "",
+  "helpUrl": ""
+},
 
 ];
 

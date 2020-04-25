@@ -556,19 +556,23 @@ HtmlGenerator['import_model_obj'] = function(block) {
 HtmlGenerator['primitive'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var dropdown_name = block.getFieldValue('DROPDOWN');
-  var statements_content = HtmlGenerator.statementToCode(block, 'NAME');    
+  var text_idname = block.getFieldValue('IDNAME')
+  var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
+  var checkbox_visible = block.getFieldValue('VISIBLE') == 'TRUE';
   // TODO: Assemble JavaScript into code variable.
-    var code = '<a-'+ dropdown_name +' '+statements_content+'></a-'+ dropdown_name + '>\n'; 
+    var code = '<a-'+ dropdown_name +' id="'+text_idname+'" visible="'+checkbox_visible+'" '+statements_content+'></a-'+ dropdown_name + '>\n'; 
   return code;
 };
 
 HtmlGenerator['primitive_child'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var dropdown_name = block.getFieldValue('DROPDOWN');
+  var text_idname = block.getFieldValue('IDNAME')
   var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
   var statements_child = HtmlGenerator.statementToCode(block, 'CHILD');
+  var checkbox_visible = block.getFieldValue('VISIBLE') == 'TRUE';
   // TODO: Assemble JavaScript into code variable.
-    var code = '<a-'+ dropdown_name +' '+statements_content+'>'+statements_child+'</a-'+ dropdown_name + '>\n'; 
+    var code = '<a-'+ dropdown_name +' id="'+text_idname+'" visible="'+checkbox_visible+'" '+statements_content+'>'+statements_child+'</a-'+ dropdown_name + '>\n'; 
     
   return code;
 };
@@ -576,11 +580,13 @@ HtmlGenerator['primitive_child'] = function(block) {
 HtmlGenerator['primitive_option_child'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var dropdown_name = block.getFieldValue('DROPDOWN');
+  var text_idname = block.getFieldValue('IDNAME')
   var value_text = HtmlGenerator.valueToCode(block, 'VALUE', HtmlGenerator.ORDER_ATOMIC);
+  var checkbox_visible = block.getFieldValue('VISIBLE') == 'TRUE';    
   //var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
   var statements_child = HtmlGenerator.statementToCode(block, 'CHILD');
   // TODO: Assemble JavaScript into code variable.
-    var code = '<a-'+ dropdown_name +' '+value_text+' >'+statements_child+'</a-'+ dropdown_name + '>\n'; 
+    var code = '<a-'+ dropdown_name +' id="'+text_idname+'" visible="'+checkbox_visible+'" '+value_text+' >'+statements_child+'</a-'+ dropdown_name + '>\n'; 
     
   return code;
 };
@@ -1011,7 +1017,7 @@ HtmlGenerator['event_type'] = function(block) {
 HtmlGenerator['event_target'] = function(block) {
   var text_name_target = block.getFieldValue('NAME_TARGET');
   // TODO: Assemble JavaScript into code variable.
-  var code = '_target = #'+text_name_target+';\n';
+  var code = '_target : #'+text_name_target+';\n';
   return code;
 };
 
@@ -1038,11 +1044,6 @@ HtmlGenerator['event_position'] = function(block) {
 };
 
 
-HtmlGenerator['entity_cursor'] = function(block) {
-  // TODO: Assemble JavaScript into code variable.
-  var code = '<a-entity cursor position="0 0 -1"\ngeometry="primitive: sphere; radius: 0.005"\nmaterial="color: #000000; shader: flat;\nopacity: 0.5">\n</a-entity>\n';
-  return code;
-};
 
 HtmlGenerator['event_position'] = function(block) {
   var value_x = HtmlGenerator.valueToCode(block, 'X', HtmlGenerator.ORDER_ATOMIC);
@@ -1050,5 +1051,22 @@ HtmlGenerator['event_position'] = function(block) {
   var value_z = HtmlGenerator.valueToCode(block, 'Z', HtmlGenerator.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
   var code = ' position: '+value_x+' '+value_y+' '+value_z+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_cursor'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-entity cursor position="0 0 -1"\ngeometry="primitive: sphere; radius: 0.005"\nmaterial="color: #000000; shader: flat;\nopacity: 0.5">\n</a-entity>\n';
+  return code;
+};
+
+
+HtmlGenerator['entity_cursor_vr'] = function(block) {
+  var checkbox_vr_mode = block.getFieldValue('VR_MODE') == 'TRUE';
+  var colour_name = block.getFieldValue('NAME');
+  var value_radius_value = HtmlGenerator.valueToCode(block, 'RADIUS_VALUE', HtmlGenerator.ORDER_ATOMIC);
+  var statements_animation = HtmlGenerator.statementToCode(block, 'ANIMATION');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-entity cursor = "fuse : '+checkbox_vr_mode+' fuseTimeout: 1500" position="0 0 -1" \n geometry="primitive: sphere; radius: '+value_radius_value+'" material="color: '+colour_name+';\n shader: flat; opacity: 0.5" \n'+statements_animation+' >\n</a-entity>\n';
   return code;
 };
