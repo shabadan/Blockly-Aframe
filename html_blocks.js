@@ -1520,7 +1520,7 @@ var AframeBlocks =
 
 {
   "type": "a-entity",
-  "message0": "Entity id: %1 %2",
+  "message0": "Entity id: %1 %2 Child %3",
   "args0": [
     {
       "type": "field_input",
@@ -1530,6 +1530,10 @@ var AframeBlocks =
     {
       "type": "input_statement",
       "name": "CONTENT"
+    },
+    {
+      "type": "input_statement",
+      "name": "NAME"
     }
   ],
   "previousStatement": null,

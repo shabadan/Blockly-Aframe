@@ -534,8 +534,9 @@ HtmlGenerator['gltf_entity'] = function(block) {
 HtmlGenerator['a-entity'] = function(block) {
   var text_idname = block.getFieldValue('IDNAME');
   var statements_content = HtmlGenerator.statementToCode(block, 'CONTENT');
+  var statements_name = HtmlGenerator.statementToCode(block, 'NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = '<a-entity id="'+text_idname+'" '+statements_content+'></a-entity>\n';
+  var code = '<a-entity id="'+text_idname+'" '+statements_content+'>'+statements_name+'</a-entity>\n';
   return code;
 };
 
@@ -1035,14 +1036,14 @@ HtmlGenerator['event_visible'] = function(block) {
   var code = 'visible: '+dropdown_visible+';\n';
   return code;
 };
-
+/*
 HtmlGenerator['event_position'] = function(block) {
   var dropdown_visible = block.getFieldValue('Visible');
   // TODO: Assemble JavaScript into code variable.
   var code = 'visible: '+dropdown_visible+';\n';
   return code;
 };
-
+*/
 
 
 HtmlGenerator['event_position'] = function(block) {
