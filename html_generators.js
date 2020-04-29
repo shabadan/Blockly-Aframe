@@ -531,6 +531,37 @@ HtmlGenerator['gltf_entity'] = function(block) {
   return code;
 };
 
+HtmlGenerator['obj_entity'] = function(block) {
+  var dropdown_objdrop = block.getFieldValue('OBJDROP');
+  var text_objlink = block.getFieldValue('OBJLINK');
+  var statements_objname = HtmlGenerator.statementToCode(block, 'OBJNAME');
+  var dropdown_mtldrop = block.getFieldValue('MTLDROP');
+  var text_mtllink = block.getFieldValue('MTLLINK');
+  // TODO: Assemble JavaScript into code variable.
+  var code =  '<a-obj-model src="'+dropdown_objdrop+text_objlink'" mtl="'+dropdown_mtldrop+text_mtllink+'"></a-obj-model>\n';
+  return code;
+};
+
+HtmlGenerator['extra_entity'] = function(block) {
+  var dropdown_typedrop = block.getFieldValue('TYPEDROP');
+  var dropdown_srcdrop = block.getFieldValue('SRCDROP');
+  var text_srclink = block.getFieldValue('SRCLINK');
+  var statements_name = HtmlGenerator.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code;
+  switch(dropdown_typedrop) {
+  case dae:
+    code = '<a-entity collada-model-legacy="'+dropdown_srcdrop+text_srclink+'">\n'+statements_name+'</a-entity>\n';
+    break;
+  case fbx:
+    code = '<a-entity fbx-model="'+dropdown_srcdrop+text_srclink+'">\n'+statements_name+'</a-entity>\n';
+    break;
+  default:
+    code = 'error!';
+}
+  return code;
+};
+
 HtmlGenerator['a-entity'] = function(block) {
   var text_idname = block.getFieldValue('IDNAME');
   var statements_content = HtmlGenerator.statementToCode(block, 'CONTENT');

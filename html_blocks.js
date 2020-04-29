@@ -1519,6 +1519,112 @@ var AframeBlocks =
 },
 
 {
+  "type": "obj_entity",
+  "message0": "obj entity %1 %2 %3 mtl entity %4 %5",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "OBJDROP",
+      "options": [
+        [
+          "id",
+          "#"
+        ],
+        [
+          "url",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "OBJLINK",
+      "text": "default"
+    },
+    {
+      "type": "input_statement",
+      "name": "OBJNAME"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "MTLDROP",
+      "options": [
+        [
+          "id",
+          "#"
+        ],
+        [
+          "url",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "MTLLINK",
+      "text": "default"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "extra_entity",
+  "message0": "model type %1 %2 entity %3 %4 %5",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "TYPEDROP",
+      "options": [
+        [
+          "dae",
+          "dae"
+        ],
+        [
+          "fbx",
+          "fbx"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_dropdown",
+      "name": "SRCDROP",
+      "options": [
+        [
+          "id",
+          "#"
+        ],
+        [
+          "url",
+          ""
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "SRCLINK",
+      "text": "default"
+    },
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "need to import extras",
+  "helpUrl": ""
+},
+
+{
   "type": "a-entity",
   "message0": "Entity id: %1 %2 Child %3",
   "args0": [
