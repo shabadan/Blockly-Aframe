@@ -550,10 +550,10 @@ HtmlGenerator['extra_entity'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code;
   switch(dropdown_typedrop) {
-  case dae:
+  case "dae":
     code = '<a-entity collada-model-legacy="'+dropdown_srcdrop+text_srclink+'">\n'+statements_name+'</a-entity>\n';
     break;
-  case fbx:
+  case "fbx":
     code = '<a-entity fbx-model="'+dropdown_srcdrop+text_srclink+'">\n'+statements_name+'</a-entity>\n';
     break;
   default:
