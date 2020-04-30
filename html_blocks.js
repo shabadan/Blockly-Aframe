@@ -2614,6 +2614,14 @@ var AframeBlocks =
         [
           "Scale",
           "scale"
+        ],
+        [
+          "Color",
+          "material.color"
+        ],
+        [
+          "Opacity",
+          "opacity"
         ]
       ]
     },
@@ -2731,6 +2739,14 @@ var AframeBlocks =
         [
           "Scale",
           "scale"
+        ],
+        [
+          "Color",
+          "material.color"
+        ],
+        [
+          "Opacity",
+          "opacity"
         ]
       ]
     }
@@ -2741,7 +2757,58 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+    
+{
+  "type": "animation_opacity",
+  "message0": "From:  %1 %2 To:  %3",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "FROM",
+      "text": "0"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_input",
+      "name": "TO",
+      "text": "1"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
 
+{
+  "type": "animation_color",
+  "message0": "From:  %1 %2 To:  %3",
+  "args0": [
+    {
+      "type": "field_colour",
+      "name": "FROM",
+      "colour": "#ccffff"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_colour",
+      "name": "TO",
+      "colour": "#3333ff"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+
+ 
 {
   "type": "animation_property_from",
   "message0": "From:  X:  %1 Y:  %2 Z:  %3",

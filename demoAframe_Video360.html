@@ -591,8 +591,13 @@
 		  <block type="import_model_obj"></block>
          </category>
 		 
-		 <category name="Scene Options" colour="#5C81A6"> 
-          <block type="primitive"></block>
+		 <category name="Scene Options" colour="#5C81A6">
+         
+         <category name="Exemple" colour="#5C81A6">
+         <block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N" x="-77" y="307"><statement name="NAME"><block type="primitive" id="fb)_4#9lh6:5N$b~Q#[l"><field name="DROPDOWN">box</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="-d:L;,+dZ@H}!}7U%;9^"><field name="COLOR3D">#ff0000</field><next><block type="position3d" id="F:GEWkT,nTr,%SjV=g^@"><field name="Pos_X">0</field><field name="Pos_Y">2</field><field name="Pos_Z">-2</field><next><block type="rotation3d" id="_(B+1}~S|}xg!i^2f0cp"><field name="Rot_X">0</field><field name="Rot_Y">45</field><field name="Rot_Z">45</field></block></next></block></next></block></statement></block></statement></block>
+         </category>
+         
+           <block type="primitive"></block>
 		  <block type="color3d"></block>
           <block type="color3dHEX"></block>
           <block type="imgsrc"></block>
@@ -647,6 +652,10 @@
            
            <category name="Exemple" colour="#5C81A6">
            <block type="animation_options" id="Q9n5t=^dhb(WG7Bz~(:?" x="-137" y="263"><statement name="ANIMATION_OPTION"><block type="animation_property_property" id="DC]~PcXf/.|?eJT@ti*m"><field name="property">rotation</field><next><block type="animation_property_to" id="r4#Jaey~sUgKmyW]qTz;"><field name="TO_X">0</field><field name="TO_Y">360</field><field name="TO_Z">0</field><next><block type="animation_property_loop" id="xg*,WfFs*7r.Vy/+*@]B"><field name="LOOP">true</field><next><block type="animation_property_liner" id="jo:4oPk:/7/1M-[)LGz#"><field name="EAS">linear</field><next><block type="animation_property_dur" id="c60V};6U}N{Ne%ZNd2?K"><field name="DUR">3000</field></block></next></block></next></block></next></block></next></block></statement></block>
+           
+           <block type="animation_options" id="wU}(4{YU{Dmx#0C+hE/X" x="-82" y="290"><statement name="ANIMATION_OPTION"><block type="animation_property_property" id="oF~hd9UZDH0GZj9FQpi}"><field name="property">material.color</field><next><block type="animation_color" id="(9doTel}riR3O~7;Es4J"><field name="FROM">#ccffff</field><field name="TO">#3333ff</field><next><block type="animation_property_dir" id="5m|M%C2y#oZ[J/koiF%0"><field name="DIR">alternate</field><next><block type="animation_property_loop" id="l1P/]QCux}Z=u6Lv@V97"><field name="LOOP">true</field><next><block type="animation_property_dur" id="{c/FY]1AN-Kc=wW3/NyW"><field name="DUR">1500</field></block></next></block></next></block></next></block></next></block></statement></block>
+           
+           <block type="animation_options" id="wU}(4{YU{Dmx#0C+hE/X" x="-12" y="488"><statement name="ANIMATION_OPTION"><block type="animation_property_property" id="oF~hd9UZDH0GZj9FQpi}"><field name="property">opacity</field><next><block type="animation_opacity" id="FKP)(P*#L*}cRD6Dm/)T"><field name="FROM">0</field><field name="TO">1</field><next><block type="animation_property_dir" id="5m|M%C2y#oZ[J/koiF%0"><field name="DIR">alternate</field><next><block type="animation_property_loop" id="l1P/]QCux}Z=u6Lv@V97"><field name="LOOP">true</field><next><block type="animation_property_dur" id="{c/FY]1AN-Kc=wW3/NyW"><field name="DUR">1500</field></block></next></block></next></block></next></block></next></block></statement></block>
            </category>
            
             <block type="animation_options"></block>
@@ -654,6 +663,8 @@
             <block type="animation_property_property"></block>
             <block type="animation_property_from"></block>
             <block type="animation_property_to"></block>
+            <block type="animation_opacity"></block>
+            <block type="animation_color"></block>
             <block type="animation_property_loop"></block>
             <block type="animation_property_dir"></block>
             <block type="animation_property_dur"></block>

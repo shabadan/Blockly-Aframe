@@ -854,6 +854,22 @@ HtmlGenerator['animation_property_property'] = function(block) {
   return code;
 };
 
+HtmlGenerator['animation_opacity'] = function(block) {
+  var text_from = block.getFieldValue('FROM');
+  var text_to = block.getFieldValue('TO');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'from: '+text_from+';\nto: '+text_to+';\n';
+  return code;
+};
+
+HtmlGenerator['animation_color'] = function(block) {
+  var colour_from = block.getFieldValue('FROM');
+  var colour_to = block.getFieldValue('TO');
+  // TODO: Assemble JavaScript into code variable.
+   var code = 'from: '+colour_from+';\nto: '+colour_to+';\n';
+  return code;
+};
+
 HtmlGenerator['animation_property_from'] = function(block) { 
   var text_from_x = block.getFieldValue('FROM_X');
   var text_from_y = block.getFieldValue('FROM_Y');
