@@ -330,6 +330,7 @@ HtmlGenerator['import_script'] = function(block) {
   return code;
 };
 
+
 HtmlGenerator['import_aframe'] = function(block) {
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.

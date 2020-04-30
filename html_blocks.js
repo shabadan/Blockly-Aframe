@@ -1009,7 +1009,7 @@ var AframeBlocks =
         [
           "Extra",
           "https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"
-        ]
+        ]  
       ]
     }
   ],
@@ -1019,6 +1019,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+      
     
 {
   "type": "import_aframe",
@@ -1086,7 +1087,9 @@ var AframeBlocks =
   "colour": 90,
   "tooltip": "",
   "helpUrl": "https://aframe.io"
-}, 
+},
+    
+    
  
 {
   "type": "scene_create",
@@ -1780,90 +1783,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
-    
-/*
-{
-  "type": "primitive",
-  "message0": "%1 %2 %3",
-  "args0": [
-    {
-      "type": "field_dropdown",
-      "name": "DROPDOWN",
-      "options": [
-        [
-          "Box",
-          "box"
-        ],
-        [
-          "Plane",
-          "plane"
-        ],
-        [
-          "Cone",
-          "cone"
-        ],
-        [
-          "Octahedron",
-          "octahedron"
-        ],
-        [
-          "Circle",
-          "circle"
-        ],
-        [
-          "Ring",
-          "ring"
-        ],
-        [
-          "Sphere",
-          "sphere"
-        ],
-        [
-          "Cylinder",
-          "cylinder"
-        ],          
-        [
-          "Tetrahedron",
-          "tetrahedron"
-        ],
-        [
-          "Torus",
-          "torus"
-        ],
-         [
-          "TorusKnot",
-          "torusKnot"
-        ],
-        [
-          "Triangle",
-          "triangle"
-        ],
-        [
-          "Dodecahedron",
-          "dodecahedron"
-        ],
-         [
-          "Icosahedron",
-          "icosahedron"
-        ]
-      ]
-    },
-    {
-      "type": "input_statement",
-      "name": "NAME"
-    },
-    {
-      "type": "input_dummy"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 230,
-  "tooltip": "",
-  "helpUrl": ""
-},
-
-*/    
+ 
 
 {
   "type": "primitive_child",
