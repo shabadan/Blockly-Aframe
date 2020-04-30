@@ -66,7 +66,9 @@
     </div>
 
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-      <category name="html" expanded="true">
+      
+       
+       <category name="html" expanded="true">
         <category name="baseframe" colour="#a55b5b">
           <block type="html">
             <statement name="content">
@@ -566,7 +568,10 @@
         <category name="functions" colour="#9A5CA6" custom="PROCEDURE"></category>
       </category>
 	  <sep></sep>
-      <category name="AFrame">
+     
+     
+     
+   <category name="AFrame">
         <category name="Import" colour="#5C81A6">
           <block type= "import_script"></block>
           <block type="import_aframe"></block>
@@ -575,6 +580,7 @@
           <block type="import_extra"></block>
           <block type="inspector_code_load"></block>
          </category>
+         
          <category name="Scene" color="#5C81A6">
           <block type="scene_create"></block>
 		  <block type="camera_3d"></block>
@@ -589,13 +595,9 @@
           <block type=Options_Primitive></block>
 		  <block type="import_model_gltf"></block>
 		  <block type="import_model_obj"></block>
-         </category>
-		 
-		 <category name="Scene Options" colour="#5C81A6">
          
-         <category name="Exemple" colour="#5C81A6">
-         <block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N" x="-77" y="307"><statement name="NAME"><block type="primitive" id="fb)_4#9lh6:5N$b~Q#[l"><field name="DROPDOWN">box</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="-d:L;,+dZ@H}!}7U%;9^"><field name="COLOR3D">#ff0000</field><next><block type="position3d" id="F:GEWkT,nTr,%SjV=g^@"><field name="Pos_X">0</field><field name="Pos_Y">2</field><field name="Pos_Z">-2</field><next><block type="rotation3d" id="_(B+1}~S|}xg!i^2f0cp"><field name="Rot_X">0</field><field name="Rot_Y">45</field><field name="Rot_Z">45</field></block></next></block></next></block></statement></block></statement></block>
-         </category>
+         <category name="Scene Options" colour="#5C81A6">
+         
          
            <block type="primitive"></block>
 		  <block type="color3d"></block>
@@ -616,18 +618,16 @@
           <block type="segments-radial3d"></block>
           <block type="side3d"></block>
         </category>
-		 
-        <category name="3D Camera Option" color="#5C81A6">
+        
+         <category name="3D Camera Option" color="#5C81A6">
          
-         <category name="Options" color="#5C81A6">
-          <block type="position3d"></block>
+           <block type="position3d"></block>
           <block type="rotation3d"></block>
           <block type="wasd_fps"></block>
            <block type="camera_cursor"></block>
            <block type="camera_cursor_color"></block>
            <block type="camera_cursor_scale"></block>
            <block type="camera_cursor_opacity"></block>
-           </category>
 		 
 	 
            <category name="Child" color="#5C81A6">
@@ -636,8 +636,8 @@
            </category>
            
          </category>
-		 
-       	 <category name="Light Option" color="#5C81A6">
+         
+         <category name="Light Option" color="#5C81A6">
 		 <block type="position3d"></block>
           <block type="rotation3d"></block>
            <block type="color3d"></block>
@@ -646,8 +646,31 @@
           <block type="light3d_intenity"></block>
 		 </category>
 		 
+         
+         <category name="Exemple" colour="#5C81A6">
+         <block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N" x="-77" y="307"><statement name="NAME"><block type="primitive" id="fb)_4#9lh6:5N$b~Q#[l"><field name="DROPDOWN">box</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="-d:L;,+dZ@H}!}7U%;9^"><field name="COLOR3D">#ff0000</field><next><block type="position3d" id="F:GEWkT,nTr,%SjV=g^@"><field name="Pos_X">0</field><field name="Pos_Y">2</field><field name="Pos_Z">-2</field><next><block type="rotation3d" id="_(B+1}~S|}xg!i^2f0cp"><field name="Rot_X">0</field><field name="Rot_Y">45</field><field name="Rot_Z">45</field></block></next></block></next></block></statement></block></statement></block>
+         
+         <block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N" x="-63" y="178"><statement name="NAME"><block type="primitive" id="C9NU!5pewvbAM0y9b~i["><field name="DROPDOWN">cone</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="8!{TkZ0lNB}Zj;,uJiW7"><field name="COLOR3D">#000099</field><next><block type="posrotscale_3d_" id="aU{EFmoT~IN?H^b1OwER"><field name="POSROTSCALE">position</field><value name="POSROTSCALE_X"><block type="input_number" id="Q`oGF{:]kpX0GdfV*(oE"><field name="NUMBER_VALUE">0</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="M/VymBj.e7iGW?3BYvY,"><field name="NUMBER_VALUE">2</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="_M|NlH_+ZdQ]H$(w)#5|"><field name="NUMBER_VALUE">-2</field></block></value><next><block type="posrotscale_3d_" id="6J+|+nvf5.NI[6Z!|-i@"><field name="POSROTSCALE">rotation</field><value name="POSROTSCALE_X"><block type="input_number" id="2h3~JmR7=ctF+lM)x))d"><field name="NUMBER_VALUE">80</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="V}Q@Td!9,F=7#uW#1]w$"><field name="NUMBER_VALUE">45</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="o(P?%pC!]evO?o00DV57"><field name="NUMBER_VALUE">1</field></block></value></block></next></block></next></block></statement></block></statement></block>
+         
+         <block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N" x="10" y="344"><statement name="NAME"><block type="primitive" id="C9NU!5pewvbAM0y9b~i["><field name="DROPDOWN">cylinder</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="posrotscale_3d_" id="aU{EFmoT~IN?H^b1OwER"><field name="POSROTSCALE">position</field><value name="POSROTSCALE_X"><block type="input_number" id="Q`oGF{:]kpX0GdfV*(oE"><field name="NUMBER_VALUE">0</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="M/VymBj.e7iGW?3BYvY,"><field name="NUMBER_VALUE">1</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="_M|NlH_+ZdQ]H$(w)#5|"><field name="NUMBER_VALUE">-5</field></block></value><next><block type="posrotscale_3d_" id="6J+|+nvf5.NI[6Z!|-i@"><field name="POSROTSCALE">rotation</field><value name="POSROTSCALE_X"><block type="input_number" id="2h3~JmR7=ctF+lM)x))d"><field name="NUMBER_VALUE">15</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="V}Q@Td!9,F=7#uW#1]w$"><field name="NUMBER_VALUE">50</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="o(P?%pC!]evO?o00DV57"><field name="NUMBER_VALUE">60</field></block></value><next><block type="color3d" id="8!{TkZ0lNB}Zj;,uJiW7"><field name="COLOR3D">#009900</field><next><block type="dimension_3d" id="rpH0VnZ%5*~F~az!,)q4"><field name="DIMENSION">height</field><field name="DIMENSION_VALUE">4</field><next><block type="dimension_3d" id="V2w1@@Q{Ws2A)Ym)B[0T"><field name="DIMENSION">radius</field><field name="DIMENSION_VALUE">1</field></block></next></block></next></block></next></block></next></block></statement></block></statement></block>
+         
+         </category>
+         
+         </category>
+
+		         <category name="Texture" colour="#5C81A6"> 
+            <block type="Texture3D"></block>
+            <block type="Texture3d_link"></block>
+            <block type="Texture3D_repeat"></block>
+            <block type="Texture_NormalMap3D"></block>
+            <block type="Texture3D_NormalMap_repeat"></block>
+            <block type="Texture3D_normal_scale"></block>
+            <block type="texture3d_roughness"></block>
+            <block type="texture3d_opacity"></block>
+        </category>
 		
-        
+       
+
           <category name="Animation" colour="#5C81A6">
            
            <category name="Exemple" colour="#5C81A6">
@@ -675,17 +698,7 @@
 
         </category>
         
-        <category name="Texture" colour="#5C81A6"> 
-            <block type="Texture3D"></block>
-            <block type="Texture3d_link"></block>
-            <block type="Texture3D_repeat"></block>
-            <block type="Texture_NormalMap3D"></block>
-            <block type="Texture3D_NormalMap_repeat"></block>
-            <block type="Texture3D_normal_scale"></block>
-            <block type="texture3d_roughness"></block>
-            <block type="texture3d_opacity"></block>
-        </category>
-		
+
 		
 		<category name="Assets" colour="#5C81A6"> 
 		  <block type="assets_list"></block>
@@ -735,6 +748,8 @@
         </category>
         
 	  </category>
+	  
+	  
     </xml>
 
     <script>
