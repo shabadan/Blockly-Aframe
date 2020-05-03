@@ -24,9 +24,9 @@ html, body {
 	#leftcontainer {grid-column-start: 1;  grid-column-end: 3; grid-row-start: 1;  grid-row-end: span 4;
 	position: relative;
 	width: 100%;
-	resize: horizontal;
+	/*resize: both; 
 	overflow: auto;
-	}
+	*/}
 
 	#rightcontainer { grid-column-start: 3;  grid-column-end: 5; grid-row-start: 1;  grid-row-end: span 4;
 	
@@ -54,12 +54,19 @@ html, body {
 
 	  #modelArea { grid-column: 2 / 1;  grid-row: 1 / span 4;
 	  /*grid-column-start: 2;  grid-column-end: 3; grid-row-start: 1;  grid-row-end: span 4;*/
-			position: absolute;
+			position: relative;
+			float: right;
 			z-index: 1;
-			left: 75%;
 			height: 100%;
 			opacity: 1;
 			background-color: LightSkyBlue;
+	  }
+	  
+	  #aa { grid-column: 2 / 1;  grid-row: 1 / span 4;
+	  position: relative;
+			float: right;
+			z-index: 2;
+			height: 100%;
 	  }
 
 
@@ -114,4 +121,18 @@ html, body {
 .titleSidebarTop{
 	background: #09B6F1;
 }
+
+
+.box{
+        float:left;
+        overflow: hidden;
+        background: red;
+    }
+
+.slide-toggle{
+		position: relative;
+		left: -1px;
+        background: green;
+		z-index: 2;
+    }
 

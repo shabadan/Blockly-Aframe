@@ -9,6 +9,7 @@
 		<!-- Custom -->
 		<link rel="stylesheet" type="text/css" href="css/mainrestyle.css"/>
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 		<script src="blockly/blockly_compressed.js"></script>
 		<script src="blockly/msg/js/en.js"></script>
@@ -25,6 +26,9 @@
 		<div id="container">
 			<div id="leftcontainer">
 				<div id="blocklyArea"></div>
+				
+				<div id="aa">
+				<button type="button" id="closebutton" class="slide-toggle" onclick="searchBar()">Slide Toggle</button>
 				<div id="modelArea">
 					<div id="modeldiv"><span id="modelspan" >◀ Model window</span> <input type="button" value="Cancel LocalStorage" id="modelbutton" style="max-width:200px" /></div>
 					<label for="fileselect">Files to upload:</label>
@@ -41,6 +45,7 @@
 							</ul>
 						</div>
 					</div>
+				</div>
 				</div>
 			</div>
 			
@@ -859,5 +864,17 @@
 		</script>
 		<script src="js/model.js"></script>
 		<script src="js/geoDB.js"></script>
+		<script>
+		
+			$(document).ready(function(){
+				$(".slide-toggle").click(function(){
+					$("#modelArea").animate({
+						width: "toggle"
+					});
+				});
+			});
+		
+
+		</script>
 	</body>
 </html>
