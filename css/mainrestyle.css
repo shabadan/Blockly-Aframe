@@ -1,0 +1,117 @@
+/**** General Style ****/
+/*
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+*/
+
+/* MAIN CONTAINER */
+html, body {
+        padding: 0;
+        margin: 0;
+      }
+
+      #container {
+        width:100vw;
+        height:100vh;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 25% 25% 25% 25%;
+        -ms-grid-rows: 50px 30px 50% auto%;
+        grid-template-columns: 25% 25% 25% 25%;
+        grid-template-rows: 50px 30px 50% auto;
+      }
+
+	#leftcontainer {grid-column-start: 1;  grid-column-end: 3; grid-row-start: 1;  grid-row-end: span 4;
+	position: relative;
+	width: 100%;
+	resize: horizontal;
+	overflow: auto;
+	}
+
+	#rightcontainer { grid-column-start: 3;  grid-column-end: 5; grid-row-start: 1;  grid-row-end: span 4;
+	
+	}
+	
+      #blocklyArea  { grid-column: 1 / span 2;  grid-row: 1 / span 4; 
+	   position: absolute;
+	   top: 0; left: 0; right: 0; bottom: 0;}
+	  /*grid-column-start: 1;  grid-column-end: 3; grid-row-start: 1;  grid-row-end: span 4;*/ 
+      
+	  #menubar { grid-column: 3 / span 2;  grid-row: 1 / span 1; 
+	  font-family: sans-serif; font-size: 18px; padding: 5px 10px; 
+	  display: -ms-grid; display: grid; grid-template-columns: 25% 25% 25% 25%; background: #a9d0f7; }
+	  
+      #title        {grid-column: 3 / span 2;  grid-row: 2 / span 1;
+	  width: 100%; background-color: #444; color:white; text-align:center; font-size: 20px; font-family: sans-serif; padding-top: 5px; -ms-grid-row:2;-ms-grid-column:2;}
+      
+	  #websiteFrame {grid-column-start: 3;  grid-column-end: -1; grid-row-start: 3;  grid-row-end: span 1;
+	  border: 5px solid #444;  -ms-grid-row:3;-ms-grid-column:2;}
+	  
+      #sourcecode   {grid-column-start: 3;  grid-column-end: -1; grid-row-start: 4;  grid-row-end: span 1; 
+	  border: 5px solid lightgray; overflow: scroll; margin:0px;  -ms-grid-row:4;-ms-grid-column:2;}
+
+      #website {width: calc(100% - 5px);height: calc(50% - 5px);}
+
+	  #modelArea { grid-column: 2 / 1;  grid-row: 1 / span 4;
+	  /*grid-column-start: 2;  grid-column-end: 3; grid-row-start: 1;  grid-row-end: span 4;*/
+			position: absolute;
+			z-index: 1;
+			left: 75%;
+			height: 100%;
+			opacity: 1;
+			background-color: LightSkyBlue;
+	  }
+
+
+
+
+      /* Edge hack, God I hate this browser */
+      _:-ms-lang(x),
+      #container {
+        width:98vw;
+      }
+	  /*
+	html, body{
+		font-family: 'Open Sans', sans-serif;
+		height: 100%;
+		background: #000000;
+		overflow: hidden;
+		margin:0;
+		padding:0;
+	}
+	*/
+	
+	
+	
+#modeldiv { 
+ }
+
+#modellist { 
+  list-style-type:circle;
+ }
+ 
+ #filedrag
+{
+	display: none;
+	font-weight: bold;
+	text-align: center;
+	padding: 1em 0;
+	margin: 1em 0;
+	color: #555;
+	border: 2px dashed #555;
+	border-radius: 7px;
+	cursor: default;
+}
+
+#filedrag.hover
+{
+	color: #f00;
+	border-color: #f00;
+	border-style: solid;
+	box-shadow: inset 0 3px 4px #888;
+}
+
+.titleSidebarTop{
+	background: #09B6F1;
+}
+

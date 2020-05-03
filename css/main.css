@@ -53,13 +53,9 @@ html, body {
 	}
 	*/
 #modeldiv { 
-  position: relative;
-  left: 0px;
  }
 
 #modellist { 
-  position: relative;
-  left: 0px;
   list-style-type:circle;
  }
  
