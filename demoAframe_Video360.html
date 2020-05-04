@@ -66,7 +66,9 @@
     </div>
 
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
-      <category name="html" expanded="true">
+      
+       
+       <category name="html" expanded="true">
         <category name="baseframe" colour="#a55b5b">
           <block type="html">
             <statement name="content">
@@ -566,7 +568,10 @@
         <category name="functions" colour="#9A5CA6" custom="PROCEDURE"></category>
       </category>
 	  <sep></sep>
-      <category name="AFrame">
+     
+     
+     
+   <category name="AFrame">
         <category name="Import" colour="#5C81A6">
           <block type= "import_script"></block>
           <block type="import_aframe"></block>
@@ -575,6 +580,7 @@
           <block type="import_extra"></block>
           <block type="inspector_code_load"></block>
          </category>
+         
          <category name="Scene" color="#5C81A6">
           <block type="scene_create"></block>
 		  <block type="camera_3d"></block>
@@ -589,10 +595,11 @@
           <block type=Options_Primitive></block>
 		  <block type="import_model_gltf"></block>
 		  <block type="import_model_obj"></block>
-         </category>
-		 
-		 <category name="Scene Options" colour="#5C81A6"> 
-          <block type="primitive"></block>
+         
+         <category name="Scene Options" colour="#5C81A6">
+         
+         
+           <block type="primitive"></block>
 		  <block type="color3d"></block>
           <block type="color3dHEX"></block>
           <block type="imgsrc"></block>
@@ -611,18 +618,16 @@
           <block type="segments-radial3d"></block>
           <block type="side3d"></block>
         </category>
-		 
-        <category name="3D Camera Option" color="#5C81A6">
+        
+         <category name="3D Camera Option" color="#5C81A6">
          
-         <category name="Options" color="#5C81A6">
-          <block type="position3d"></block>
+           <block type="position3d"></block>
           <block type="rotation3d"></block>
           <block type="wasd_fps"></block>
            <block type="camera_cursor"></block>
            <block type="camera_cursor_color"></block>
            <block type="camera_cursor_scale"></block>
            <block type="camera_cursor_opacity"></block>
-           </category>
 		 
 	 
            <category name="Child" color="#5C81A6">
@@ -631,8 +636,8 @@
            </category>
            
          </category>
-		 
-       	 <category name="Light Option" color="#5C81A6">
+         
+         <category name="Light Option" color="#5C81A6">
 		 <block type="position3d"></block>
           <block type="rotation3d"></block>
            <block type="color3d"></block>
@@ -641,30 +646,19 @@
           <block type="light3d_intenity"></block>
 		 </category>
 		 
-		
-        
-          <category name="Animation" colour="#5C81A6">
-           
-           <category name="Exemple" colour="#5C81A6">
-           <block type="animation_options" id="Q9n5t=^dhb(WG7Bz~(:?" x="-137" y="263"><statement name="ANIMATION_OPTION"><block type="animation_property_property" id="DC]~PcXf/.|?eJT@ti*m"><field name="property">rotation</field><next><block type="animation_property_to" id="r4#Jaey~sUgKmyW]qTz;"><field name="TO_X">0</field><field name="TO_Y">360</field><field name="TO_Z">0</field><next><block type="animation_property_loop" id="xg*,WfFs*7r.Vy/+*@]B"><field name="LOOP">true</field><next><block type="animation_property_liner" id="jo:4oPk:/7/1M-[)LGz#"><field name="EAS">linear</field><next><block type="animation_property_dur" id="c60V};6U}N{Ne%ZNd2?K"><field name="DUR">3000</field></block></next></block></next></block></next></block></next></block></statement></block>
-           </category>
-           
-            <block type="animation_options"></block>
-            <block type="animation_property"></block>
-            <block type="animation_property_property"></block>
-            <block type="animation_property_from"></block>
-            <block type="animation_property_to"></block>
-            <block type="animation_property_loop"></block>
-            <block type="animation_property_dir"></block>
-            <block type="animation_property_dur"></block>
-            <block type="animation_property_liner"></block>
-            <block type="animation_property_easeIn"></block>
-            <block type="animation_property_easeOut"></block>
-            <block type="animation_property_easeInOut"></block>
+         
+         <category name="Exemple" colour="#5C81A6">
+         <block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N" x="-77" y="307"><statement name="NAME"><block type="primitive" id="fb)_4#9lh6:5N$b~Q#[l"><field name="DROPDOWN">box</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="-d:L;,+dZ@H}!}7U%;9^"><field name="COLOR3D">#ff0000</field><next><block type="position3d" id="F:GEWkT,nTr,%SjV=g^@"><field name="Pos_X">0</field><field name="Pos_Y">2</field><field name="Pos_Z">-2</field><next><block type="rotation3d" id="_(B+1}~S|}xg!i^2f0cp"><field name="Rot_X">0</field><field name="Rot_Y">45</field><field name="Rot_Z">45</field></block></next></block></next></block></statement></block></statement></block>
+         
+         <block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N" x="-63" y="178"><statement name="NAME"><block type="primitive" id="C9NU!5pewvbAM0y9b~i["><field name="DROPDOWN">cone</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="8!{TkZ0lNB}Zj;,uJiW7"><field name="COLOR3D">#000099</field><next><block type="posrotscale_3d_" id="aU{EFmoT~IN?H^b1OwER"><field name="POSROTSCALE">position</field><value name="POSROTSCALE_X"><block type="input_number" id="Q`oGF{:]kpX0GdfV*(oE"><field name="NUMBER_VALUE">0</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="M/VymBj.e7iGW?3BYvY,"><field name="NUMBER_VALUE">2</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="_M|NlH_+ZdQ]H$(w)#5|"><field name="NUMBER_VALUE">-2</field></block></value><next><block type="posrotscale_3d_" id="6J+|+nvf5.NI[6Z!|-i@"><field name="POSROTSCALE">rotation</field><value name="POSROTSCALE_X"><block type="input_number" id="2h3~JmR7=ctF+lM)x))d"><field name="NUMBER_VALUE">80</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="V}Q@Td!9,F=7#uW#1]w$"><field name="NUMBER_VALUE">45</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="o(P?%pC!]evO?o00DV57"><field name="NUMBER_VALUE">1</field></block></value></block></next></block></next></block></statement></block></statement></block>
+         
+         <block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N" x="10" y="344"><statement name="NAME"><block type="primitive" id="C9NU!5pewvbAM0y9b~i["><field name="DROPDOWN">cylinder</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="posrotscale_3d_" id="aU{EFmoT~IN?H^b1OwER"><field name="POSROTSCALE">position</field><value name="POSROTSCALE_X"><block type="input_number" id="Q`oGF{:]kpX0GdfV*(oE"><field name="NUMBER_VALUE">0</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="M/VymBj.e7iGW?3BYvY,"><field name="NUMBER_VALUE">1</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="_M|NlH_+ZdQ]H$(w)#5|"><field name="NUMBER_VALUE">-5</field></block></value><next><block type="posrotscale_3d_" id="6J+|+nvf5.NI[6Z!|-i@"><field name="POSROTSCALE">rotation</field><value name="POSROTSCALE_X"><block type="input_number" id="2h3~JmR7=ctF+lM)x))d"><field name="NUMBER_VALUE">15</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="V}Q@Td!9,F=7#uW#1]w$"><field name="NUMBER_VALUE">50</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="o(P?%pC!]evO?o00DV57"><field name="NUMBER_VALUE">60</field></block></value><next><block type="color3d" id="8!{TkZ0lNB}Zj;,uJiW7"><field name="COLOR3D">#009900</field><next><block type="dimension_3d" id="rpH0VnZ%5*~F~az!,)q4"><field name="DIMENSION">height</field><field name="DIMENSION_VALUE">4</field><next><block type="dimension_3d" id="V2w1@@Q{Ws2A)Ym)B[0T"><field name="DIMENSION">radius</field><field name="DIMENSION_VALUE">1</field></block></next></block></next></block></next></block></next></block></statement></block></statement></block>
+         
+         </category>
+         
+         </category>
 
-        </category>
-        
-        <category name="Texture" colour="#5C81A6"> 
+		         <category name="Texture" colour="#5C81A6"> 
             <block type="Texture3D"></block>
             <block type="Texture3d_link"></block>
             <block type="Texture3D_repeat"></block>
@@ -675,6 +669,36 @@
             <block type="texture3d_opacity"></block>
         </category>
 		
+       
+
+          <category name="Animation" colour="#5C81A6">
+           
+           <category name="Exemple" colour="#5C81A6">
+           <block type="animation_options" id="Q9n5t=^dhb(WG7Bz~(:?" x="-137" y="263"><statement name="ANIMATION_OPTION"><block type="animation_property_property" id="DC]~PcXf/.|?eJT@ti*m"><field name="property">rotation</field><next><block type="animation_property_to" id="r4#Jaey~sUgKmyW]qTz;"><field name="TO_X">0</field><field name="TO_Y">360</field><field name="TO_Z">0</field><next><block type="animation_property_loop" id="xg*,WfFs*7r.Vy/+*@]B"><field name="LOOP">true</field><next><block type="animation_property_liner" id="jo:4oPk:/7/1M-[)LGz#"><field name="EAS">linear</field><next><block type="animation_property_dur" id="c60V};6U}N{Ne%ZNd2?K"><field name="DUR">3000</field></block></next></block></next></block></next></block></next></block></statement></block>
+           
+           <block type="animation_options" id="wU}(4{YU{Dmx#0C+hE/X" x="-82" y="290"><statement name="ANIMATION_OPTION"><block type="animation_property_property" id="oF~hd9UZDH0GZj9FQpi}"><field name="property">material.color</field><next><block type="animation_color" id="(9doTel}riR3O~7;Es4J"><field name="FROM">#ccffff</field><field name="TO">#3333ff</field><next><block type="animation_property_dir" id="5m|M%C2y#oZ[J/koiF%0"><field name="DIR">alternate</field><next><block type="animation_property_loop" id="l1P/]QCux}Z=u6Lv@V97"><field name="LOOP">true</field><next><block type="animation_property_dur" id="{c/FY]1AN-Kc=wW3/NyW"><field name="DUR">1500</field></block></next></block></next></block></next></block></next></block></statement></block>
+           
+           <block type="animation_options" id="wU}(4{YU{Dmx#0C+hE/X" x="-12" y="488"><statement name="ANIMATION_OPTION"><block type="animation_property_property" id="oF~hd9UZDH0GZj9FQpi}"><field name="property">opacity</field><next><block type="animation_opacity" id="FKP)(P*#L*}cRD6Dm/)T"><field name="FROM">0</field><field name="TO">1</field><next><block type="animation_property_dir" id="5m|M%C2y#oZ[J/koiF%0"><field name="DIR">alternate</field><next><block type="animation_property_loop" id="l1P/]QCux}Z=u6Lv@V97"><field name="LOOP">true</field><next><block type="animation_property_dur" id="{c/FY]1AN-Kc=wW3/NyW"><field name="DUR">1500</field></block></next></block></next></block></next></block></next></block></statement></block>
+           </category>
+           
+            <block type="animation_options"></block>
+            <block type="animation_property"></block>
+            <block type="animation_property_property"></block>
+            <block type="animation_property_from"></block>
+            <block type="animation_property_to"></block>
+            <block type="animation_opacity"></block>
+            <block type="animation_color"></block>
+            <block type="animation_property_loop"></block>
+            <block type="animation_property_dir"></block>
+            <block type="animation_property_dur"></block>
+            <block type="animation_property_liner"></block>
+            <block type="animation_property_easeIn"></block>
+            <block type="animation_property_easeOut"></block>
+            <block type="animation_property_easeInOut"></block>
+
+        </category>
+        
+
 		
 		<category name="Assets" colour="#5C81A6"> 
 		  <block type="assets_list"></block>
@@ -691,7 +715,34 @@
 		</category>
 		
 		<category name="Entity Options" colour="#5C81A6">
-       
+              <block type="entity_dimension"></block>
+               
+               
+               <block type="entity_text"></block>
+               <block type="entity_text_value"></block>
+               <block type="entity_color"></block>
+                <block type="entity_color_HEX"></block>
+                <block type="entity_align"></block>
+                <block type="entity_wrapcount"></block>
+                <block type="entity_text_font"></block>
+                <block type="entity_shader"></block>
+                
+                <category name="Exemple" colour="#5C81A6">
+                <block type="a-entity" id="F)N6RX7?a9O)1Kp~7~9b" x="59" y="260"><field name="IDNAME">TEXT</field><statement name="CONTENT"><block type="position3d" id="BF~BT@VP4^sVG}cjqkvZ"><field name="Pos_X">0</field><field name="Pos_Y">1.8</field><field name="Pos_Z">-1</field><next><block type="scale3d" id="[o9S,7Ulg356Aw--QF:A"><field name="SCAL_X">0.5</field><field name="SCAL_Y">0.5</field><field name="SCAL_Z">1</field><next><block type="entity_text" id="EKkcNWQ`+uC8oSWgW[}4"><statement name="TEXT"><block type="entity_text_value" id="l/*r/V|n7xV]wgZ.Gw,!"><field name="VALUE">Hello World!</field><next><block type="entity_color" id="A:_{!#:$o1~2Cc@fS,g,"><field name="NAME">#ff0000</field><next><block type="entity_align" id="jXbh=0+|$*}OxO4E;gba"><field name="NAME">center</field><next><block type="entity_wrapcount" id="IALPQl,rNMs=VeS^8ux8"><field name="WRAPCOUNT">20</field><next><block type="entity_dimension" id="HHelPC,Wh_aYyUt4p1x*"><field name="DIM">width</field><field name="DIMVALUE">10</field><next><block type="entity_text_font" id="MAB)~[ATh73X*L6FMt}+"><field name="DIM">https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/cabin/Cabin-Medium.json;</field><next><block type="entity_shader" id="CuL;#0YY7*oifk6TA/|L"><field name="DIM">msdf</field></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block></next></block></next></block></statement></block>
+                </category>
+                
+                <block type= entity_geometry></block>
+                <block type=entity_geometry_primitive></block>
+                <block type=entity_geometry_dimension></block>
+                
+                <block type= entity_material></block>
+                <block type=entity_material_color></block>
+                <block type=entity_material_color_hex></block>
+                <block type=entity_material_visible></block>
+                
+                <block type=animation></block>
+                
+                
         </category> 
         
         <category name="Video" colour="#5C81A6">
@@ -724,6 +775,8 @@
         </category>
         
 	  </category>
+	  
+	  
     </xml>
 
     <script>

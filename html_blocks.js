@@ -1009,7 +1009,7 @@ var AframeBlocks =
         [
           "Extra",
           "https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"
-        ]
+        ]  
       ]
     }
   ],
@@ -1019,6 +1019,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+      
     
 {
   "type": "import_aframe",
@@ -1086,7 +1087,9 @@ var AframeBlocks =
   "colour": 90,
   "tooltip": "",
   "helpUrl": "https://aframe.io"
-}, 
+},
+    
+    
  
 {
   "type": "scene_create",
@@ -1648,8 +1651,445 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 }, 
- 
- 
+
+{
+  "type": "entity_text",
+  "message0": "Text:  %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "TEXT"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+  
+{
+  "type": "entity_text_value",
+  "message0": "Text:  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "VALUE",
+      "text": "Hello World!"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
+    
+{
+  "type": "entity_color",
+  "message0": "Color:  %1",
+  "args0": [
+    {
+      "type": "field_colour",
+      "name": "NAME",
+      "colour": "#ff0000"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "entity_align",
+  "message0": "Align: %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "NAME",
+      "options": [
+        [
+          "Center",
+          "center"
+        ],
+        [
+          "Left",
+          "left"
+        ],
+        [
+          "Right",
+          "right"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+
+{
+  "type": "entity_color_HEX",
+  "message0": "Color:  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "COLOR",
+      "text": "#212121"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+
+{
+  "type": "entity_wrapcount",
+  "message0": "Wrap Count: %1",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "WRAPCOUNT",
+      "value": 40
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+    
+{
+  "type": "entity_dimension",
+  "message0": "%1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "DIM",
+      "options": [
+        [
+          "width",
+          "width"
+        ],
+        [
+          "height",
+          "height"
+        ],
+        [
+          "depth",
+          "depth"
+        ]
+      ]
+    },
+    {
+      "type": "field_number",
+      "name": "DIMVALUE",
+      "value": 0
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "entity_text_font",
+  "message0": "%1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "DIM",
+      "options": [
+        [
+          "Cabin-Medium",
+          "https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/cabin/Cabin-Medium.json;"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "entity_shader",
+  "message0": "Shader:  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "DIM",
+      "options": [
+        [
+          "msdf",
+          "msdf"
+        ],
+          [
+          "Flat",
+          "flat"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+
+{
+  "type": "entity_geometry",
+  "message0": "Geometry:  %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "GEOMETRY"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
+    
+{
+  "type": "entity_geometry_primitive",
+  "message0": "primitive: %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "NAME",
+      "options": [
+        [
+          "Box",
+          "box"
+        ],
+        [
+          "Plane",
+          "plane"
+        ],
+        [
+          "Cone",
+          "cone"
+        ],
+        [
+          "Octahedron",
+          "octahedron"
+        ],
+        [
+          "Circle",
+          "circle"
+        ],
+        [
+          "Ring",
+          "ring"
+        ],
+        [
+          "Sphere",
+          "sphere"
+        ],
+        [
+          "Cylinder",
+          "cylinder"
+        ],          
+        [
+          "Tetrahedron",
+          "tetrahedron"
+        ],
+        [
+          "Torus",
+          "torus"
+        ],
+         [
+          "TorusKnot",
+          "torusKnot"
+        ],
+        [
+          "Triangle",
+          "triangle"
+        ],
+        [
+          "Dodecahedron",
+          "dodecahedron"
+        ],
+         [
+          "Icosahedron",
+          "icosahedron"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+
+{
+  "type": "entity_geometry_dimension",
+  "message0": "%1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "NAME",
+      "options": [
+        [
+          "width",
+          "width"
+        ],
+        [
+          "height",
+          "height"
+        ],
+        [
+          "depth",
+          "depth"
+        ],
+       [
+          "radius",
+          "radius"
+        ],
+        [
+          "segments-radial",
+          "segments-radial"
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "VALUE",
+      "text": "auto"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
+    
+{
+  "type": "entity_material",
+  "message0": "Material:  %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "MATERIAL"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "entity_material_color",
+  "message0": "Color :  %1",
+  "args0": [
+    {
+      "type": "field_colour",
+      "name": "COLOR",
+      "colour": "#ff0000"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "entity_material_color_hex",
+  "message0": "Color :  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "COLOR",
+      "text": "#009900"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+
+{
+  "type": "entity_material_visible",
+  "message0": "Visible :  %1",
+  "args0": [
+    {
+      "type": "field_checkbox",
+      "name": "VISIBLE",
+      "checked": true
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+{
+  "type": "animation",
+  "message0": "Animation.%1 %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "ANIMATION",
+      "options": [
+        [
+          "Property",
+          "property"
+        ],
+        [
+          "From",
+          "from"
+        ],
+        [
+          "To",
+          "to"
+        ],
+        [
+          "Duration",
+          "dur"
+        ]
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "VALUE",
+      "text": "default"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+    
+    
 {
   "type": "import_model_gltf",
   "message0": "gltf model url %1",
@@ -1780,90 +2220,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
-    
-/*
-{
-  "type": "primitive",
-  "message0": "%1 %2 %3",
-  "args0": [
-    {
-      "type": "field_dropdown",
-      "name": "DROPDOWN",
-      "options": [
-        [
-          "Box",
-          "box"
-        ],
-        [
-          "Plane",
-          "plane"
-        ],
-        [
-          "Cone",
-          "cone"
-        ],
-        [
-          "Octahedron",
-          "octahedron"
-        ],
-        [
-          "Circle",
-          "circle"
-        ],
-        [
-          "Ring",
-          "ring"
-        ],
-        [
-          "Sphere",
-          "sphere"
-        ],
-        [
-          "Cylinder",
-          "cylinder"
-        ],          
-        [
-          "Tetrahedron",
-          "tetrahedron"
-        ],
-        [
-          "Torus",
-          "torus"
-        ],
-         [
-          "TorusKnot",
-          "torusKnot"
-        ],
-        [
-          "Triangle",
-          "triangle"
-        ],
-        [
-          "Dodecahedron",
-          "dodecahedron"
-        ],
-         [
-          "Icosahedron",
-          "icosahedron"
-        ]
-      ]
-    },
-    {
-      "type": "input_statement",
-      "name": "NAME"
-    },
-    {
-      "type": "input_dummy"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 230,
-  "tooltip": "",
-  "helpUrl": ""
-},
-
-*/    
+ 
 
 {
   "type": "primitive_child",
@@ -2614,6 +2971,14 @@ var AframeBlocks =
         [
           "Scale",
           "scale"
+        ],
+        [
+          "Color",
+          "material.color"
+        ],
+        [
+          "Opacity",
+          "opacity"
         ]
       ]
     },
@@ -2731,6 +3096,14 @@ var AframeBlocks =
         [
           "Scale",
           "scale"
+        ],
+        [
+          "Color",
+          "material.color"
+        ],
+        [
+          "Opacity",
+          "opacity"
         ]
       ]
     }
@@ -2741,7 +3114,58 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+    
+{
+  "type": "animation_opacity",
+  "message0": "From:  %1 %2 To:  %3",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "FROM",
+      "text": "0"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_input",
+      "name": "TO",
+      "text": "1"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
 
+{
+  "type": "animation_color",
+  "message0": "From:  %1 %2 To:  %3",
+  "args0": [
+    {
+      "type": "field_colour",
+      "name": "FROM",
+      "colour": "#ccffff"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_colour",
+      "name": "TO",
+      "colour": "#3333ff"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+
+ 
 {
   "type": "animation_property_from",
   "message0": "From:  X:  %1 Y:  %2 Z:  %3",

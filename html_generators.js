@@ -330,6 +330,7 @@ HtmlGenerator['import_script'] = function(block) {
   return code;
 };
 
+
 HtmlGenerator['import_aframe'] = function(block) {
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
@@ -531,6 +532,8 @@ HtmlGenerator['gltf_entity'] = function(block) {
   return code;
 };
 
+
+
 HtmlGenerator['obj_entity'] = function(block) {
   var dropdown_objdrop = block.getFieldValue('OBJDROP');
   var text_objlink = block.getFieldValue('OBJLINK');
@@ -570,6 +573,131 @@ HtmlGenerator['a-entity'] = function(block) {
   var code = '<a-entity id="'+text_idname+'" '+statements_content+'>'+statements_name+'</a-entity>\n';
   return code;
 };
+
+HtmlGenerator['entity_text'] = function(block) {
+  var statements_text = HtmlGenerator.statementToCode(block, 'TEXT');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\ntext = "'+statements_text+'"\n';
+  return code;
+};
+
+
+HtmlGenerator['entity_text_value'] = function(block) {
+  var text_value= block.getFieldValue('VALUE');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'value:'+text_value+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_dimension'] = function(block) {
+  var dropdown_dim = block.getFieldValue('DIM');
+  var number_dimvalue = block.getFieldValue('DIMVALUE');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ''+dropdown_dim+':'+number_dimvalue+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_text_font'] = function(block) {
+  var dropdown_dim = block.getFieldValue('DIM');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'font:'+dropdown_dim+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_shader'] = function(block) {
+  var dropdown_dim = block.getFieldValue('DIM');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'shader:'+dropdown_dim+';\n';
+  return code;
+};
+
+
+HtmlGenerator['entity_color'] = function(block) {
+  var text_color = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'color:'+text_color+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_color_HEX'] = function(block) {
+  var text_color = block.getFieldValue('COLOR');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'color:'+text_color+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_align'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'align:'+dropdown_name+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_wrapcount'] = function(block) {
+  var number_wrapcount = block.getFieldValue('WRAPCOUNT');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'wrapCount:'+number_wrapcount+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_geometry'] = function(block) {
+  var statements_text = HtmlGenerator.statementToCode(block, 'GEOMETRY');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\ngeometry = "'+statements_text+'"\n';
+  return code;
+};
+
+HtmlGenerator['entity_geometry_primitive'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'primitive: '+dropdown_name+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_geometry_dimension'] = function(block) {
+  var dropdown_name = block.getFieldValue('NAME');
+  var text_value = block.getFieldValue('VALUE');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ''+dropdown_name+' : '+text_value+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_material'] = function(block) {
+  var statements_text = HtmlGenerator.statementToCode(block, 'MATERIAL');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\nmaterial = "'+statements_text+'"\n';
+  return code;
+};
+
+HtmlGenerator['entity_material_color'] = function(block) {
+  var colour_color = block.getFieldValue('COLOR');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'color: '+colour_color+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_material_color_hex'] = function(block) {
+  var text_color = block.getFieldValue('COLOR');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'color: '+text_color+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_material_visible'] = function(block) {
+  var checkbox_visible = block.getFieldValue('VISIBLE') == 'TRUE';
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'visible: '+checkbox_visible+';\n';
+  return code;
+};
+
+HtmlGenerator['animation'] = function(block) {
+  var dropdown_animation = block.getFieldValue('ANIMATION');
+  var text_value = block.getFieldValue('VALUE');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'animation.'+dropdown_animation+' : '+text_value+';\n';
+  return code;
+};
+
 
 HtmlGenerator['import_model_gltf'] = function(block) {
   var text_name = block.getFieldValue('NAME');
@@ -851,6 +979,22 @@ HtmlGenerator['animation_property_property'] = function(block) {
   var dropdown_property = block.getFieldValue('property');
   // TODO: Assemble JavaScript into code variable.
   var code = '\n property:'+dropdown_property+';\n';
+  return code;
+};
+
+HtmlGenerator['animation_opacity'] = function(block) {
+  var text_from = block.getFieldValue('FROM');
+  var text_to = block.getFieldValue('TO');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'from: '+text_from+';\nto: '+text_to+';\n';
+  return code;
+};
+
+HtmlGenerator['animation_color'] = function(block) {
+  var colour_from = block.getFieldValue('FROM');
+  var colour_to = block.getFieldValue('TO');
+  // TODO: Assemble JavaScript into code variable.
+   var code = 'from: '+colour_from+';\nto: '+colour_to+';\n';
   return code;
 };
 
