@@ -2,14 +2,16 @@
 <html>
 	<head>
 		<title></title>
-		<meta content=""/>
 		<meta charset="utf-8"/>
+		<meta name="viewport" content=""/>
 		
 		<!-- load CSS -->
 		<!-- Custom -->
 		<link rel="stylesheet" type="text/css" href="css/mainrestyle.css"/>
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 		<script src="blockly/blockly_compressed.js"></script>
 		<script src="blockly/msg/js/en.js"></script>
@@ -24,11 +26,10 @@
 	</head>
 	<body>
 		<div id="container">
-			<div id="leftcontainer">
+			<div id="leftcontainer" class="ui-widget-content">
 				<div id="blocklyArea"></div>
 				
-				<div id="aa">
-				<button type="button" id="closebutton" class="slide-toggle" onclick="searchBar()">Slide Toggle</button>
+				<div id="toggleBox">
 				<div id="modelArea">
 					<div id="modeldiv"><span id="modelspan" >◀ Model window</span> <input type="button" value="Cancel LocalStorage" id="modelbutton" style="max-width:200px" /></div>
 					<label for="fileselect">Files to upload:</label>
@@ -46,10 +47,11 @@
 						</div>
 					</div>
 				</div>
+				<button type="button" id="togglebutton" class="slide-toggle">Slide Toggle</button>
 				</div>
 			</div>
 			
-			<div id="rightcontainer">
+			<div id="rightcontainer" class="ui-widget-content">
 				<div id="menubar">
 					<div><span id="newProj">💾 New project</span> <input type="button" value="New" id="newButton" /></div>
 					<div><span id="saveText">💾 Save blocks:</span> <input type="button" value="Save" id="saveButton" /></div>
@@ -67,7 +69,7 @@
 				</div>
 				<div id="title">untitled web page</div>
 				<script>//"blob:http://192.168.1.66:8080"   "about:blank"</script>
-				<div id="websiteFrame"><iframe id="website" srcdoc="blob:http://localhost:8080"></iframe></div>
+				<div id="websiteFrame" class="ui-widget-content"><iframe id="website" srcdoc="blob:http://localhost:8080"></iframe></div>
 				<pre id="sourcecode">sum contnent</pre>
 			</div>
 		</div>
@@ -862,17 +864,53 @@
 			document.getElementById("modelbutton").onclick = clearLocalStorage;
 
 		</script>
-		<script src="js/model.js"></script>
 		<script src="js/geoDB.js"></script>
+		<script src="js/model.js"></script>
 		<script>
 		
 			$(document).ready(function(){
+				var websiteSourceHeight = $('#websiteFrame').height() + $('#sourcecode').height() +15;
+			
 				$(".slide-toggle").click(function(){
-					$("#modelArea").animate({
-						width: "toggle"
-					});
+					$("#modelArea").animate({width: "toggle"});
+					if($("#modelArea").css("z-index")=="1"){
+						$("#modelArea").css("z-index","-1");
+						$("#toggleBox").css("width","0%");
+						//$("#toggleBox").css("z-index","1");
+						//$("#togglebutton").css("z-index","2");
+					}else{
+						$("#modelArea").css("z-index","1");
+						$("#toggleBox").css("width","100%");
+						//$("#toggleBox").css("z-index","1");
+						//$("#togglebutton").css("z-index","2");
+					}
 				});
+				
+				$( function() {
+					$( "#websiteFrame" ).resizable({
+						
+						resize: function(e, ui){
+						$('#sourcecode').height(websiteSourceHeight-ui.size.height); 
+					  }
+					} );
+				});
+				
+				
+				$( function() {
+				$( "#leftcontainer" ).resizable();
+				} );
+				
+				$('#leftcontainer').resize(function(){
+					var parentwidth = $("#container").width();
+				    $('#rightcontainer').width(parentwidth-$("#leftcontainer").width()); 
+					rightpercentage = Math.round(($("#rightcontainer").width() / parentwidth) * 100),
+					leftpercentage = Math.round(($("#leftcontainer").width() / parentwidth) * 100);
+					$('#container').css( "grid-template-columns", leftpercentage+" "+rightpercentage );
+				});
+			
 			});
+			
+			
 		
 
 		</script>
