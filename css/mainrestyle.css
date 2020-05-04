@@ -57,7 +57,7 @@ html, body {
 			left: -1px;
 			background: green;
 			z-index: 2;
-			width: 50px;
+			width: 30px;
 		}
 		
 	#modelArea { /*grid-column: 2 / 1;  grid-row: 1 / span 4;*/
@@ -149,6 +149,14 @@ html, body {
 
 .titleSidebarTop{
 	background: #09B6F1;
+}
+
+.centerText {
+	display: flex;
+	vertical-align:middle;
+    text-align:center;
+	background: lightblue;
+	justify-content: center;
 }
 
 
