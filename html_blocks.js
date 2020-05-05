@@ -1009,7 +1009,11 @@ var AframeBlocks =
         [
           "Extra",
           "https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"
-        ]  
+        ],
+         [
+          "Video",
+          "AFRAME.registerComponent('play-pause', \n{ init: function () \n{ var myVideo = document.querySelector('#YOUR-VIDEO-ID'); var videoControls = document.querySelector('#videoControls'); this.el.addEventListener('click', function () { if (myVideo.paused) \n{ tmyVideo.play(); videoControls.setAttribute('src', '#pause'); }\n else \n{ myVideo.pause(); videoControls.setAttribute('src', '#play'); }\n });\n }\n });"
+        ],  
       ]
     }
   ],
@@ -2825,7 +2829,39 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
- 
+
+{
+  "type": "video",
+  "message0": "Video src: %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "360_SRC",
+      "text": "url video"
+    },
+    {
+      "type": "input_statement",
+      "name": "360_Option"
+    }
+  ],
+   "previousStatement": null,
+  "nextStatement": null,    
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+    /*
+{
+  "type": "videobutton",
+  "message0": "Video Controll",
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},    */
+
 {
  
   "type": "animation_options",
