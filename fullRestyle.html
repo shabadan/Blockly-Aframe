@@ -33,7 +33,7 @@
 				<div id="modelArea">
 					<label class="centerText"> Tools Panel</label> </br>
 					</br>
-					<div>	<input type="checkbox" id="websiteUpdateCheckbox" name="websiteCheckbox" checked>	<label for="websiteUpdateCheckbox">Render window automatic update</label>	</div>
+					<div>	<input type="checkbox" id="websiteUpdateCheckbox" name="websiteCheckbox" checked>	<label for="websiteUpdateCheckbox">Render window automatic update</label>	<button type="button" id="websiteUpdateButton" disabled hasbeenclicked="false">Update</button> </div>
 					</br>
 					<div>	<label for="EraseLocalStorageButton">Erase LocalStorage:</label> <input type="button" value="Erase" id="EraseLocalStorageButton" style="max-width:100px" /> </div>
 					</br>
@@ -816,7 +816,7 @@
 				var code = HtmlGenerator.workspaceToCode(workspace);
 				document.getElementById('sourcecode').innerText = code;
 				//document.getElementById('website').src = "data:text/html;charset=utf-8," + encodeURIComponent(code);
-				if(document.getElementById('websiteUpdateCheckbox').checked) {
+				if(document.getElementById('websiteUpdateCheckbox').checked || document.getElementById('websiteUpdateButton').getAttribute("hasbeenclicked")=="true") {
 					document.getElementById('website').srcdoc = code;
 				}
 				// Save Blocks
@@ -918,10 +918,21 @@
 			
 				$('#websiteUpdateCheckbox').change(function() {
 					if(this.checked) {
+						document.getElementById("websiteUpdateButton").disabled = true;
 						myUpdateFunction();
 						//workspace.trigger( "onchange" );
-					}      
+					}
+					else { document.getElementById("websiteUpdateButton").disabled = false; }
 				});
+				
+				$('#websiteUpdateButton').click(function() {
+						document.getElementById('websiteUpdateButton').setAttribute("hasbeenclicked", "true");
+						myUpdateFunction();
+						document.getElementById('websiteUpdateButton').setAttribute("hasbeenclicked", "false");
+						//workspace.trigger( "onchange" );
+				});
+				
+				
 			});
 			
 			
