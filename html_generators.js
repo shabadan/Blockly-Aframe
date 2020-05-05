@@ -930,6 +930,22 @@ HtmlGenerator['videosphere360'] = function(block) {
   return code;
 };
 
+HtmlGenerator['video'] = function(block) {
+  var text_360_src = block.getFieldValue('360_SRC');
+  var statements_360_option = HtmlGenerator.statementToCode(block, '360_Option');
+  // TODO: Assemble JavaScript into code variable.
+  var code =  '<a-video src="#'+text_360_src+'"'+statements_360_option+'></a-video>\n';
+  return code;
+};
+
+/*  SONO QUI
+HtmlGenerator['videobutton'] = function(block) {
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-image \nid="videoControls" \nsrc="#play" \nposition="0 -3 0" \nscale="0.5 0.5 1"\nplay-pause>\n</a-image>\n';
+  return code;
+};
+
+*/
 HtmlGenerator['animation_options'] = function(block) {
   var statements_animation = HtmlGenerator.statementToCode(block, 'ANIMATION_OPTION');
   // TODO: Assemble JavaScript into code variable. 
