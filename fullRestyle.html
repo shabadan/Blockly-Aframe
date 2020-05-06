@@ -596,14 +596,11 @@
 					<block type="camera_3d"></block>
 					<block type="light_3d"></block>
 					<block type="camera_3d_child"></block>
-					<block type="camera_3d_option_child"></block>
 					<block type="img_child"></block>
 					<block type="a-sky"></block>
 					<block type="a_sky_explor"></block>
 					<block type="primitive"></block>
 					<block type="primitive_child"></block>
-					<block type=primitive_option_child></block>
-					<block type=Options_Primitive></block>
 					<block type="import_model_gltf"></block>
 					<block type="import_model_obj"></block>
 				</category>
@@ -615,26 +612,14 @@
 					<block type="imgsrc"></block>
 					<block type="audiosrc"></block>
 					<block type="posrotscale_3d_OLD"></block>
-					<block type="posrotscale_3d_"></block>
-					<block type="position3d"></block>
-					<block type="rotation3d"></block>
-					<block type="scale3d"></block>
-
-
 					<block type="dimension_3d"></block>
-					<block type="width3d"></block>   
-					<block type="height3d"></block> 
-					<block type="depth3d"></block>
-					<block type="radius3d"></block>
-					<block type="segments-radial3d"></block>
 					<block type="side3d"></block>
 				</category>
 
 				<category name="3D Camera Option" color="#5C81A6">
 
 					<category name="Options" color="#5C81A6">
-						<block type="position3d"></block>
-						<block type="rotation3d"></block>
+						<block type="posrotscale_3d_OLD"></block>
 						<block type="wasd_fps"></block>
 						<block type="camera_cursor"></block>
 						<block type="camera_cursor_color"></block>
@@ -651,22 +636,15 @@
 				</category>
 
 				<category name="Light Option" color="#5C81A6">
-					<block type="position3d"></block>
-					<block type="rotation3d"></block>
+	                <block type="posrotscale_3d_OLD"></block>
 					<block type="color3d"></block>
 					<block type="color3dHEX"></block>
 					<block type="light3d_type"></block>
 					<block type="light3d_intenity"></block>
 				</category>
 				
-				<category name="Exemple" colour="#5C81A6">
-         <block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N" x="-77" y="307"><statement name="NAME"><block type="primitive" id="fb)_4#9lh6:5N$b~Q#[l"><field name="DROPDOWN">box</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="-d:L;,+dZ@H}!}7U%;9^"><field name="COLOR3D">#ff0000</field><next><block type="position3d" id="F:GEWkT,nTr,%SjV=g^@"><field name="Pos_X">0</field><field name="Pos_Y">2</field><field name="Pos_Z">-2</field><next><block type="rotation3d" id="_(B+1}~S|}xg!i^2f0cp"><field name="Rot_X">0</field><field name="Rot_Y">45</field><field name="Rot_Z">45</field></block></next></block></next></block></statement></block></statement></block>
+         <category name="Example" colour="#5C81A6">
          
-         <block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N" x="-63" y="178"><statement name="NAME"><block type="primitive" id="C9NU!5pewvbAM0y9b~i["><field name="DROPDOWN">cone</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="8!{TkZ0lNB}Zj;,uJiW7"><field name="COLOR3D">#000099</field><next><block type="posrotscale_3d_" id="aU{EFmoT~IN?H^b1OwER"><field name="POSROTSCALE">position</field><value name="POSROTSCALE_X"><block type="input_number" id="Q`oGF{:]kpX0GdfV*(oE"><field name="NUMBER_VALUE">0</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="M/VymBj.e7iGW?3BYvY,"><field name="NUMBER_VALUE">2</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="_M|NlH_+ZdQ]H$(w)#5|"><field name="NUMBER_VALUE">-2</field></block></value><next><block type="posrotscale_3d_" id="6J+|+nvf5.NI[6Z!|-i@"><field name="POSROTSCALE">rotation</field><value name="POSROTSCALE_X"><block type="input_number" id="2h3~JmR7=ctF+lM)x))d"><field name="NUMBER_VALUE">80</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="V}Q@Td!9,F=7#uW#1]w$"><field name="NUMBER_VALUE">45</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="o(P?%pC!]evO?o00DV57"><field name="NUMBER_VALUE">1</field></block></value></block></next></block></next></block></statement></block></statement></block>
-         
-         <block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N" x="10" y="344"><statement name="NAME"><block type="primitive" id="C9NU!5pewvbAM0y9b~i["><field name="DROPDOWN">cylinder</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="posrotscale_3d_" id="aU{EFmoT~IN?H^b1OwER"><field name="POSROTSCALE">position</field><value name="POSROTSCALE_X"><block type="input_number" id="Q`oGF{:]kpX0GdfV*(oE"><field name="NUMBER_VALUE">0</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="M/VymBj.e7iGW?3BYvY,"><field name="NUMBER_VALUE">1</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="_M|NlH_+ZdQ]H$(w)#5|"><field name="NUMBER_VALUE">-5</field></block></value><next><block type="posrotscale_3d_" id="6J+|+nvf5.NI[6Z!|-i@"><field name="POSROTSCALE">rotation</field><value name="POSROTSCALE_X"><block type="input_number" id="2h3~JmR7=ctF+lM)x))d"><field name="NUMBER_VALUE">15</field></block></value><value name="POSROTSCALE_Y"><block type="input_number" id="V}Q@Td!9,F=7#uW#1]w$"><field name="NUMBER_VALUE">50</field></block></value><value name="POSROTSCALE_Z"><block type="input_number" id="o(P?%pC!]evO?o00DV57"><field name="NUMBER_VALUE">60</field></block></value><next><block type="color3d" id="8!{TkZ0lNB}Zj;,uJiW7"><field name="COLOR3D">#009900</field><next><block type="dimension_3d" id="rpH0VnZ%5*~F~az!,)q4"><field name="DIMENSION">height</field><field name="DIMENSION_VALUE">4</field><next><block type="dimension_3d" id="V2w1@@Q{Ws2A)Ym)B[0T"><field name="DIMENSION">radius</field><field name="DIMENSION_VALUE">1</field></block></next></block></next></block></next></block></next></block></statement></block></statement></block>
-         
-        <block type="scene_create_color" id="SBvC9XA|(FCez|;[oF5/" x="-179" y="69"><field name="NAME">#000000</field><statement name="NAME"><block type="asset_audio" id="4:)fl;hENZk*E9qInC%|"><field name="IDNAME">YOUR-AMBIENCE-SOUND</field><field name="URL">your-ambience-sound.mp3</field><next><block type="primitive" id="z{7j.G|B|Xg=EEE(bZi4"><field name="DROPDOWN">box</field><field name="IDNAME">primitive_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="Xr~B?-qHVa=kHXubTu;["><field name="COLOR3D">#ff0000</field><next><block type="posrotscale_3d_OLD" id="6~!l9ZOvAQhD7,C~c%:/"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">2</field><field name="POSROTSCALE_Z">-2</field></block></next></block></statement><next><block type="a-sky" id="tyYT:GT%WeLH:,,ygfDc"><statement name="NAME"><block type="audiosrc" id="Pzo8D8Qlw-1pOLokU^ks"><field name="SRC">YOUR-AMBIENCE-SOUND</field><field name="AUTOPLAY">TRUE</field><field name="LOOP">TRUE</field><field name="POSITIONAL">FALSE</field></block></statement></block></next></block></next></block></statement></block>
          
          </category>
 
@@ -725,8 +703,34 @@
 				</category>
 
 				<category name="Entity Options" colour="#5C81A6">
-
-				</category> 
+              <block type="entity_dimension"></block>
+               
+               
+               <block type="entity_text"></block>
+               <block type="entity_text_value"></block>
+               <block type="entity_color"></block>
+                <block type="entity_color_HEX"></block>
+                <block type="entity_align"></block>
+                <block type="entity_wrapcount"></block>
+                <block type="entity_text_font"></block>
+                <block type="entity_shader"></block>
+                
+                <category name="Exemple" colour="#5C81A6">
+                </category>
+                
+                <block type= entity_geometry></block>
+                <block type=entity_geometry_primitive></block>
+                <block type=entity_geometry_dimension></block>
+                
+                <block type= entity_material></block>
+                <block type=entity_material_color></block>
+                <block type=entity_material_color_hex></block>
+                <block type=entity_material_visible></block>
+                
+                <block type=animation></block>
+                
+                
+        </category> 
 
 				<category name="Video" colour="#5C81A6">
 					<block type="video_src"></block>
@@ -752,13 +756,6 @@
 					<block type="event_visible"></block>
 					<block type="entity_cursor"></block>
 					<block type="entity_cursor_vr"></block>
-				</category>
-
-				<category name="Input" colour="#5C81A6"> 
-					<block type="input_text"></block>
-					<block type="input_number"></block>
-					<block type="input_color"></block>
-
 				</category>
 
 			</category>

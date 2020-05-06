@@ -422,19 +422,6 @@ HtmlGenerator['camera_3d_child'] = function(block) {
   return code;
 };
 
-HtmlGenerator['camera_3d_option_child'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
-  var dropdown_name = block.getFieldValue('DROPDOWN');
-  var value_text = HtmlGenerator.valueToCode(block, 'VALUE', HtmlGenerator.ORDER_ATOMIC);
-  //var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
-  var statements_child = HtmlGenerator.statementToCode(block, 'CHILD');
-  // TODO: Assemble JavaScript into code variable.
-    var code = '<a-'+ dropdown_name +' '+value_text+' >'+statements_child+'</a-'+ dropdown_name + '>\n'; 
-    
-  return code;
-};
-
-
 HtmlGenerator['cursor3d'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
   var colour_color3d = block.getFieldValue('CURSOR3D');
@@ -757,28 +744,8 @@ HtmlGenerator['primitive_child'] = function(block) {
   return code;
 };
 
-HtmlGenerator['primitive_option_child'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
-  var dropdown_name = block.getFieldValue('DROPDOWN');
-  var text_idname = block.getFieldValue('IDNAME')
-  var value_text = HtmlGenerator.valueToCode(block, 'VALUE', HtmlGenerator.ORDER_ATOMIC);
-  var checkbox_visible = block.getFieldValue('VISIBLE') == 'TRUE';    
-  //var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
-  var statements_child = HtmlGenerator.statementToCode(block, 'CHILD');
-  // TODO: Assemble JavaScript into code variable.
-    var code = '<a-'+ dropdown_name +' id="'+text_idname+'" visible="'+checkbox_visible+'" '+value_text+' >'+statements_child+'</a-'+ dropdown_name + '>\n'; 
-    
-  return code;
-};
 
 
-HtmlGenerator['Options_Primitive'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
-  var statements_option = HtmlGenerator.statementToCode(block, 'OPTIONS');
-  // TODO: Assemble JavaScript into code variable.
-  var code = ''+ statements_option+'';
-  return [code, HtmlGenerator.ORDER_NONE];
-};
 
 
 HtmlGenerator['color3d'] = function(block) {
@@ -801,57 +768,9 @@ HtmlGenerator['color3dHEX'] = function(block) {
   return code;
 };
 
-HtmlGenerator['position3d'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
-  var text_pos_x = block.getFieldValue('Pos_X');
-  var text_pos_y = block.getFieldValue('Pos_Y');
-  var text_pos_z = block.getFieldValue('Pos_Z');
-  // TODO: Assemble JavaScript into code variable.
-
-  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
-    var code = ' position="'+ text_pos_x +' '+text_pos_y+' '+text_pos_z+'"'; //position="0 1 -1"
-    
-  return code;
-};
-
-HtmlGenerator['rotation3d'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
-  var text_rot_x = block.getFieldValue('Rot_X');
-  var text_rot_y = block.getFieldValue('Rot_Y');
-  var text_rot_z = block.getFieldValue('Rot_Z');
-  // TODO: Assemble JavaScript into code variable.
-
-  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
-    var code = ' rotation="'+ text_rot_x +' '+text_rot_y+' '+text_rot_z+'" '; 
-    
-  return code;
-};
-
-HtmlGenerator['scale3d'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
-  var text_scal_x = block.getFieldValue('SCAL_X');
-  var text_scal_y = block.getFieldValue('SCAL_Y');
-  var text_scal_z = block.getFieldValue('SCAL_Z');
-  // TODO: Assemble JavaScript into code variable.
-
-  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
-    var code = ' scale="'+ text_scal_x +' '+text_scal_y+' '+text_scal_z+'" ';
-    
-  return code;
-};
 
 
 
-HtmlGenerator['posrotscale_3d_'] = function(block) {
-  var dropdown_posrotscale = block.getFieldValue('POSROTSCALE');
-  var text_posrotscale_x = HtmlGenerator.valueToCode(block, 'POSROTSCALE_X', HtmlGenerator.ORDER_ATOMIC);
-  var text_posrotscale_y = HtmlGenerator.valueToCode(block, 'POSROTSCALE_Y', HtmlGenerator.ORDER_ATOMIC);
-  var text_posrotscale_z = HtmlGenerator.valueToCode(block, 'POSROTSCALE_Z', HtmlGenerator.ORDER_ATOMIC);
-    // TODO: Assemble JavaScript into code variable.
-    var code =''+dropdown_posrotscale+'= "'+ text_posrotscale_x +' '+ text_posrotscale_y+' '+text_posrotscale_z+'" '; 
-    
-  return code;
-};
 
 HtmlGenerator['posrotscale_3d_OLD'] = function(block) {
   var dropdown_posrotscale = block.getFieldValue('POSROTSCALE');
@@ -860,61 +779,6 @@ HtmlGenerator['posrotscale_3d_OLD'] = function(block) {
   var text_posrotscale_z = block.getFieldValue('POSROTSCALE_Z');
     // TODO: Assemble JavaScript into code variable.
     var code =''+dropdown_posrotscale+'= "'+ text_posrotscale_x +' '+ text_posrotscale_y+' '+text_posrotscale_z+'" '; 
-    
-  return code;
-};
-
-HtmlGenerator['depth3d'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
-  var text_depth = block.getFieldValue('depth');
-  // TODO: Assemble JavaScript into code variable.
-
-  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
-    var code = ' depth="'+ text_depth +'"'; //position="0 1 -1"
-    
-  return code;
-};
-
-HtmlGenerator['height3d'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
-  var text_height = block.getFieldValue('height');
-  // TODO: Assemble JavaScript into code variable.
-
-  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
-    var code = ' height="'+ text_height +'"'; //position="0 1 -1"
-    
-  return code;
-};
-
-HtmlGenerator['width3d'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
-  var text_width = block.getFieldValue('width');
-  // TODO: Assemble JavaScript into code variable.
-
-  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
-    var code = ' width="'+ text_width +'"'; //position="0 1 -1"
-    
-  return code;
-};
-
-HtmlGenerator['radius3d'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
-  var text_radius = block.getFieldValue('RADIUS');
-  // TODO: Assemble JavaScript into code variable.
-
-  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
-    var code = ' radius="'+ text_radius +'"'; 
-    
-  return code;
-};
-
-HtmlGenerator['segments-radial3d'] = function(block) {
-  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
-  var text_segmen_radial = block.getFieldValue('SEGMENTS-RADIAL');
-  // TODO: Assemble JavaScript into code variable.
-
-  //var code = '<a-entity geometry="primitive: '+ dropdown_name + '" material="color: red"></a-entity>\n';
-    var code = ' radius="'+ text_segmen_radial +'"'; 
     
   return code;
 };
@@ -1201,32 +1065,6 @@ HtmlGenerator['inspector_code_load'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
    var code = '\n<!----Inspector code load------>\n'+text_inspector_copy+'\n<!---------->\n';
   return code;
-};
-
-
-HtmlGenerator['input_color'] = function(block) {
-  var colour_name = block.getFieldValue('COLOR_INPUT');
-  // TODO: Assemble JavaScript into code variable.
-  var code = colour_name;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, HtmlGenerator.ORDER_NONE];
-};
-
-
-HtmlGenerator['input_text'] = function(block) {
-  var text_value = block.getFieldValue('TEXT_INPUT');
-  // TODO: Assemble JavaScript into code variable.
-  var code = text_value;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, HtmlGenerator.ORDER_NONE];
-};
-
-HtmlGenerator['input_number'] = function(block) {
-  var number_value = block.getFieldValue('NUMBER_VALUE');
-  // TODO: Assemble JavaScript into code variable.
-  var code = number_value;
-  // TODO: Change ORDER_NONE to the correct strength.
-  return [code, HtmlGenerator.ORDER_NONE];
 };
 
 
