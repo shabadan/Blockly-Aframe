@@ -367,6 +367,17 @@ HtmlGenerator['scene_create'] = function(block) {
   return code;
 };
 
+
+HtmlGenerator['scene_create_color'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var colour_name = block.getFieldValue('NAME');
+  var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-scene background = color:'+colour_name+'>\n'+ statements_content +   '</a-scene>\n';
+  return code;
+};
+
+
 HtmlGenerator['camera_3d'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
   var statements_content = HtmlGenerator.statementToCode(block, 'CAMERA3D');
@@ -513,6 +524,15 @@ HtmlGenerator['asset_img'] = function(block) {
   return code;
 };
 
+
+HtmlGenerator['asset_audio'] = function(block) {
+  var text_idname = block.getFieldValue('IDNAME');
+  var text_url = block.getFieldValue('URL');
+  // TODO: Assemble JavaScript into code variable.
+  text_url = FileDB.getData(text_url);
+  var code = '<audio id="'+text_idname+'" src="'+text_url+'"></audio>\n';
+  return code;
+};
 
 HtmlGenerator['asset_video'] = function(block) {
   var text_idname = block.getFieldValue('IDNAME');
@@ -820,24 +840,24 @@ HtmlGenerator['scale3d'] = function(block) {
   return code;
 };
 
-/*
-HtmlGenerator['posrotscale_3d'] = function(block) {
-  var dropdown_posrotscale = block.getFieldValue('POSROTSCALE');
-  var text_posrotscale_x = block.getFieldValue('POSROTSCALE_X');
-  var text_posrotscale_y = block.getFieldValue('POSROTSCALE_Y');
-  var text_posrotscale_z = block.getFieldValue('POSROTSCALE_Z');
-    // TODO: Assemble JavaScript into code variable.
-    var code =''+dropdown_posrotscale+'= "'+ text_posrotscale_x +' '+ text_posrotscale_y+' '+text_posrotscale_z+'" '; 
-    
-  return code;
-};
-*/
+
 
 HtmlGenerator['posrotscale_3d_'] = function(block) {
   var dropdown_posrotscale = block.getFieldValue('POSROTSCALE');
   var text_posrotscale_x = HtmlGenerator.valueToCode(block, 'POSROTSCALE_X', HtmlGenerator.ORDER_ATOMIC);
   var text_posrotscale_y = HtmlGenerator.valueToCode(block, 'POSROTSCALE_Y', HtmlGenerator.ORDER_ATOMIC);
   var text_posrotscale_z = HtmlGenerator.valueToCode(block, 'POSROTSCALE_Z', HtmlGenerator.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var code =''+dropdown_posrotscale+'= "'+ text_posrotscale_x +' '+ text_posrotscale_y+' '+text_posrotscale_z+'" '; 
+    
+  return code;
+};
+
+HtmlGenerator['posrotscale_3d_OLD'] = function(block) {
+  var dropdown_posrotscale = block.getFieldValue('POSROTSCALE');
+  var text_posrotscale_x =  block.getFieldValue('POSROTSCALE_X'); 
+  var text_posrotscale_y = block.getFieldValue('POSROTSCALE_Y');
+  var text_posrotscale_z = block.getFieldValue('POSROTSCALE_Z');
     // TODO: Assemble JavaScript into code variable.
     var code =''+dropdown_posrotscale+'= "'+ text_posrotscale_x +' '+ text_posrotscale_y+' '+text_posrotscale_z+'" '; 
     
@@ -930,22 +950,28 @@ HtmlGenerator['videosphere360'] = function(block) {
   return code;
 };
 
-HtmlGenerator['video'] = function(block) {
+HtmlGenerator['video_src'] = function(block) {
   var text_360_src = block.getFieldValue('360_SRC');
   var statements_360_option = HtmlGenerator.statementToCode(block, '360_Option');
   // TODO: Assemble JavaScript into code variable.
-  var code =  '<a-video src="#'+text_360_src+'"'+statements_360_option+'></a-video>\n';
+  var code =  'src="#'+text_360_src+'"'+statements_360_option+'\n';
   return code;
 };
 
-/*  SONO QUI
-HtmlGenerator['videobutton'] = function(block) {
+HtmlGenerator['video_child'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var text_idname = block.getFieldValue('IDNAME')
+  var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
+  var statements_child = HtmlGenerator.statementToCode(block, 'CHILD');
+  var checkbox_visible = block.getFieldValue('VISIBLE') == 'TRUE';
   // TODO: Assemble JavaScript into code variable.
-  var code = '<a-image \nid="videoControls" \nsrc="#play" \nposition="0 -3 0" \nscale="0.5 0.5 1"\nplay-pause>\n</a-image>\n';
+    var code = '<a-video id="'+text_idname+'" visible="'+checkbox_visible+'" '+statements_content+'>'+statements_child+'</a-video>\n'; 
+    
   return code;
 };
 
-*/
+
+
 HtmlGenerator['animation_options'] = function(block) {
   var statements_animation = HtmlGenerator.statementToCode(block, 'ANIMATION_OPTION');
   // TODO: Assemble JavaScript into code variable. 
@@ -953,7 +979,18 @@ HtmlGenerator['animation_options'] = function(block) {
   return code;
 };
 
-
+HtmlGenerator['video_controller'] = function(block) {
+  var text_src = block.getFieldValue('SRC');
+  var number_posx = block.getFieldValue('POSX');
+  var number_posy = block.getFieldValue('POSY');
+  var number_posz = block.getFieldValue('POSZ');
+  var number_scalex = block.getFieldValue('SCALEX');
+  var number_scaley = block.getFieldValue('SCALEY');
+  var number_scalez = block.getFieldValue('SCALEZ');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-image \nid="videoControls" \nsrc="#'+text_src+'" \nposition="'+number_posx+' '+number_posy+' '+number_posz+'" \nscale="'+number_scalex+' '+number_scaley+' '+number_scalez+'" play-pause>\n</a-image>\n';
+  return code;
+};
 
 
 HtmlGenerator['animation_propety'] = function(block) {
@@ -1260,5 +1297,27 @@ HtmlGenerator['entity_cursor_vr'] = function(block) {
   var statements_animation = HtmlGenerator.statementToCode(block, 'ANIMATION');
   // TODO: Assemble JavaScript into code variable.
   var code = '<a-entity cursor = "fuse : '+checkbox_vr_mode+' fuseTimeout: 1500" position="0 0 -1" \n geometry="primitive: sphere; radius: '+value_radius_value+'" material="color: '+colour_name+';\n shader: flat; opacity: 0.5" \n'+statements_animation+' >\n</a-entity>\n';
+  return code;
+};
+
+HtmlGenerator['img_child'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');   
+  var text_idname = block.getFieldValue('IDNAME')
+  var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
+  var statements_child = HtmlGenerator.statementToCode(block, 'CHILD');
+  var checkbox_visible = block.getFieldValue('VISIBLE') == 'TRUE';
+  // TODO: Assemble JavaScript into code variable.
+    var code = '<a-image id="'+text_idname+'" visible="'+checkbox_visible+'" '+statements_content+'>'+statements_child+'</a-image>\n'; 
+    
+  return code;
+};
+
+HtmlGenerator['audiosrc'] = function(block) {
+  var text_src = block.getFieldValue('SRC');
+  var checkbox_autoplay = block.getFieldValue('AUTOPLAY') == 'TRUE';
+  var checkbox_loop = block.getFieldValue('LOOP') == 'TRUE';
+  var checkbox_positional = block.getFieldValue('POSITIONAL') == 'TRUE';
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'sound="src:#'+text_src+'; autoplay: '+checkbox_autoplay+'; loop: '+checkbox_loop+'; positional: '+checkbox_positional+'";\n';
   return code;
 };

@@ -1112,6 +1112,31 @@ var AframeBlocks =
 },
 
 {
+  "type": "scene_create_color",
+  "message0": "crea scena %1 %2 Background Color %3",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    },
+     {
+      "type": "input_dummy"
+    },  
+     {
+      "type": "field_colour",
+      "name": "NAME",
+      "colour": "#ffffff"
+    }  
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+    
+    
+{
   "type": "camera_3d",
   "message0": "Camera 3D %1",
   "args0": [
@@ -1504,6 +1529,32 @@ var AframeBlocks =
   "helpUrl": ""
 },  
 
+{
+  "type": "asset_audio",
+  "message0": "define asset audio %1 id: %2 src: %3",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_input",
+      "name": "IDNAME",
+      "text": "YOUR-AMBIENCE-SOUND"
+    },
+    {
+      "type": "field_input",
+      "name": "URL",
+      "text": "default"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},  
+    
+    
 {
   "type": "gltf_entity",
   "message0": "gltf asset id: %1 %2",
@@ -2556,9 +2607,9 @@ var AframeBlocks =
   "helpUrl": ""
 },
 
-/*  
+  
 {
-  "type": "posrotscale_3d",
+  "type": "posrotscale_3d_OLD",
   "message0": "%1 X :  %2 Y :  %3 Z :  %4",
   "args0": [
     {
@@ -2601,7 +2652,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
-*/
+
 {
   "type": "posrotscale_3d_",
   "message0": "%1 %2 X : %3 Y : %4 Z : %5",
@@ -2831,7 +2882,45 @@ var AframeBlocks =
 },
 
 {
-  "type": "video",
+  "type": "video_child",
+  "message0": " ID:%1 %2 Visible %3 %4 Options: %5 Child %6",
+  "args0": [
+    
+    {
+      "type": "field_input",
+      "name": "IDNAME",
+      "text": "video_name"
+    },
+    {
+      "type": "input_dummy"
+    },  
+     {
+      "type": "field_checkbox",
+      "name": "VISIBLE",
+      "checked": true
+    },
+    {
+      "type": "input_dummy"
+    },  
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    },
+  
+    {
+      "type": "input_statement",
+      "name": "CHILD"
+    },
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+
+{
+  "type": "video_src",
   "message0": "Video src: %1 %2",
   "args0": [
     {
@@ -2840,7 +2929,7 @@ var AframeBlocks =
       "text": "url video"
     },
     {
-      "type": "input_statement",
+      "type": "input_dummy",
       "name": "360_Option"
     }
   ],
@@ -2851,7 +2940,60 @@ var AframeBlocks =
   "helpUrl": ""
 },
 
-    /*
+{
+  "type": "video_controller",
+  "message0": "Play/Pause src: %1 %2 Position:  X %3 Y %4 Z %5 %6 Scale:  X %7 Y %8 Z %9",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "SRC",
+      "text": "play"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_number",
+      "name": "POSX",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "POSY",
+      "value": -3
+    },
+    {
+      "type": "field_number",
+      "name": "POSZ",
+      "value": 0
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_number",
+      "name": "SCALEX",
+      "value": 0.5
+    },
+    {
+      "type": "field_number",
+      "name": "SCALEY",
+      "value": 0.5
+    },
+    {
+      "type": "field_number",
+      "name": "SCALEZ",
+      "value": 1
+    },
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+    
+
 {
   "type": "videobutton",
   "message0": "Video Controll",
@@ -2860,7 +3002,7 @@ var AframeBlocks =
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
-},    */
+},    
 
 {
  
@@ -4015,6 +4157,81 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+
+{
+  "type": "img_child",
+  "message0": " Image ID:%1 %2 Visible %3 %4 Options: %5 Child %6",
+  "args0": [
+    
+    {
+      "type": "field_input",
+      "name": "IDNAME",
+      "text": "name"
+    },
+    {
+      "type": "input_dummy"
+    },  
+     {
+      "type": "field_checkbox",
+      "name": "VISIBLE",
+      "checked": true
+    },
+    {
+      "type": "input_dummy"
+    },  
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    },
+  
+    {
+      "type": "input_statement",
+      "name": "CHILD"
+    },
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+    
+{
+  "type": "audiosrc",
+  "message0": "Audio src:  %1 %2 autoplay %3 loop %4 positional %5",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "SRC",
+      "text": "YOUR-AMBIENCE-SOUND"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_checkbox",
+      "name": "AUTOPLAY",
+      "checked": true
+    },
+    {
+      "type": "field_checkbox",
+      "name": "LOOP",
+      "checked": true
+    },
+    {
+      "type": "field_checkbox",
+      "name": "POSITIONAL",
+      "checked": false
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,    
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}    
+    
+    
 
 ];
 
