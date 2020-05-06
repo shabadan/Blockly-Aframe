@@ -1090,7 +1090,7 @@ HtmlGenerator['event_target'] = function(block) {
 
 HtmlGenerator['event_material'] = function(block) {
   var dropdown_option = block.getFieldValue('option');
-  var value_material_input = HtmlGenerator.valueToCode(block, 'MATERIAL_INPUT', HtmlGenerator.ORDER_ATOMIC);
+  var value_material_input = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
   var code = 'material.'+dropdown_option+' : '+value_material_input+';\n';
   return code;
@@ -1102,22 +1102,16 @@ HtmlGenerator['event_visible'] = function(block) {
   var code = 'visible: '+dropdown_visible+';\n';
   return code;
 };
-/*
-HtmlGenerator['event_position'] = function(block) {
-  var dropdown_visible = block.getFieldValue('Visible');
-  // TODO: Assemble JavaScript into code variable.
-  var code = 'visible: '+dropdown_visible+';\n';
-  return code;
-};
-*/
 
 
 HtmlGenerator['event_position'] = function(block) {
-  var value_x = HtmlGenerator.valueToCode(block, 'X', HtmlGenerator.ORDER_ATOMIC);
-  var value_y = HtmlGenerator.valueToCode(block, 'Y', HtmlGenerator.ORDER_ATOMIC);
-  var value_z = HtmlGenerator.valueToCode(block, 'Z', HtmlGenerator.ORDER_ATOMIC);
-  // TODO: Assemble JavaScript into code variable.
-  var code = ' position: '+value_x+' '+value_y+' '+value_z+';\n';
+  var dropdown_posrotscale = block.getFieldValue('POSROTSCALE');
+  var text_posrotscale_x =  block.getFieldValue('POSROTSCALE_X'); 
+  var text_posrotscale_y = block.getFieldValue('POSROTSCALE_Y');
+  var text_posrotscale_z = block.getFieldValue('POSROTSCALE_Z');
+    // TODO: Assemble JavaScript into code variable.
+    var code =''+dropdown_posrotscale+': "'+ text_posrotscale_x +' '+ text_posrotscale_y+' '+text_posrotscale_z+'" '; 
+    
   return code;
 };
 
@@ -1131,7 +1125,7 @@ HtmlGenerator['entity_cursor'] = function(block) {
 HtmlGenerator['entity_cursor_vr'] = function(block) {
   var checkbox_vr_mode = block.getFieldValue('VR_MODE') == 'TRUE';
   var colour_name = block.getFieldValue('NAME');
-  var value_radius_value = HtmlGenerator.valueToCode(block, 'RADIUS_VALUE', HtmlGenerator.ORDER_ATOMIC);
+  var value_radius_value = block.getFieldValue('RADIUS_VALUE');
   var statements_animation = HtmlGenerator.statementToCode(block, 'ANIMATION');
   // TODO: Assemble JavaScript into code variable.
   var code = '<a-entity cursor = "fuse : '+checkbox_vr_mode+' fuseTimeout: 1500" position="0 0 -1" \n geometry="primitive: sphere; radius: '+value_radius_value+'" material="color: '+colour_name+';\n shader: flat; opacity: 0.5" \n'+statements_animation+' >\n</a-entity>\n';

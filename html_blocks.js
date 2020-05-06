@@ -3627,9 +3627,10 @@ var AframeBlocks =
     {
       "type": "input_dummy"
     },
-    {
-      "type": "input_value",
-      "name": "MATERIAL_INPUT"
+     {
+      "type": "field_colour",
+      "name": "NAME",
+      "colour": "#ff0000"
     }
   ],
   "previousStatement": null,
@@ -3674,36 +3675,53 @@ var AframeBlocks =
   "helpUrl": ""
 },
 
+
 {
   "type": "event_position",
-  "message0": "Position:  %1 X : %2 Y : %3 Z : %4",
+  "message0": "%1 X :  %2 Y :  %3 Z :  %4",
   "args0": [
     {
-      "type": "input_dummy"
+      "type": "field_dropdown",
+      "name": "POSROTSCALE",
+      "options": [
+        [
+          "Position",
+          "position"
+        ],
+        /*[
+          "Rotation",
+          "rotation"
+        ],
+        [
+          "Scale",
+          "scale"
+        ]*/
+      ]
     },
     {
-      "type": "input_value",
-      "name": "X",
-      "check": "Number"
+      "type": "field_input",
+      "name": "POSROTSCALE_X",
+      "text": "0"
     },
     {
-      "type": "input_value",
-      "name": "Y",
-      "check": "Number"
+      "type": "field_input",
+      "name": "POSROTSCALE_Y",
+      "text": "0"
     },
     {
-      "type": "input_value",
-      "name": "Z",
-      "check": "Number"
+      "type": "field_input",
+      "name": "POSROTSCALE_Z",
+      "text": "0"
     }
   ],
-  "inputsInline": true,
   "previousStatement": null,
   "nextStatement": null,
   "colour": 270,
   "tooltip": "",
   "helpUrl": ""
 },
+    
+    
  
 {
   "type": "entity_cursor_vr",
@@ -3731,9 +3749,9 @@ var AframeBlocks =
       "type": "input_dummy"
     },
     {
-      "type": "input_value",
+      "type": "field_input",
       "name": "RADIUS_VALUE",
-      "check": "Number"
+      "text": "1"
     },
     {
       "type": "input_statement",
