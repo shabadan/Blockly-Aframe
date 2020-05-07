@@ -1154,3 +1154,10 @@ HtmlGenerator['audiosrc'] = function(block) {
   var code = 'sound="src:#'+text_src+'; autoplay: '+checkbox_autoplay+'; loop: '+checkbox_loop+'; positional: '+checkbox_positional+'";\n';
   return code;
 };
+
+HtmlGenerator['entity_text_geometry'] = function(block) {
+  var statements_text = HtmlGenerator.statementToCode(block, 'TEXT');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\ntext = "'+statements_text+'"\n';
+  return code;
+};

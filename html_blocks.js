@@ -1011,6 +1011,10 @@ var AframeBlocks =
           "https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"
         ],
          [
+          "Text Geometry",
+          "https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"
+        ],  
+         [
           "Video",
           "AFRAME.registerComponent('play-pause', \n{ init: function () \n{ var myVideo = document.querySelector('#YOUR-VIDEO-ID'); var videoControls = document.querySelector('#videoControls'); this.el.addEventListener('click', function () { if (myVideo.paused) \n{ tmyVideo.play(); videoControls.setAttribute('src', '#pause'); }\n else \n{ myVideo.pause(); videoControls.setAttribute('src', '#play'); }\n });\n }\n });"
         ],  
@@ -1826,12 +1830,16 @@ var AframeBlocks =
   "message0": "%1",
   "args0": [
     {
-      "type": "field_dropdown",
+      "type": "field_dropdown", 
       "name": "DIM",
       "options": [
         [
           "Cabin-Medium",
           "https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/cabin/Cabin-Medium.json;"
+        ],
+        [
+          "optimerBoldFont",
+          "https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json;"
         ]
       ]
     }
@@ -3836,7 +3844,23 @@ var AframeBlocks =
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
-}    
+},    
+
+{
+  "type": "entity_text_geometry",
+  "message0": "Text Geometry:  %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "TEXT"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},
     
     
 
