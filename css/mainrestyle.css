@@ -25,7 +25,7 @@ html, body {
 	#leftcontainer {/*grid-column-start: 1;  grid-column-end: 3; grid-row-start: 1;  grid-row-end: span 4;*/
 	grid-column-start: 1;  grid-column-end: 2; grid-row-start: 1;  grid-row-end: span 4;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 70% 30%;
 	position: relative;
 	width: 100%;
 	float: left;
@@ -57,7 +57,7 @@ html, body {
 			left: -1px;
 			background: green;
 			z-index: 2;
-			width: 30px;
+			width: 9%;
 		}
 		
 	#modelArea { /*grid-column: 2 / 1;  grid-row: 1 / span 4;*/
@@ -68,6 +68,7 @@ html, body {
 			z-index: 1;
 			opacity: 1;
 			background-color: LightSkyBlue;
+			width : 90%
 	  }
 	  
 	#toggleBox { grid-column: 2 / span 1;  grid-row: 1 / span 4;

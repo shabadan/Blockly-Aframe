@@ -14,7 +14,10 @@
 			return true; // if succeded
 		}
    }
-   this.getData = function(key) { return dictionary[key]; }
+   this.getData = function(key) { if ("key" in dictionary) {
+															return dictionary[key]; }
+								  else { return false; }
+   }
    this.numOfElem = function () { //privileged method: can access private properties
         return numofelem;
     };

@@ -497,7 +497,8 @@ HtmlGenerator['asset_item'] = function(block) {
   var text_idname = block.getFieldValue('IDNAME');
   var text_url = block.getFieldValue('URL');
   // TODO: Assemble JavaScript into code variable.
-  text_url = FileDB.getData(text_url);
+  if (FileDB.getData(text_url)) {
+  text_url = FileDB.getData(text_url);}
   var code = '<a-asset-item id="'+text_idname+'" src="'+text_url+'"></a-asset-item>\n';
   return code;
 };
@@ -561,10 +562,10 @@ HtmlGenerator['extra_entity'] = function(block) {
   var code;
   switch(dropdown_typedrop) {
   case "dae":
-    code = '<a-entity collada-model-legacy="'+dropdown_srcdrop+text_srclink+'">\n'+statements_name+'</a-entity>\n';
+    code = '<a-entity collada-model-legacy="'+dropdown_srcdrop+text_srclink+'" '+statements_name+'></a-entity>\n';
     break;
   case "fbx":
-    code = '<a-entity fbx-model="'+dropdown_srcdrop+text_srclink+'">\n'+statements_name+'</a-entity>\n';
+    code = '<a-entity fbx-model="'+dropdown_srcdrop+text_srclink+'" '+statements_name+'></a-entity>\n';
     break;
   default:
     code = 'error!';

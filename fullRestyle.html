@@ -923,12 +923,14 @@
 					$("#modelArea").animate({width: "toggle"});
 					if($("#modelArea").css("z-index")=="1"){ //Closing
 						$("#modelArea").css("z-index","-1");
-						$("#toggleBox").css("width","0%");
+						$("#toggleBox").css("width","1%");
 						document.getElementById("togglebutton").innerHTML = "◀"; //left-arrow
+						$("#togglebutton").animate({width: '40px'});
 					}else{                                   // Opening
 						$("#modelArea").css("z-index","1");
 						$("#toggleBox").css("width","100%");
 						document.getElementById("togglebutton").innerHTML = "▶"; //right-arrow
+						$("#togglebutton").animate({width: '9%'});
 					}
 				});
 				
