@@ -747,7 +747,24 @@ HtmlGenerator['primitive_child'] = function(block) {
     
   return code;
 };
+// arrow primitive and attributes
+HtmlGenerator['arrow_primitive'] = function(block) {
+  var number_x = block.getFieldValue('X');
+  var number_y = block.getFieldValue('Y');
+  var number_z = block.getFieldValue('Z');
+  var statements_name = HtmlGenerator.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-arrow direction="'+number_x+' '+number_y+' '+number_z+'"'+statements_name+' > </a-arrow>\n';
+  return code;
+};
 
+HtmlGenerator['arrow_lengths'] = function(block) {
+  var dropdown_attribute = block.getFieldValue('ATTRIBUTE');
+  var number_name = block.getFieldValue('NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ' '+dropdown_attribute+'="'+number_name+'"';
+  return code;
+};
 
 
 

@@ -1020,7 +1020,7 @@ var AframeBlocks =
         ],
 		[
           "Arrow",
-          "http://unpkg.com/aframe-arrow-component"//"js/arrow.js"
+          "js/arrow.js" // "http://unpkg.com/aframe-arrow-component" + primitive added
         ]
       ]
     }
@@ -2351,9 +2351,77 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+// Arrow primitive and its attributes
+{
+  "type": "arrow_primitive",
+  "message0": "arrow  %1 direction= X: %2 Y: %3 Z: %4 %5",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_number",
+      "name": "X",
+      "value": 1
+    },
+    {
+      "type": "field_number",
+      "name": "Y",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "Z",
+      "value": 0
+    },
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 30,
+  "tooltip": "",
+  "helpUrl": ""
+},
 
+{
+  "type": "arrow_lengths",
+  "message0": "arrow  %1 : %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "ATTRIBUTE",
+      "options": [
+        [
+          "LENGTH",
+          "length"
+        ],
+        [
+          "HEADLENGTH",
+          "headlength"
+        ],
+        [
+          "HEADWIDTH",
+          "headwidth"
+        ]
+      ]
+    },
+    {
+      "type": "field_number",
+      "name": "NAME",
+      "value": 0
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 30,
+  "tooltip": "",
+  "helpUrl": ""
+},
 
-
+//
 {
   "type": "color3d",
   "message0": "Color = %1",
