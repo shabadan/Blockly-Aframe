@@ -330,15 +330,12 @@ HtmlGenerator['import_script'] = function(block) {
   return code;
 };
 
-/*
-HtmlGenerator['import_script_video'] = function(block) {
-  var dropdown_import = block.getFieldValue('IMPORT');
-  var text_video_id = block.getFieldValue('VIDEO_ID');  
+HtmlGenerator['script_video_controll'] = function(block) {
+  var text_src = block.getFieldValue('SRC');   
   // TODO: Assemble JavaScript into code variable.
-  var code = '<script src="'AFRAME.registerComponent('play-pause', \n{ init: function () \n{ var myVideo = document.querySelector('#'+text_video_id+''); var videoControls = document.querySelector('#videoControls'); this.el.addEventListener('click', function () { if (myVideo.paused) \n{ tmyVideo.play(); videoControls.setAttribute('src', '#pause'); }\n else \n{ myVideo.pause(); videoControls.setAttribute('src', '#play'); }\n });\n }\n });'"></script>\n';
+  var code = '<script>\nAFRAME.registerComponent(\'play-pause\', {\ninit: function () {\nvar myVideo = document.querySelector(\'#'+text_src+'\');\n	var videoControls = document.querySelector( \'#videoControls\');\nthis.el.addEventListener(\'click\', function () {\nif (myVideo.paused) {\nmyVideo.play();\nvideoControls.setAttribute(\'src\', \'#pause\');\n} else {\nmyVideo.pause();\nvideoControls.setAttribute(\'src\', \'#play\');\n}\n});\n}\n});\n</script>' ;
   return code;
 };
-*/
 
 HtmlGenerator['import_aframe'] = function(block) {
   var text_name = block.getFieldValue('NAME');

@@ -1026,34 +1026,23 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
-/*
+    
 {
-  "type": "import_script_video",
-  "message0": "Import:  %1 VIDEO ID: %2",
+  "type": "script_video_controll",
+  "message0": "Import video controll %1",
   "args0": [
     {
-      "type": "field_dropdown",
-      "name": "IMPORT",
-      "options": [
-        [
-          "Video",
-          ""
-        ],  
-      ]
-    },
-    {
       "type": "field_input",
-      "name": "VIDEO_ID",
+      "name": "SRC",
       "text": "YOUR-VIDEO-ID"
-    }  
+    }
   ],
   "previousStatement": null,
   "nextStatement": null,
   "colour": 90,
   "tooltip": "",
   "helpUrl": ""
-},    
-*/  
+},
     
 {
   "type": "import_aframe",
