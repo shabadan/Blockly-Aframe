@@ -330,6 +330,15 @@ HtmlGenerator['import_script'] = function(block) {
   return code;
 };
 
+/*
+HtmlGenerator['import_script_video'] = function(block) {
+  var dropdown_import = block.getFieldValue('IMPORT');
+  var text_video_id = block.getFieldValue('VIDEO_ID');  
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<script src="'AFRAME.registerComponent('play-pause', \n{ init: function () \n{ var myVideo = document.querySelector('#'+text_video_id+''); var videoControls = document.querySelector('#videoControls'); this.el.addEventListener('click', function () { if (myVideo.paused) \n{ tmyVideo.play(); videoControls.setAttribute('src', '#pause'); }\n else \n{ myVideo.pause(); videoControls.setAttribute('src', '#play'); }\n });\n }\n });'"></script>\n';
+  return code;
+};
+*/
 
 HtmlGenerator['import_aframe'] = function(block) {
   var text_name = block.getFieldValue('NAME');

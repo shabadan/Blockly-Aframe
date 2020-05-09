@@ -1006,6 +1006,9 @@ var AframeBlocks =
           "Event",
           "https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"
         ],
+        [   "Video",
+            "AFRAME.registerComponent('play-pause', {\ninit: function () {\nvar myVideo = document.querySelector('#YOUR-VIDEO-ID');\nvar videoControls = document.querySelector('#videoControls');\nthis.el.addEventListener('click', function () {\nif (myVideo.paused) {\nmyVideo.play();\nvideoControls.setAttribute('src', '#pause');\n} else {\nmyVideo.pause();\nvideoControls.setAttribute('src', '#play');\n}\n});\n}\n});"
+        ],  
         [
           "Extra",
           "https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"
@@ -1013,10 +1016,6 @@ var AframeBlocks =
          [
           "Text Geometry",
           "https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"
-        ],  
-         [
-          "Video",
-          "AFRAME.registerComponent('play-pause', \n{ init: function () \n{ var myVideo = document.querySelector('#YOUR-VIDEO-ID'); var videoControls = document.querySelector('#videoControls'); this.el.addEventListener('click', function () { if (myVideo.paused) \n{ tmyVideo.play(); videoControls.setAttribute('src', '#pause'); }\n else \n{ myVideo.pause(); videoControls.setAttribute('src', '#play'); }\n });\n }\n });"
         ],  
       ]
     }
@@ -1027,7 +1026,34 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
-      
+/*
+{
+  "type": "import_script_video",
+  "message0": "Import:  %1 VIDEO ID: %2",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "IMPORT",
+      "options": [
+        [
+          "Video",
+          ""
+        ],  
+      ]
+    },
+    {
+      "type": "field_input",
+      "name": "VIDEO_ID",
+      "text": "YOUR-VIDEO-ID"
+    }  
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+*/  
     
 {
   "type": "import_aframe",
@@ -1488,7 +1514,7 @@ var AframeBlocks =
       "type": "field_input",
       "name": "URL",
       "text": "default"
-    }
+    },
   ],
   "previousStatement": null,
   "nextStatement": null,
