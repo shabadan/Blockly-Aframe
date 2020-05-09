@@ -516,7 +516,8 @@ HtmlGenerator['asset_img'] = function(block) {
   var text_idname = block.getFieldValue('IDNAME');
   var text_url = block.getFieldValue('URL');
   // TODO: Assemble JavaScript into code variable.
-  text_url = FileDB.getData(text_url);
+  if (FileDB.getData(text_url)) {
+  text_url = FileDB.getData(text_url);}
   var code = '<img id="'+text_idname+'" src="'+text_url+'">\n';
   return code;
 };
@@ -526,7 +527,8 @@ HtmlGenerator['asset_audio'] = function(block) {
   var text_idname = block.getFieldValue('IDNAME');
   var text_url = block.getFieldValue('URL');
   // TODO: Assemble JavaScript into code variable.
-  text_url = FileDB.getData(text_url);
+  if (FileDB.getData(text_url)) {
+  text_url = FileDB.getData(text_url);}
   var code = '<audio id="'+text_idname+'" src="'+text_url+'"></audio>\n';
   return code;
 };
@@ -536,7 +538,8 @@ HtmlGenerator['asset_video'] = function(block) {
   var text_url = block.getFieldValue('URL');
   var checkbox_loop = block.getFieldValue('Loop') == 'TRUE';
   // TODO: Assemble JavaScript into code variable.
-  text_url = FileDB.getData(text_url);
+  if (FileDB.getData(text_url)) {
+  text_url = FileDB.getData(text_url);}
   var code = '<video id="'+text_idname+'" src="'+text_url+'" autoplay loop="'+checkbox_loop+'">\n';
   return code;
 };
