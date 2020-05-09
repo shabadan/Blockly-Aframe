@@ -1017,7 +1017,11 @@ var AframeBlocks =
          [
           "Video",
           "AFRAME.registerComponent('play-pause', \n{ init: function () \n{ var myVideo = document.querySelector('#YOUR-VIDEO-ID'); var videoControls = document.querySelector('#videoControls'); this.el.addEventListener('click', function () { if (myVideo.paused) \n{ tmyVideo.play(); videoControls.setAttribute('src', '#pause'); }\n else \n{ myVideo.pause(); videoControls.setAttribute('src', '#play'); }\n });\n }\n });"
-        ],  
+        ],
+		[
+          "Arrow",
+          "http://unpkg.com/aframe-arrow-component"//"js/arrow.js"
+        ]
       ]
     }
   ],
@@ -3860,7 +3864,8 @@ var AframeBlocks =
   "colour": 75,
   "tooltip": "",
   "helpUrl": ""
-},
+}
+
     
     
 
