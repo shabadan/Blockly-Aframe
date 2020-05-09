@@ -14,7 +14,7 @@
 			return true; // if succeded
 		}
    }
-   this.getData = function(key) { if ("key" in dictionary) {
+   this.getData = function(key) { if (key in dictionary) {
 															return dictionary[key]; }
 								  else { return false; }
    }
