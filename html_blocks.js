@@ -1031,7 +1031,23 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
-      
+    
+{
+  "type": "script_video_controll",
+  "message0": "Import video controll %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "SRC",
+      "text": "YOUR-VIDEO-ID"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": ""
+},
     
 {
   "type": "import_aframe",
@@ -1492,7 +1508,7 @@ var AframeBlocks =
       "type": "field_input",
       "name": "URL",
       "text": "default"
-    }
+    },
   ],
   "previousStatement": null,
   "nextStatement": null,
