@@ -999,6 +999,11 @@ var AframeBlocks =
           "https://aframe.io/releases/1.0.4/aframe.min.js"
         ],
         [
+          "AR",
+          "https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"
+        ],  
+          
+        [
           "Inspector",
           "https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
         ],
@@ -1065,6 +1070,7 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": "https://aframe.io"
 },
+    
 {
   "type": "import_inspector",
   "message0": "Import Inspector %1",
@@ -1134,6 +1140,22 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+    
+{
+  "type": "scene_create_AR",
+  "message0": "crea AR scena %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},    
 
 {
   "type": "scene_create_color",
@@ -3948,8 +3970,70 @@ var AframeBlocks =
   "colour": 75,
   "tooltip": "",
   "helpUrl": ""
-}
+},
 
+{
+  "type": "ar_marker",
+  "message0": "AR Marker %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "AR_MARKER",
+      "text": "Hiro"
+    },
+    {
+      "type": "input_statement",
+      "name": "AR"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+    
+{
+  "type": "ar_pattern",
+  "message0": "AR Marker URL  %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "AR_URL",
+      "text": "path/to/pattern-marker.patt"
+    },
+    {
+      "type": "input_statement",
+      "name": "AR"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+    
+{
+  "type": "ar_barcode",
+  "message0": "AR Marker Barcode  %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "AR_VALUE",
+      "text": "5"
+    },
+    {
+      "type": "input_statement",
+      "name": "AR"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},   
     
     
 

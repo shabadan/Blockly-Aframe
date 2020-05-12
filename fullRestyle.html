@@ -593,6 +593,7 @@
 				</category>
 				<category name="Scene" color="#5C81A6">
 					<block type="scene_create"></block>
+					<block type="scene_create_AR"></block>
 					<block type="scene_create_color"></block>
 					<block type="camera_3d"></block>
 					<block type="light_3d"></block>
@@ -762,8 +763,7 @@
 				    <block type="html" id="g}6:G4ODR/`m1VLM4tIM" x="-69" y="61"><statement name="content"><block type="head" id="Udl@dtG@6{wgJ]uvl-2}"><statement name="content"><block type="title" id=".Vu:`5HHMX#uFT=nxR`z"><statement name="content"><block type="plaintext" id="-`S^ryK?}*s94VARoPz4"><field name="content">Blockly Aframe HTML example</field></block></statement><next><block type="import_aframe" id="rj~6v@~C59R8=XN9A-}N"><field name="NAME">https://aframe.io/releases/1.0.4/aframe.min.js</field><next><block type="script_video_controll" id="+CxTqSx(M^MXjpLZ?e3g"><field name="SRC">YOUR-VIDEO-ID</field></block></next></block></next></block></statement><next><block type="body_attributes" id="#l]irD^akBgWWbrd8k1i"><value name="NAME"><block type="style" id="z%IeHi[G5XEyAH/Kljcd"><statement name="NAME"><block type="genericstyle" id="QaW5zx|[q5Bz{;G0iRKd"><field name="property">font-family</field><field name="value">sans-serif</field></block></statement></block></value><statement name="content"><block type="scene_create" id="II5JCIkq:kf=@OZd$pnf"><statement name="NAME"><block type="camera_3d_child" id="^TgLLMnN_oPWLEUIf:tU"><field name="DROPDOWN">camera</field><statement name="CHILD"><block type="entity_cursor" id="N,F|*0,6/n~7+jQ,;Fr)"></block></statement><next><block type="assets_list" id="DI/kDdu9.[6,DWWWEMHL"><statement name="assetslist"><block type="asset_img" id=".8x931|/n99@(zcl#l!O"><field name="IDNAME">play</field><field name="URL">play.png</field><next><block type="asset_img" id="A=xi4rKeb.a!CWqegaOi"><field name="IDNAME">pause</field><field name="URL">pause.png</field><next><block type="asset_video" id="gu;bK8_2[*.6kAOLRi_B"><field name="IDNAME">YOUR-VIDEO-ID</field><field name="URL">lagioconda.mp4</field><field name="Loop">TRUE</field></block></next></block></next></block></statement><next><block type="video_child" id="*Xiu8/4{D|Z6,geSh%=t"><field name="IDNAME">video_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="video_src" id="Ob$+LtXMJn~.8=ml~FLy"><field name="360_SRC">YOUR-VIDEO-ID</field><next><block type="posrotscale_3d_OLD" id="1~c)L@P*UIE64G*Lxx20"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">3</field><field name="POSROTSCALE_Z">-9</field><next><block type="dimension_3d" id=":#N:+LIBgiG,5nF#W0bg"><field name="DIMENSION">width</field><field name="DIMENSION_VALUE">8</field><next><block type="dimension_3d" id="iQb|y{D]SdW!Z^m59syh"><field name="DIMENSION">height</field><field name="DIMENSION_VALUE">4.5</field></block></next></block></next></block></next></block></statement><statement name="CHILD"><block type="video_controller" id="T_010]${F;FG{c#ziwJf"><field name="SRC">play</field><field name="POSX">0</field><field name="POSY">-3</field><field name="POSZ">0</field><field name="SCALEX">0.5</field><field name="SCALEY">0.5</field><field name="SCALEZ">1</field></block></statement></block></next></block></next></block></statement></block></statement></block></next></block></statement></block>
 				    
 				</category>
-					
-							
+						
 				</category>
 
 				<category name="Event" colour="#5C81A6"> 
@@ -785,7 +785,14 @@
 					<block type="entity_cursor"></block>
 					<block type="entity_cursor_vr"></block>
 				</category>
+           
+            <category name="AR" colour="#5C81A6">	
+			<block type="ar_marker"></block>
+            <block type="ar_pattern"></block>
+            <block type="ar_barcode"></block>
 
+           		
+            </category>	
 			</category>
 		</xml>
 

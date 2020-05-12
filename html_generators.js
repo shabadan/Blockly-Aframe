@@ -365,6 +365,14 @@ HtmlGenerator['import_extra'] = function(block) {
   return code;
 };
 
+HtmlGenerator['scene_create_AR'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-scene embedded arjs=\'sourceType: webcam;\'>\n'+ statements_content +   '</a-scene>\n';
+  return code;
+};
+
 HtmlGenerator['scene_create'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
   var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
@@ -1188,6 +1196,28 @@ HtmlGenerator['entity_text_geometry'] = function(block) {
   return code;
 };
 
+HtmlGenerator['ar_marker'] = function(block) {
+  var text_ar_marker = block.getFieldValue('AR_MARKER');
+  var statements_ar = HtmlGenerator.statementToCode(block, 'AR');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-marker preset='+text_ar_marker+'>'+statements_ar+'</a-marker>\n';
+  return code;
+};
 
+HtmlGenerator['ar_pattern'] = function(block) {
+  var text_ar_url = block.getFieldValue('AR_URL');
+  var statements_ar = HtmlGenerator.statementToCode(block, 'AR');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-marker type=\'pattern\' url=\''+text_ar_url+'\'>'+statements_ar+'</a-marker>\n';
+  return code;
+};
+
+HtmlGenerator['ar_barcode'] = function(block) {
+  var text_ar_url = block.getFieldValue('AR_VALUE');
+  var statements_ar = HtmlGenerator.statementToCode(block, 'AR');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-marker type=\'barcode\' value=\''+text_ar_url+'\'>'+statements_ar+'</a-marker>\n';
+  return code;
+};
 
 
