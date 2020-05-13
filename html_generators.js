@@ -367,9 +367,11 @@ HtmlGenerator['import_extra'] = function(block) {
 
 HtmlGenerator['scene_create_AR'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var checkbox_debug = block.getFieldValue('DEBUG') == 'TRUE';
+  var text_matrixcode = block.getFieldValue('MATRIXCODE');
   var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = '<a-scene embedded arjs=\'sourceType: webcam;\'>\n'+ statements_content +   '</a-scene>\n';
+  var code = '<a-scene embedded arjs=\'sourceType: webcam; debugUIEnabled: '+checkbox_debug+'; detectionMode: mono_and_matrix; matrixCodeType: '+text_matrixcode+';\'>\n'+ statements_content +   '</a-scene>\n';
   return code;
 };
 

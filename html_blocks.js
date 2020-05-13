@@ -1000,7 +1000,7 @@ var AframeBlocks =
         ],
         [
           "AR",
-          "https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"
+          "https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"
         ],  
           
         [
@@ -1143,8 +1143,24 @@ var AframeBlocks =
     
 {
   "type": "scene_create_AR",
-  "message0": "crea AR scena %1",
+  "message0": "crea AR scena debugUIEnabled %1 %2 matrixCodeType %3 %4 %5",
   "args0": [
+    {
+      "type": "field_checkbox",
+      "name": "DEBUG",
+      "checked": false
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_input",
+      "name": "MATRIXCODE",
+      "text": "3x3"
+    },
+    {
+      "type": "input_dummy"
+    },
     {
       "type": "input_statement",
       "name": "NAME"
