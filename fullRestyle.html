@@ -842,32 +842,48 @@
 
 			var workspace = Blockly.inject(blocklyArea, options);
 
-			var xml_text = localStorage.getItem('blockly-html-code');
-			if (xml_text) {
-				var xml = Blockly.Xml.textToDom(xml_text);
-				Blockly.Xml.domToWorkspace(xml, workspace);
+			//
+			function isSupported(getStorage) {
+			  try {
+				const key = "__some_random_key_you_are_not_going_to_use__";
+				getStorage().setItem(key, key);
+				getStorage().removeItem(key);
+				return true;
+			  } catch (e) {
+				return false;
+			  }
 			}
-			else {
-				/* === For backwards compability. Remove soon ===*/
-				var xml_text = localStorage.getItem('code');
+			
+			
+			//
+			if (isSupported(() => localStorage)) {
+				var xml_text = localStorage.getItem('blockly-html-code');
 				if (xml_text) {
 					var xml = Blockly.Xml.textToDom(xml_text);
 					Blockly.Xml.domToWorkspace(xml, workspace);
-					}
-				/* === ^^^ === */
+				}
 				else {
-						if (localStorage.getItem("blank-flag") === null || localStorage.getItem("blank-flag")=="false") {
-						var workspaceBlocks = document.getElementById("workspaceBlocks");
-						Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+					/* === For backwards compability. Remove soon ===*/
+					var xml_text = localStorage.getItem('code');
+					if (xml_text) {
+						var xml = Blockly.Xml.textToDom(xml_text);
+						Blockly.Xml.domToWorkspace(xml, workspace);
 						}
-						else {
-							var blankBlocks = document.getElementById("workspaceBlank");
-							Blockly.Xml.domToWorkspace(blankBlocks, workspace);
-							localStorage.setItem('blank-flag', 'false');
-						}
+					/* === ^^^ === */
+					else {
+							if (localStorage.getItem("blank-flag") === null || localStorage.getItem("blank-flag")=="false") {
+							var workspaceBlocks = document.getElementById("workspaceBlocks");
+							Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+							}
+							else {
+								var blankBlocks = document.getElementById("workspaceBlank");
+								Blockly.Xml.domToWorkspace(blankBlocks, workspace);
+								localStorage.setItem('blank-flag', 'false');
+							}
+					}
 				}
 			}
-
+			
 			Blockly.svgResize(workspace);
 
 			function myUpdateFunction(event) {
@@ -880,7 +896,9 @@
 				// Save Blocks
 				var xml = Blockly.Xml.workspaceToDom(workspace);
 				var xml_text = Blockly.Xml.domToText(xml);
-				localStorage.setItem('blockly-html-code', xml_text);
+				if (isSupported(() => localStorage)) {
+					localStorage.setItem('blockly-html-code', xml_text);
+				}
 			}
 			
 			
@@ -933,7 +951,7 @@
 		</script>
 		<script src="js/geoDB.js"></script>
 		<script src="js/model.js"></script>
-		<script src="js/arrow.js"></script>
+		<!-- <script src="js/arrow.js"></script> -->
 		<script>
 		
 			$(document).ready(function(){
