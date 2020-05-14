@@ -327,6 +327,9 @@ HtmlGenerator['import_script'] = function(block) {
   var dropdown_import = block.getFieldValue('IMPORT');
   // TODO: Assemble JavaScript into code variable.
   var code = '<script src="'+dropdown_import+'"></script>\n';
+  if (dropdown_import=="https://aframe.io/releases/1.0.4/aframe.min.js") {
+	code = code + '<script src="js/arrow.js"></script>\n';
+  }
   return code;
 };
 
@@ -340,7 +343,7 @@ HtmlGenerator['script_video_controll'] = function(block) {
 HtmlGenerator['import_aframe'] = function(block) {
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
-  var code = '<script src="'+text_name+'"></script>\n';
+  var code = '<script src="'+text_name+'"></script>\n<script src="js/arrow.js"></script>\n';
   return code;
 };
 
