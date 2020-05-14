@@ -594,6 +594,7 @@
 				<category name="Scene" color="#5C81A6">
 					<block type="scene_create"></block>
 					<block type="scene_create_AR"></block>
+					<block type="scene_create_GPS"></block>
 					<block type="scene_create_color"></block>
 					<block type="camera_3d"></block>
 					<block type="light_3d"></block>
@@ -630,17 +631,20 @@
 					<block type="side3d"></block>
 					<block type="arrow_primitive"></block>
 					<block type="arrow_lengths"></block>
+					<block type="look_at"></block>
 				</category>
 
 				<category name="3D Camera Option" color="#5C81A6">
 
 					<category name="Options" color="#5C81A6">
 						<block type="posrotscale_3d_OLD"></block>
+						<block type="camera_name"></block>
 						<block type="wasd_fps"></block>
 						<block type="camera_cursor"></block>
 						<block type="camera_cursor_color"></block>
 						<block type="camera_cursor_scale"></block>
 						<block type="camera_cursor_opacity"></block>
+						<block type="camera_rotation_reader"></block>
 					</category>
 
 
@@ -790,9 +794,10 @@
 			<block type="ar_marker"></block>
             <block type="ar_pattern"></block>
             <block type="ar_barcode"></block>
+            <block type="ar_gps"></block>
             
             <category name="Example" colour="#5C81A6">
-            <block type="html" id="9oFDR`IIn6rS=HtBc1=;" x="-137" y="13"><statement name="content"><block type="head" id="GcN`f+0y~dua46CQmnr|"><statement name="content"><block type="title" id="rB[~}$}00N3;aP6]xnDB"><statement name="content"><block type="plaintext" id="CjhokkH)~`2F##tpTkVK"><field name="content">Blockly Aframe HTML example</field></block></statement><next><block type="import_aframe" id="+*.`^K2f%Qcbji,@6N=Q"><field name="NAME">https://aframe.io/releases/1.0.4/aframe.min.js</field><next><block type="import_script" id="T80A@nDW|4Blix~CXLPn"><field name="IMPORT">https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js</field></block></next></block></next></block></statement><next><block type="body_attributes" id="PScP7X][kjt|f!8/L%#="><value name="NAME"><block type="style" id="m0}^Fb+}Ev,7[q@ztf#N"><statement name="NAME"><block type="genericstyle" id="6@F@,+j$;T5u{n4?uEUr"><field name="property">font-family</field><field name="value">sans-serif</field></block></statement></block></value><statement name="content"><block type="scene_create_AR" id="aw]Un7iomw4%[9GfkJTS"><field name="DEBUG">FALSE</field><field name="MATRIXCODE">3x3</field><statement name="NAME"><block type="ar_barcode" id="u^VPO$SKEY)1u80C+jXF"><field name="AR_VALUE">0</field><statement name="AR"><block type="primitive" id="@O-,yz}3N]KSG8GBk9W="><field name="DROPDOWN">box</field><field name="IDNAME">Red_Box</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="!WM**C/6`bGA6[@FfK(*"><field name="COLOR3D">#ff0000</field><next><block type="posrotscale_3d_OLD" id="F8xS{p-{99h,F8v@@kf_"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">1</field><field name="POSROTSCALE_Z">-3</field><next><block type="posrotscale_3d_OLD" id="}3o/9GuvFt_`eF-St9R5"><field name="POSROTSCALE">rotation</field><field name="POSROTSCALE_X">2</field><field name="POSROTSCALE_Y">30</field><field name="POSROTSCALE_Z">35</field></block></next></block></next></block></statement></block></statement></block></statement></block></statement></block></next></block></statement></block>
+                     <block type="html" id="9oFDR`IIn6rS=HtBc1=;" x="-137" y="13"><statement name="content"><block type="head" id="GcN`f+0y~dua46CQmnr|"><statement name="content"><block type="title" id="rB[~}$}00N3;aP6]xnDB"><statement name="content"><block type="plaintext" id="CjhokkH)~`2F##tpTkVK"><field name="content">Blockly Aframe HTML example</field></block></statement><next><block type="import_aframe" id="+*.`^K2f%Qcbji,@6N=Q"><field name="NAME">https://aframe.io/releases/1.0.4/aframe.min.js</field><next><block type="import_script" id="T80A@nDW|4Blix~CXLPn"><field name="IMPORT">https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js</field></block></next></block></next></block></statement><next><block type="body_attributes" id="PScP7X][kjt|f!8/L%#="><value name="NAME"><block type="style" id="m0}^Fb+}Ev,7[q@ztf#N"><statement name="NAME"><block type="genericstyle" id="6@F@,+j$;T5u{n4?uEUr"><field name="property">font-family</field><field name="value">sans-serif</field></block></statement></block></value><statement name="content"><block type="scene_create_AR" id="aw]Un7iomw4%[9GfkJTS"><field name="DEBUG">FALSE</field><field name="MATRIXCODE">3x3</field><statement name="NAME"><block type="ar_barcode" id="u^VPO$SKEY)1u80C+jXF"><field name="AR_VALUE">0</field><statement name="AR"><block type="primitive" id="@O-,yz}3N]KSG8GBk9W="><field name="DROPDOWN">box</field><field name="IDNAME">Red_Box</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="!WM**C/6`bGA6[@FfK(*"><field name="COLOR3D">#ff0000</field><next><block type="posrotscale_3d_OLD" id="F8xS{p-{99h,F8v@@kf_"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">1</field><field name="POSROTSCALE_Z">-3</field><next><block type="posrotscale_3d_OLD" id="}3o/9GuvFt_`eF-St9R5"><field name="POSROTSCALE">rotation</field><field name="POSROTSCALE_X">2</field><field name="POSROTSCALE_Y">30</field><field name="POSROTSCALE_Z">35</field></block></next></block></next></block></statement></block></statement></block></statement></block></statement></block></next></block></statement></block>
            	</category>
            		
             </category>	

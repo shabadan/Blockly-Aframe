@@ -1026,7 +1026,11 @@ var AframeBlocks =
 		[
           "Arrow",
           "js/arrow.js" // "http://unpkg.com/aframe-arrow-component" + primitive added
-        ]
+        ],
+        [
+          "Look At",
+          "https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js" 
+        ],  
       ]
     }
   ],
@@ -1173,6 +1177,31 @@ var AframeBlocks =
   "helpUrl": ""
 },    
 
+{
+  "type": "scene_create_GPS",
+  "message0": "crea AR GPS %1 scena debugUIEnabled %2  %3",
+  "args0": [
+       {
+      "type": "input_dummy"
+    },  
+    {
+      "type": "field_checkbox",
+      "name": "DEBUG",
+      "checked": false
+    },
+ 
+    {
+      "type": "input_statement",
+      "name": "NAME"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},       
+    
 {
   "type": "scene_create_color",
   "message0": "crea scena %1 %2 Background Color %3",
@@ -1432,6 +1461,42 @@ var AframeBlocks =
   "helpUrl": ""
 },  
 
+{
+  "type": "camera_name",
+  "message0": "Camera Name:  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "GPS_CAMERA",
+      "text": "gps-camera"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+    
+{
+  "type": "camera_rotation_reader",
+  "message0": "%1",
+  "args0": [
+    {
+      "type": "field_label_serializable",
+      "name": "ROTATION-READER",
+      "text": "rotation-reader"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+    
+    
+    
 {
   "type": "wasd_fps",
   "message0": "WASD (FPS) %1",
@@ -4048,9 +4113,53 @@ var AframeBlocks =
   "nextStatement": null,
   "colour": 230,
   "tooltip": "",
-  "helpUrl": ""
+  "helpUrl": "https://au.gmented.com/app/marker/marker.php"
 },   
+
+{
+  "type": "ar_gps",
+  "message0": "GPS PLACE %1 latitude: %2 %3 longitude: %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_input",
+      "name": "LAT",
+      "text": "44.475299"
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_input",
+      "name": "LONG",
+      "text": "11.384117"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": "https://www.latlong.net"
+},
     
+{
+  "type": "look_at",
+  "message0": "Look At:  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "CAMERA_NAME",
+      "text": "CAMERA-NAME"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+}    
     
 
 ];

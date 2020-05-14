@@ -375,6 +375,15 @@ HtmlGenerator['scene_create_AR'] = function(block) {
   return code;
 };
 
+HtmlGenerator['scene_create_GPS'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var checkbox_debug = block.getFieldValue('DEBUG') == 'TRUE';
+  var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-scene embedded arjs=\'sourceType: webcam; debugUIEnabled: '+checkbox_debug+';\'>\n'+ statements_content +   '</a-scene>\n';
+  return code;
+};
+
 HtmlGenerator['scene_create'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
   var statements_content = HtmlGenerator.statementToCode(block, 'NAME');
@@ -478,6 +487,20 @@ HtmlGenerator['camera_cursor_scale'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
  var code = 'cursor-scale="'+ text_scale +'"\n';
     
+  return code;
+};
+
+HtmlGenerator['camera_name'] = function(block) {
+  var text_gps_camera = block.getFieldValue('GPS_CAMERA');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ' '+text_gps_camera+' ';
+  return code;
+};
+
+HtmlGenerator['camera_rotation_reader'] = function(block) {
+  var text_rotation = block.getFieldValue('ROTATION-READER');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ''+text_rotation+'';
   return code;
 };
 
@@ -1222,4 +1245,17 @@ HtmlGenerator['ar_barcode'] = function(block) {
   return code;
 };
 
+HtmlGenerator['ar_gps'] = function(block) {
+  var text_lat = block.getFieldValue('LAT');
+  var text_long = block.getFieldValue('LONG');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'gps-entity-place="latitude:'+text_lat+'; longitude: '+text_long+';"\n';
+  return code;
+};
 
+HtmlGenerator['look_at'] = function(block) {
+  var text_look_at = block.getFieldValue('CAMERA_NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'look-at="['+text_look_at+']"\n';
+  return code;
+};
