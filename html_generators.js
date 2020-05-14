@@ -422,6 +422,14 @@ HtmlGenerator['light_3d'] = function(block) {
   return code;
 };
 
+HtmlGenerator['link_3d'] = function(block) {
+  //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  var statements_content = HtmlGenerator.statementToCode(block, 'LINK3D');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-link'+ statements_content +   '></<a-link>\n';
+  return code;
+};
+
 HtmlGenerator['light3d_type'] = function(block) {
   var dropdown_type_light = block.getFieldValue('TYPE_LIGHT');
   // TODO: Assemble JavaScript into code variable.
@@ -867,7 +875,26 @@ HtmlGenerator['side3d'] = function(block) {
   return code;
 };
 
+HtmlGenerator['href_3d'] = function(block) {
+  var text_href = block.getFieldValue('HREF');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'href="'+text_href+'"\n';
+  return code;
+};
 
+HtmlGenerator['image_3d'] = function(block) {
+  var text_image = block.getFieldValue('IMAGE');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'image="'+text_image+'"\n';
+  return code;
+};
+
+HtmlGenerator['title_3d'] = function(block) {
+  var text_title = block.getFieldValue('TITLE');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'title="'+text_title+'"\n';
+  return code;
+};
 
 HtmlGenerator['videosphere360'] = function(block) {
   var text_360_src = block.getFieldValue('360_SRC');
@@ -1263,4 +1290,4 @@ HtmlGenerator['look_at'] = function(block) {
   return code;
 };
 
-//
+

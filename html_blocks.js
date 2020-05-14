@@ -1257,7 +1257,24 @@ var AframeBlocks =
   "colour": 195,
   "tooltip": "",
   "helpUrl": ""
-}, 
+},
+
+{
+  "type": "link_3d",
+  "message0": "Link  %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "LINK3D"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 195,
+  "tooltip": "",
+  "helpUrl": ""
+},     
+    
  
 {
   "type": "light3d_type",
@@ -1331,6 +1348,10 @@ var AframeBlocks =
           "Light",
           "light"
         ],
+         [
+          "Link",
+          "link"
+        ],  
       ]
     },
      {
@@ -2695,6 +2716,57 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+
+{
+  "type": "href_3d",
+  "message0": "href = %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "HREF",
+      "text": "index.html"
+    }
+  ],
+   "previousStatement": null,
+  "nextStatement": null,    
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},   
+
+{
+  "type": "image_3d",
+  "message0": "image = %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "IMAGE",
+      "text": "image.jpg"
+    }
+  ],
+   "previousStatement": null,
+  "nextStatement": null,    
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},
+    
+{
+  "type": "title_3d",
+  "message0": "title = %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TITLE",
+      "text": "Home Page"
+    }
+  ],
+   "previousStatement": null,
+  "nextStatement": null,    
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},      
 
 {
   "type": "videosphere360",
