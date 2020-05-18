@@ -1016,6 +1016,10 @@ var AframeBlocks =
           "https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"
         ],
          [
+          "Particle System",
+          "https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"
+        ],   
+         [
           "Text Geometry",
           "https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"
         ],  
@@ -2135,9 +2139,26 @@ var AframeBlocks =
           "radius",
           "radius"
         ],
+        
+        [
+          "radius-tubular",
+          "radius-tubular"
+        ],  
         [
           "segments-radial",
           "segments-radial"
+        ],
+        [
+          "arc",
+          "arc"
+        ],
+        [
+          "p",
+          "p"
+        ],
+        [
+          "q",
+          "q"
         ]
       ]
     },
@@ -2259,7 +2280,107 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },    
+
+{
+  "type": "entity_particle-system",
+  "message0": "Particle-System:  %1",
+  "args0": [
+    {
+      "type": "input_statement",
+      "name": "PARTICEL"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "Need Particel System plugin",
+  "helpUrl": ""
+},    
+
+{
+  "type": "entity_particle_system_preset",
+  "message0": "preset:  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "PRESET",
+      "options": [
+        [
+          "Dust",
+          "dust"
+        ],
+        [
+          "Snow",
+          "snow"
+        ],
+        [
+          "Rain",
+          "rain"
+        ],
+        [
+          "Default",
+          "default"
+        ]
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+
+{
+  "type": "entity_paticel_velocityvalue",
+  "message0": "velocityValue: %1",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "VELOCITYVALUE",
+      "value": 0.2
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+
+{
+  "type": "entity_particleCount",
+  "message0": "particleCount: %1",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "PARTICELCOUNT",
+      "value": 10000
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},     
     
+{
+  "type": "entity_texture",
+  "message0": "texture: %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "TEXTURE",
+      "text": ""
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 75,
+  "tooltip": "",
+  "helpUrl": ""
+},    
     
 {
   "type": "import_model_gltf",
@@ -2668,9 +2789,26 @@ var AframeBlocks =
           "radius",
           "radius"
         ],
+        
+        [
+          "radius-tubular",
+          "radius-tubular"
+        ],  
         [
           "segments-radial",
           "segments-radial"
+        ],
+        [
+          "arc",
+          "arc"
+        ],
+        [
+          "p",
+          "p"
+        ],
+        [
+          "q",
+          "q"
         ]
       ]    
     },

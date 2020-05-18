@@ -759,6 +759,40 @@ HtmlGenerator['animation'] = function(block) {
   return code;
 };
 
+HtmlGenerator['entity_particle-system'] = function(block) {
+  var statements_text = HtmlGenerator.statementToCode(block, 'PARTICEL');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\nparticle-system = "'+statements_text+'"\n';
+  return code;
+};
+
+HtmlGenerator['entity_particle_system_preset'] = function(block) {
+  var dropdown_preset = block.getFieldValue('PRESET');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'preset:'+dropdown_preset+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_particleCount'] = function(block) {
+  var number_particelcount = block.getFieldValue('PARTICELCOUNT');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'particleCount:'+number_particelcount+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_paticel_velocityvalue'] = function(block) {
+  var number_velocityvalue = block.getFieldValue('VELOCITYVALUE');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'velocityValue:'+number_velocityvalue+';\n';
+  return code;
+};
+
+HtmlGenerator['entity_texture'] = function(block) {
+  var text_texture = block.getFieldValue('TEXTURE');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'texture:'+text_texture+';\n';
+  return code;
+};
 
 HtmlGenerator['import_model_gltf'] = function(block) {
   var text_name = block.getFieldValue('NAME');
