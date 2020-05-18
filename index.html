@@ -584,6 +584,7 @@
 			<category name="AFrame">
 				<category name="Import" colour="#5C81A6">
 					<block type= "import_script"></block>
+					<block type="script_video_controll"></block>
 					<block type="import_aframe"></block>
 					<block type="import_inspector"></block>
 					<block type="import_event"></block>
@@ -592,9 +593,12 @@
 				</category>
 				<category name="Scene" color="#5C81A6">
 					<block type="scene_create"></block>
+					<block type="scene_create_AR"></block>
+					<block type="scene_create_GPS"></block>
 					<block type="scene_create_color"></block>
 					<block type="camera_3d"></block>
 					<block type="light_3d"></block>
+					<block type="link_3d"></block>
 					<block type="camera_3d_child"></block>
 					<block type="img_child"></block>
 					<block type="a-sky"></block>
@@ -614,6 +618,8 @@
          
          <block type="a-sky" id="e7tn+:VMo#T9ojw_}ReY" x="-54" y="198"><statement name="NAME"><block type="audiosrc" id="TVE3BeU%bw8ZV)yJ@_qN"><field name="SRC">YOUR-AMBIENCE-SOUND</field><field name="AUTOPLAY">TRUE</field><field name="LOOP">TRUE</field><field name="POSITIONAL">FALSE</field></block></statement></block>
          
+         <block type="link_3d" id="V=zGUfP0j]LMz`,;)EE#" x="-93" y="178"><statement name="LINK3D"><block type="posrotscale_3d_OLD" id="18f_nyc[mcLZ?MPA0TaO"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">2</field><field name="POSROTSCALE_Z">-2</field><next><block type="href_3d" id="}|k}yZQ77Rxv3zFn,VB8"><field name="HREF">https://aframe.io/aframe/examples/boilerplate/panorama/</field><next><block type="title_3d" id="b`*WEp5T[JP/HRtYCxIy"><field name="TITLE">Home Page</field><next><block type="image_3d" id="~^!^O3#:*_{:aaKorNRF"><field name="IMAGE">https://aframe.io/images/card.jpg</field></block></next></block></next></block></next></block></statement></block>
+         
          </category>
 				</category>
 
@@ -626,17 +632,25 @@
 					<block type="posrotscale_3d_OLD"></block>
 					<block type="dimension_3d"></block>
 					<block type="side3d"></block>
+					<block type="href_3d"></block>
+					<block type="image_3d"></block>
+					<block type="title_3d"></block>
+					<block type="arrow_primitive"></block>
+					<block type="arrow_lengths"></block>
+					<block type="look_at"></block>
 				</category>
 
 				<category name="3D Camera Option" color="#5C81A6">
 
 					<category name="Options" color="#5C81A6">
 						<block type="posrotscale_3d_OLD"></block>
+						<block type="camera_name"></block>
 						<block type="wasd_fps"></block>
 						<block type="camera_cursor"></block>
 						<block type="camera_cursor_color"></block>
 						<block type="camera_cursor_scale"></block>
 						<block type="camera_cursor_opacity"></block>
+						<block type="camera_rotation_reader"></block>
 					</category>
 
 
@@ -717,34 +731,45 @@
                 
                 <block type="entity_text" id="znyGw6}t++YtaSfn8924" x="118" y="204"><statement name="TEXT"><block type="entity_color" id="d%qyqzauw(eGA!Y/8)5v"><field name="NAME">#cc0000</field><next><block type="entity_text_value" id="O,2L_]=]4!sg|_34L9jP"><field name="VALUE">Hello World!</field><next><block type="entity_align" id="j+JjNQCCBe%HFBf|b[Kl"><field name="NAME">center</field><next><block type="entity_wrapcount" id="1B4E(Bq^zB=jRl*v0q/Y"><field name="WRAPCOUNT">40</field><next><block type="entity_text_font" id="*?CET:;UuD14Z4hD3}mQ"><field name="DIM">https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/cabin/Cabin-Medium.json;</field><next><block type="entity_dimension" id="7cB`=yxv!4kJd[/h`a[X"><field name="DIM">width</field><field name="DIMVALUE">2</field><next><block type="entity_shader" id="7B%`)InU[$o`_aEW~a9H"><field name="DIM">msdf</field></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block>
                 
+                <block type="import_script" id="[3+gv^)b-6FW#Rp-s!E-" x="67" y="540"><field name="IMPORT">https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js</field></block><block type="entity_particle-system" id="4tCFZE{gE6${`y1(pYnU" x="73" y="647"><statement name="PARTICEL"><block type="entity_particle_system_preset" id="OfGjN6X/^?juIiKf5hov"><field name="PRESET">rain</field><next><block type="entity_color_HEX" id="m|yX2Jwiu~%ZF.[;gojG"><field name="COLOR">#212121</field><next><block type="entity_paticel_velocityvalue" id="d,j@/fVMUO:Bu]M^tz=F"><field name="VELOCITYVALUE">0.1</field><next><block type="entity_particleCount" id="}TKwh0wp+VlUtl%?L6d^"><field name="PARTICELCOUNT">10000</field></block></next></block></next></block></next></block></statement></block>
+                
                 </category>	
 				</category>
 
 				<category name="Entity Options" colour="#5C81A6">
-              <block type="entity_dimension"></block>
+                  
+                  
+                 <block type="entity_dimension"></block>
+                 <block type="entity_texture"></block>
+                      
+                 <block type= entity_geometry></block>
+                 <block type=entity_geometry_primitive></block>
+                 <block type=entity_geometry_dimension></block>
+                
+                 <block type= entity_material></block>
+                 <block type=entity_material_color></block>
+                 <block type=entity_material_color_hex></block>
+                 <block type=entity_material_visible></block>
                
-               
-               <block type="entity_text"></block>
-               <block type="entity_text_value"></block>
-               <block type="entity_color"></block>
-                <block type="entity_color_HEX"></block>
-                <block type="entity_align"></block>
-                <block type="entity_wrapcount"></block>
-                <block type="entity_text_font"></block>
-                <block type="entity_shader"></block>
-                
-                
-                
-                <block type= entity_geometry></block>
-                <block type=entity_geometry_primitive></block>
-                <block type=entity_geometry_dimension></block>
-                
-                <block type= entity_material></block>
-                <block type=entity_material_color></block>
-                <block type=entity_material_color_hex></block>
-                <block type=entity_material_visible></block>
+                 <block type="entity_text"></block>
+                 <block type="entity_text_geometry"></block>
+                 <block type="entity_text_value"></block>
+                 <block type="entity_color"></block>
+                 <block type="entity_color_HEX"></block>
+                 <block type="entity_align"></block>
+                 <block type="entity_wrapcount"></block>
+                 <block type="entity_text_font"></block>
+                 <block type="entity_shader"></block>
+                           
                 
                 <block type=animation></block>
+                
+               <block type=entity_particle-system></block>
+               <block type=entity_particle_system_preset></block>
+               <block type=entity_paticel_velocityvalue></block>
+               <block type=entity_particleCount></block>
+               
+               
                 
                 
         </category> 
@@ -754,7 +779,13 @@
 					<block type="video_child"></block>
 					<block type="video_controller"></block>
 					<block type="videosphere360"></block>
-					
+				
+				<category name="Example" colour="#5C81A6">
+				    
+				    <block type="html" id="g}6:G4ODR/`m1VLM4tIM" x="-69" y="61"><statement name="content"><block type="head" id="Udl@dtG@6{wgJ]uvl-2}"><statement name="content"><block type="title" id=".Vu:`5HHMX#uFT=nxR`z"><statement name="content"><block type="plaintext" id="-`S^ryK?}*s94VARoPz4"><field name="content">Blockly Aframe HTML example</field></block></statement><next><block type="import_aframe" id="rj~6v@~C59R8=XN9A-}N"><field name="NAME">https://aframe.io/releases/1.0.4/aframe.min.js</field><next><block type="script_video_controll" id="+CxTqSx(M^MXjpLZ?e3g"><field name="SRC">YOUR-VIDEO-ID</field></block></next></block></next></block></statement><next><block type="body_attributes" id="#l]irD^akBgWWbrd8k1i"><value name="NAME"><block type="style" id="z%IeHi[G5XEyAH/Kljcd"><statement name="NAME"><block type="genericstyle" id="QaW5zx|[q5Bz{;G0iRKd"><field name="property">font-family</field><field name="value">sans-serif</field></block></statement></block></value><statement name="content"><block type="scene_create" id="II5JCIkq:kf=@OZd$pnf"><statement name="NAME"><block type="camera_3d_child" id="^TgLLMnN_oPWLEUIf:tU"><field name="DROPDOWN">camera</field><statement name="CHILD"><block type="entity_cursor" id="N,F|*0,6/n~7+jQ,;Fr)"></block></statement><next><block type="assets_list" id="DI/kDdu9.[6,DWWWEMHL"><statement name="assetslist"><block type="asset_img" id=".8x931|/n99@(zcl#l!O"><field name="IDNAME">play</field><field name="URL">play.png</field><next><block type="asset_img" id="A=xi4rKeb.a!CWqegaOi"><field name="IDNAME">pause</field><field name="URL">pause.png</field><next><block type="asset_video" id="gu;bK8_2[*.6kAOLRi_B"><field name="IDNAME">YOUR-VIDEO-ID</field><field name="URL">lagioconda.mp4</field><field name="Loop">TRUE</field></block></next></block></next></block></statement><next><block type="video_child" id="*Xiu8/4{D|Z6,geSh%=t"><field name="IDNAME">video_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="video_src" id="Ob$+LtXMJn~.8=ml~FLy"><field name="360_SRC">YOUR-VIDEO-ID</field><next><block type="posrotscale_3d_OLD" id="1~c)L@P*UIE64G*Lxx20"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">3</field><field name="POSROTSCALE_Z">-9</field><next><block type="dimension_3d" id=":#N:+LIBgiG,5nF#W0bg"><field name="DIMENSION">width</field><field name="DIMENSION_VALUE">8</field><next><block type="dimension_3d" id="iQb|y{D]SdW!Z^m59syh"><field name="DIMENSION">height</field><field name="DIMENSION_VALUE">4.5</field></block></next></block></next></block></next></block></statement><statement name="CHILD"><block type="video_controller" id="T_010]${F;FG{c#ziwJf"><field name="SRC">play</field><field name="POSX">0</field><field name="POSY">-3</field><field name="POSZ">0</field><field name="SCALEX">0.5</field><field name="SCALEY">0.5</field><field name="SCALEZ">1</field></block></statement></block></next></block></next></block></statement></block></statement></block></next></block></statement></block>
+				    
+				</category>
+						
 				</category>
 
 				<category name="Event" colour="#5C81A6"> 
@@ -776,7 +807,31 @@
 					<block type="entity_cursor"></block>
 					<block type="entity_cursor_vr"></block>
 				</category>
-
+           
+            <category name="Room" colour="#5C81A6">
+            <block type="create_room"></block>
+            <block type="create_room_door_id"></block>
+            <block type="create_room_door_from_to"></block>
+            
+            <category name="Example" colour="#5C81A6">
+            
+            <block type="import_script" id="?2euQ;z^_RrifdBe*Vyi" x="108" y="230"><field name="IMPORT">https://unpkg.com/aframe-room-component@%5E0.1.0/dist/aframe-room-component.min.js</field></block><block type="create_room" id="s4T%qo?/Lekn:!u*%m}2" x="103" y="311"><field name="OPTIONS">room</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="pYCT^lS_)A]z,s;T0W;B"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">-2</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">-2</field><next><block type="entity_material" id=",H)F{qPipp]8rN|l,xG("><statement name="MATERIAL"><block type="entity_material_color_hex" id="9Cq-P*n`~(.+lWy+1Xmi"><field name="COLOR">#866</field></block></statement></block></next></block></statement><statement name="CHILD"><block type="create_room" id="T$ne@tiqC?jhG2EZ{.Zg"><field name="OPTIONS">wall</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="nYJn^dw;`v*GH=i9%.Vm"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">4</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">0</field></block></statement><next><block type="create_room" id="+JvS3ObvFGrl)+WvRsUx"><field name="OPTIONS">wall</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="G`}YRGy}?V}hl%b#p[D{"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">4</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">4</field></block></statement><next><block type="create_room" id="%Yg-OIW,..9g(c~|oNbN"><field name="OPTIONS">wall</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="_Qn(Kn4(bfQ:Cm.dBHk0"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">4</field></block></statement><next><block type="create_room" id=")-h9mlt.nmgnuw4ni;Oa"><field name="OPTIONS">wall</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="i@}4?wqU9gM![q7KgE~:"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">0</field></block></statement><statement name="CHILD"><block type="create_room" id=":|CdThLF@qrIau/:=Aq("><field name="OPTIONS">doorhole</field><statement name="OPTION"><block type="create_room_door_id" id="LSMna]n$Niv~WBx]HJA,"><field name="ID">DoorA</field></block></statement><statement name="CHILD"><block type="create_room" id="4xr1o.v-?{SkWa+Y7[-+"><field name="OPTIONS">doorlink</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="o:yb@xdOjA?|,xEra/s|"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">2.5</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">0</field><next><block type="create_room_door_from_to" id="zNjsqOo9yNAT9YDOf4qz"><field name="FROM">DoorA</field><field name="TO">DoorB</field></block></next></block></statement></block></statement></block></statement></block></next></block></next></block></next></block></statement><next><block type="create_room" id="FrViA-[#DQixIpQpO0lN"><field name="OPTIONS">room</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="C?9qpRXOu,TMAAU94INR"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">-3</field></block></statement><statement name="CHILD"><block type="create_room" id="Is6ZI;Nm$%sFGsDsw@%X"><field name="OPTIONS">wall</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="po{%(7S]4GwSPyUq8@*-"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">1</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">-1</field><next><block type="entity_material" id="5MW0K[XlOzfK,^,A3o@$"><statement name="MATERIAL"><block type="entity_material_color_hex" id="i3{7HAQ@p+H[Q`]aYai{"><field name="COLOR">#787</field></block></statement></block></next></block></statement><next><block type="create_room" id="VYA?Zwj!Xzb}B/F5Q9^;"><field name="OPTIONS">wall</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="R-4X?l$+#p*7!qrEoH.l"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">1</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">1</field><next><block type="entity_material" id="d`LOJ~(cu+)OejSJK.g,"><statement name="MATERIAL"><block type="entity_material_color_hex" id="UJa(PPA/B_AyP77qXWsj"><field name="COLOR">#877</field></block></statement></block></next></block></statement><statement name="CHILD"><block type="create_room" id="f;h?:A)ii`+uJab?yb^:"><field name="OPTIONS">doorhole</field><statement name="OPTION"><block type="create_room_door_id" id=",+0sW6D(2`QWm[g#vUpb"><field name="ID">DoorB</field></block></statement></block></statement><next><block type="create_room" id="l0Q3S%}/QVWcPX90plAU"><field name="OPTIONS">wall</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="K$K+Y!W2R#$zl_=okiP*"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">-1</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">1</field><next><block type="entity_material" id="};6Y_)_VJ^YaM}-8m,xE"><statement name="MATERIAL"><block type="entity_material_color_hex" id="{T9QJMb6/E29D~~v{Lp["><field name="COLOR">#878</field></block></statement></block></next></block></statement><next><block type="create_room" id="^r:z,$lh`Q#$?Nhs[Y2)"><field name="OPTIONS">wall</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="WhgF{rjjnM(S`uBoGLqD"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">-1</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">-1</field><next><block type="entity_material" id="n5fa9evLjuHBjxx6+l-b"><statement name="MATERIAL"><block type="entity_material_color_hex" id="I+{dq_rv-6Bm$k)pSa0h"><field name="COLOR">#787</field></block></statement></block></next></block></statement><next><block type="create_room" id="Q/9*%F17;6zm67?K98uE"><field name="OPTIONS">ceiling</field><statement name="OPTION"><block type="posrotscale_3d_OLD" id="DsI!!-1UgmqRfrOn7yDZ"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">0</field><next><block type="entity_material" id="NwaONy]TEFBM=I{pr==f"><statement name="MATERIAL"><block type="entity_material_color_hex" id="$4{tOX$q/gbOl*M+2te*"><field name="COLOR">#787</field></block></statement></block></next></block></statement></block></next></block></next></block></next></block></next></block></statement></block></next></block>
+            
+            </category>
+            </category> 
+            
+            
+            <category name="AR" colour="#5C81A6">	
+			<block type="ar_marker"></block>
+            <block type="ar_pattern"></block>
+            <block type="ar_barcode"></block>
+            <block type="ar_gps"></block>
+            
+            <category name="Example" colour="#5C81A6">
+                     <block type="import_script" id="$jb1mIW]?:p|M/`r1h]p" x="-52" y="46"><field name="IMPORT">https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js</field></block><block type="import_script" id="|j*ZR+RTkII1J.498[/[" x="-59" y="105"><field name="IMPORT">https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js</field></block><block type="scene_create_AR" id="o${.Qu$^8,.r1QAt;y%4" x="-65" y="162"><field name="DEBUG">FALSE</field><field name="MATRIXCODE">3x3</field><statement name="NAME"><block type="ar_barcode" id="!-bLo9-jzV^JcS`6MEae"><field name="AR_VALUE">0</field><statement name="AR"><block type="primitive" id="zOlCo$ysT5J.7RBjF]2*"><field name="DROPDOWN">box</field><field name="IDNAME">Red_Box</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="54U1U*GE!ZMAk.J/U:P("><field name="COLOR3D">#ff0000</field><next><block type="posrotscale_3d_OLD" id="b:13`a2U257Y%^}z[BMV"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">1</field><field name="POSROTSCALE_Z">-3</field><next><block type="posrotscale_3d_OLD" id="*FaQ+JC6y/QrAaX/08yW"><field name="POSROTSCALE">rotation</field><field name="POSROTSCALE_X">2</field><field name="POSROTSCALE_Y">30</field><field name="POSROTSCALE_Z">35</field></block></next></block></next></block></statement></block></statement></block></statement></block><block type="scene_create_GPS" id="mQ_Z:/=T52WS%_wq-Ba8" x="-52" y="472"><field name="DEBUG">FALSE</field><statement name="NAME"><block type="primitive" id="-nkn]=IJ8`fAz36w$J2n"><field name="DROPDOWN">box</field><field name="IDNAME">Red_Box</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="look_at" id=".N:xykV1[^O8{@*qdRVM"><field name="CAMERA_NAME">gps-camera</field><next><block type="color3d" id="|@ZttL|98Z*:hmxw;mC%"><field name="COLOR3D">#ff0000</field><next><block type="ar_gps" id="KZal$jp{COJQ{*kNMz^9"><field name="LAT">44.475299</field><field name="LONG">11.384117</field><next><block type="posrotscale_3d_OLD" id="5X@WSx9B6_w?ia.~Uo7i"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">2</field><field name="POSROTSCALE_Z">-2</field><next><block type="posrotscale_3d_OLD" id="`dt`~C:W|ajes;qK**fa"><field name="POSROTSCALE">rotation</field><field name="POSROTSCALE_X">2</field><field name="POSROTSCALE_Y">30</field><field name="POSROTSCALE_Z">35</field></block></next></block></next></block></next></block></next></block></statement><next><block type="camera_3d_child" id="L$~FSp,Q2c7Ornu,dlH!"><field name="DROPDOWN">camera</field><statement name="NAME"><block type="camera_name" id="/MZ0y.{gDpR~K/E+Fr@g"><field name="GPS_CAMERA">gps-camera</field><next><block type="camera_rotation_reader" id="5p,bW}J!,/r,3)uV|sp-"><field name="ROTATION-READER">rotation-reader</field></block></next></block></statement></block></next></block></statement></block>
+           	</category>
+           		
+            </category>	
 			</category>
 		</xml>
 
@@ -793,7 +848,7 @@
 		</script>
 
 		<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none">
-			<block type="html" id="9oFDR`IIn6rS=HtBc1=;" x="-206" y="-980"><statement name="content"><block type="head" id="GcN`f+0y~dua46CQmnr|"><statement name="content"><block type="title" id="rB[~}$}00N3;aP6]xnDB"><statement name="content"><block type="plaintext" id="CjhokkH)~`2F##tpTkVK"><field name="content">Blockly Aframe HTML example</field></block></statement><next><block type="import_aframe" id="+*.`^K2f%Qcbji,@6N=Q"><field name="NAME">https://aframe.io/releases/1.0.4/aframe.min.js</field><next><block type="import_extra" id="r|yoH|G)n-hs0[*[Gkc5"><field name="NAME">https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js</field></block></next></block></next></block></statement><next><block type="body_attributes" id="PScP7X][kjt|f!8/L%#="><value name="NAME"><block type="style" id="m0}^Fb+}Ev,7[q@ztf#N"><statement name="NAME"><block type="genericstyle" id="6@F@,+j$;T5u{n4?uEUr"><field name="property">font-family</field><field name="value">sans-serif</field></block></statement></block></value><statement name="content"><block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N"><statement name="NAME"><block type="extra_entity" id="~@ebKvuIAp4Db%+8Fv@)"><field name="TYPEDROP">dae</field><field name="SRCDROP"></field><field name="SRCLINK">https://3d.simulmech.com/VR/models/sgabello.dae</field><statement name="NAME"><block type="posrotscale_3d_OLD" id=";6Uj{Y+)^8[oiudQ,o1;"><field name="POSROTSCALE">rotation</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">45</field><field name="POSROTSCALE_Z">0</field></block></statement></block></statement></block></statement></block></next></block></statement></block>
+			<block type="html" id="9oFDR`IIn6rS=HtBc1=;" x="-137" y="13"><statement name="content"><block type="head" id="GcN`f+0y~dua46CQmnr|"><statement name="content"><block type="title" id="rB[~}$}00N3;aP6]xnDB"><statement name="content"><block type="plaintext" id="CjhokkH)~`2F##tpTkVK"><field name="content">Blockly Aframe HTML example</field></block></statement><next><block type="import_aframe" id="+*.`^K2f%Qcbji,@6N=Q"><field name="NAME">https://aframe.io/releases/1.0.4/aframe.min.js</field></block></next></block></statement><next><block type="body_attributes" id="PScP7X][kjt|f!8/L%#="><value name="NAME"><block type="style" id="m0}^Fb+}Ev,7[q@ztf#N"><statement name="NAME"><block type="genericstyle" id="6@F@,+j$;T5u{n4?uEUr"><field name="property">font-family</field><field name="value">sans-serif</field></block></statement></block></value><statement name="content"><block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N"><statement name="NAME"><block type="assets_list" id="b%vi7P,};sye)ALiKPy."><statement name="assetslist"><block type="asset_video" id="F#89o`19k%q?9yeLi]7x"><field name="IDNAME">myvid</field><field name="URL">White_Lions.mp4</field><field name="Loop">TRUE</field></block></statement><next><block type="videosphere360" id="lV-KNNM*dH3[b/#)c9h."><field name="360_SRC">myvid</field></block></next></block></statement></block></statement></block></next></block></statement> </block>
 		</xml>
 
 
@@ -823,32 +878,48 @@
 
 			var workspace = Blockly.inject(blocklyArea, options);
 
-			var xml_text = localStorage.getItem('blockly-html-code');
-			if (xml_text) {
-				var xml = Blockly.Xml.textToDom(xml_text);
-				Blockly.Xml.domToWorkspace(xml, workspace);
+			//
+			function isSupported(getStorage) {
+			  try {
+				const key = "__some_random_key_you_are_not_going_to_use__";
+				getStorage().setItem(key, key);
+				getStorage().removeItem(key);
+				return true;
+			  } catch (e) {
+				return false;
+			  }
 			}
-			else {
-				/* === For backwards compability. Remove soon ===*/
-				var xml_text = localStorage.getItem('code');
+			
+			
+			//
+			if (isSupported(() => localStorage)) {
+				var xml_text = localStorage.getItem('blockly-html-code');
 				if (xml_text) {
 					var xml = Blockly.Xml.textToDom(xml_text);
 					Blockly.Xml.domToWorkspace(xml, workspace);
-					}
-				/* === ^^^ === */
+				}
 				else {
-						if (localStorage.getItem("blank-flag") === null || localStorage.getItem("blank-flag")=="false") {
-						var workspaceBlocks = document.getElementById("workspaceBlocks");
-						Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+					/* === For backwards compability. Remove soon ===*/
+					var xml_text = localStorage.getItem('code');
+					if (xml_text) {
+						var xml = Blockly.Xml.textToDom(xml_text);
+						Blockly.Xml.domToWorkspace(xml, workspace);
 						}
-						else {
-							var blankBlocks = document.getElementById("workspaceBlank");
-							Blockly.Xml.domToWorkspace(blankBlocks, workspace);
-							localStorage.setItem('blank-flag', 'false');
-						}
+					/* === ^^^ === */
+					else {
+							if (localStorage.getItem("blank-flag") === null || localStorage.getItem("blank-flag")=="false") {
+							var workspaceBlocks = document.getElementById("workspaceBlocks");
+							Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+							}
+							else {
+								var blankBlocks = document.getElementById("workspaceBlank");
+								Blockly.Xml.domToWorkspace(blankBlocks, workspace);
+								localStorage.setItem('blank-flag', 'false');
+							}
+					}
 				}
 			}
-
+			
 			Blockly.svgResize(workspace);
 
 			function myUpdateFunction(event) {
@@ -861,7 +932,9 @@
 				// Save Blocks
 				var xml = Blockly.Xml.workspaceToDom(workspace);
 				var xml_text = Blockly.Xml.domToText(xml);
-				localStorage.setItem('blockly-html-code', xml_text);
+				if (isSupported(() => localStorage)) {
+					localStorage.setItem('blockly-html-code', xml_text);
+				}
 			}
 			
 			
@@ -907,13 +980,14 @@
 
 			function clearLocalStorage() {
 			localStorage.clear();
-			window.location.reload(false); 
+			window.location.reload(true); 
 			}
 			document.getElementById("EraseLocalStorageButton").onclick = clearLocalStorage;
 
 		</script>
 		<script src="js/geoDB.js"></script>
 		<script src="js/model.js"></script>
+		<!-- <script src="js/arrow.js"></script> -->
 		<script>
 		
 			$(document).ready(function(){

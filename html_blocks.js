@@ -986,7 +986,7 @@ var htmlBlocks =
 
 var AframeBlocks =
 [
-{
+/*{
   "type": "import_script",
   "message0": "Import:  %1",
   "args0": [
@@ -1047,7 +1047,70 @@ var AframeBlocks =
   "colour": 90,
   "tooltip": "",
   "helpUrl": ""
-},
+},*/
+
+{
+  "type": "import_script",
+  "message0": "Import:  %1",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "IMPORT",
+      "options": [
+        [
+          "A-Frame",
+          "js/aframe.min.js" //https://aframe.io/releases/1.0.4/aframe.min.js
+        ],
+        [
+          "AR",
+          "js/aframe-ar-nft.js" //https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js
+        ],  
+          
+        [
+          "Inspector",
+          "js/aframe-inspector.min.js" //https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js
+        ],
+        [
+          "Event",
+          "js/aframe-event-set-component.min.js" //https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js
+        ],
+        [
+          "Extra",
+          "js/aframe-extras.min.js" // https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js
+        ],
+         [
+          "Particle System",
+          "js/aframe-particle-system-component.min.js" // https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js"
+        ],   
+         [
+          "Text Geometry",
+          "js/aframe-text-geometry-component.min.js" // https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js
+        ],  
+         [
+          "Video",
+          "AFRAME.registerComponent('play-pause', \n{ init: function () \n{ var myVideo = document.querySelector('#YOUR-VIDEO-ID'); var videoControls = document.querySelector('#videoControls'); this.el.addEventListener('click', function () { if (myVideo.paused) \n{ tmyVideo.play(); videoControls.setAttribute('src', '#pause'); }\n else \n{ myVideo.pause(); videoControls.setAttribute('src', '#play'); }\n });\n }\n });"
+        ],
+		[
+          "Arrow",
+          "js/arrow.js" // "http://unpkg.com/aframe-arrow-component" + primitive added
+        ],
+        [
+          "Look At",
+          "js/aframe-look-at-component.min.js"  //https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js
+        ],
+        [
+          "Room",  
+          "js/aframe-room-component.min.js" // https://unpkg.com/aframe-room-component@%5E0.1.0/dist/aframe-room-component.min.js
+        ],
+      ]
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": ""
+},    
     
 {
   "type": "script_video_controll",
