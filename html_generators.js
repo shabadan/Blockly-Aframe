@@ -1324,4 +1324,26 @@ HtmlGenerator['look_at'] = function(block) {
   return code;
 };
 
+HtmlGenerator['create_room'] = function(block) {
+  var dropdown_options = block.getFieldValue('OPTIONS');
+  var statements_option = HtmlGenerator.statementToCode(block, 'OPTION');
+  var statements_child = HtmlGenerator.statementToCode(block, 'CHILD');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<rw-'+dropdown_options+' '+statements_option+'>'+statements_child+'</rw-'+dropdown_options+'>\n';
+  return code;
+};
 
+HtmlGenerator['create_room_door_id'] = function(block) {
+  var text_id = block.getFieldValue('ID');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'id="'+text_id+'"\n';
+  return code;
+};
+
+HtmlGenerator['create_room_door_from_to'] = function(block) {
+  var text_from = block.getFieldValue('FROM');
+  var text_to = block.getFieldValue('TO');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'from="#'+text_from+'" to="#'+text_to+'"\n';
+  return code;
+};

@@ -1034,7 +1034,11 @@ var AframeBlocks =
         [
           "Look At",
           "https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js" 
-        ],  
+        ],
+        [
+          "Room",  
+          "https://unpkg.com/aframe-room-component@%5E0.1.0/dist/aframe-room-component.min.js"
+        ],
       ]
     }
   ],
@@ -4369,8 +4373,106 @@ var AframeBlocks =
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
-}    
+},
+
+{
+  "type": "create_room",
+  "message0": "%1 %2 Option : %3 Child : %4",
+  "args0": [
+    {
+      "type": "field_dropdown",
+      "name": "OPTIONS",
+      "options": [
+        [
+          "Room",
+          "room"
+        ],
+        [
+          "Wall ",
+          "wall"
+        ],
+        [
+          "Door",
+          "doorhole"
+        ],
+        [
+          "Door Link",
+          "doorlink"
+        ],
+        [
+          "Floor",
+          "floor"
+        ],
+        [
+          "Ceiling",
+          "ceiling"
+        ],
+        [
+          "Side",
+          "sides"
+        ]
+      ]
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_statement",
+      "name": "OPTION"
+    },
+    {
+      "type": "input_statement",
+      "name": "CHILD"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 315,
+  "tooltip": "Need Room Component",
+  "helpUrl": ""
+},
     
+{
+  "type": "create_room_door_id",
+  "message0": "Door ID:  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "ID",
+      "text": ""
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 315,
+  "tooltip": "Need Room Component",
+  "helpUrl": ""
+},
+    
+{
+  "type": "create_room_door_from_to",
+  "message0": "from  %1 %2 to:  %3",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "FROM",
+      "text": ""
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_input",
+      "name": "TO",
+      "text": ""
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 315,
+  "tooltip": "Need Room Component",
+  "helpUrl": ""
+}    
 
 ];
 
