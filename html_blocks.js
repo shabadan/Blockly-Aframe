@@ -1086,10 +1086,6 @@ var AframeBlocks =
           "Text Geometry",
           "js/aframe-text-geometry-component.min.js" // https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js
         ],  
-         [
-          "Video",
-          "AFRAME.registerComponent('play-pause', \n{ init: function () \n{ var myVideo = document.querySelector('#YOUR-VIDEO-ID'); var videoControls = document.querySelector('#videoControls'); this.el.addEventListener('click', function () { if (myVideo.paused) \n{ tmyVideo.play(); videoControls.setAttribute('src', '#pause'); }\n else \n{ myVideo.pause(); videoControls.setAttribute('src', '#play'); }\n });\n }\n });"
-        ],
 		[
           "Arrow",
           "js/arrow.js" // "http://unpkg.com/aframe-arrow-component" + primitive added
@@ -1128,6 +1124,40 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+
+{
+  "type": "script_video_controll",
+  "message0": "Import video controll %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "SRC",
+      "text": "YOUR-VIDEO-ID"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+    
+{
+  "type": "script_video_controll_NEW",
+  "message0": "Import video controll %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "SRC",
+      "text": "YOUR-VIDEO-ID"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 90,
+  "tooltip": "",
+  "helpUrl": ""
+},    
     
 {
   "type": "import_aframe",
@@ -3106,7 +3136,56 @@ var AframeBlocks =
   "helpUrl": ""
 },    
     
+{
+  "type": "video_controller_NEW",
+  "message0": "Play/Pause %1 Position:  X %2 Y %3 Z %4 %5 Scale:  X %6 Y %7 Z %8",
+  "args0": [
 
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_number",
+      "name": "POSX",
+      "value": 0
+    },
+    {
+      "type": "field_number",
+      "name": "POSY",
+      "value": -3
+    },
+    {
+      "type": "field_number",
+      "name": "POSZ",
+      "value": 0
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "field_number",
+      "name": "SCALEX",
+      "value": 0.5
+    },
+    {
+      "type": "field_number",
+      "name": "SCALEY",
+      "value": 0.5
+    },
+    {
+      "type": "field_number",
+      "name": "SCALEZ",
+      "value": 1
+    },
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},    
+    
+    
 {
   "type": "videobutton",
   "message0": "Video Controll",

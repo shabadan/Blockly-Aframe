@@ -340,6 +340,13 @@ HtmlGenerator['script_video_controll'] = function(block) {
   return code;
 };
 
+HtmlGenerator['script_video_controll_NEW'] = function(block) {
+  var text_src = block.getFieldValue('SRC');   
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<script>\nAFRAME.registerComponent(\'play-pause\', {\ninit: function () {\nvar myVideo = document.querySelector(\'#'+text_src+'\');\n	var videoControls = document.querySelector( \'#videoControls\');\nthis.el.addEventListener(\'click\', function () {\nif (myVideo.paused) {\nmyVideo.play();\nvideoControls.setAttribute(\'src\', \'ASSETs/pause.png\');\n} else {\nmyVideo.pause();\nvideoControls.setAttribute(\'src\', \'ASSETs/play.png\');\n}\n});\n}\n});\n</script>' ;
+  return code;
+};
+
 HtmlGenerator['import_aframe'] = function(block) {
   var text_name = block.getFieldValue('NAME');
   // TODO: Assemble JavaScript into code variable.
@@ -980,6 +987,17 @@ HtmlGenerator['video_controller'] = function(block) {
   return code;
 };
 
+HtmlGenerator['video_controller_NEW'] = function(block) {
+  var number_posx = block.getFieldValue('POSX');
+  var number_posy = block.getFieldValue('POSY');
+  var number_posz = block.getFieldValue('POSZ');
+  var number_scalex = block.getFieldValue('SCALEX');
+  var number_scaley = block.getFieldValue('SCALEY');
+  var number_scalez = block.getFieldValue('SCALEZ');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '<a-image \nid="videoControls" \nsrc="ASSETs/play.png" \nposition="'+number_posx+' '+number_posy+' '+number_posz+'" \nscale="'+number_scalex+' '+number_scaley+' '+number_scalez+'" play-pause>\n</a-image>\n';
+  return code;
+};
 
 HtmlGenerator['animation_propety'] = function(block) {
   var dropdown_option = block.getFieldValue('Option');
