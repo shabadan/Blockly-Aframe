@@ -55,13 +55,13 @@ html, body {
 	  width: 100%; background-color: #444; color:white; text-align:center; font-size: 20px; font-family: sans-serif; }
       
 	#websiteFrame {
-		background: lightgrey;
-	  /*border: 5px solid #444;*/ }
+		
+	  /*border: 5px solid #444; background: lightgrey;*/ }
 	  
     #sourcecode   { 
-			 background: lightgrey; overflow: scroll; margin:0px; height: calc(100% - 5px);}
+			 background: white; overflow: scroll; margin:0px; height: calc(100% - 5px);}
 
-    #website {	width: calc(100% - 5px); height: calc(100% - 5px);
+    #website {	width: calc(100% - 5px); height: calc(100% - 35px);
 			}
 
 		
