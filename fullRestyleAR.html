@@ -13,7 +13,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-		<script src="js/arrow.js"></script>
 		<script src="blockly/blockly_compressed.js"></script>
 		<script src="blockly/msg/js/en.js"></script>
 
@@ -585,6 +584,7 @@
 			<category name="AFrame">
 				<category name="Import" colour="#5C81A6">
 					<block type= "import_script"></block>
+					<block type="script_video_controll"></block>
 					<block type="import_aframe"></block>
 					<block type="import_inspector"></block>
 					<block type="import_event"></block>
@@ -593,6 +593,8 @@
 				</category>
 				<category name="Scene" color="#5C81A6">
 					<block type="scene_create"></block>
+					<block type="scene_create_AR"></block>
+					<block type="scene_create_GPS"></block>
 					<block type="scene_create_color"></block>
 					<block type="camera_3d"></block>
 					<block type="light_3d"></block>
@@ -627,17 +629,22 @@
 					<block type="posrotscale_3d_OLD"></block>
 					<block type="dimension_3d"></block>
 					<block type="side3d"></block>
+					<block type="arrow_primitive"></block>
+					<block type="arrow_lengths"></block>
+					<block type="look_at"></block>
 				</category>
 
 				<category name="3D Camera Option" color="#5C81A6">
 
 					<category name="Options" color="#5C81A6">
 						<block type="posrotscale_3d_OLD"></block>
+						<block type="camera_name"></block>
 						<block type="wasd_fps"></block>
 						<block type="camera_cursor"></block>
 						<block type="camera_cursor_color"></block>
 						<block type="camera_cursor_scale"></block>
 						<block type="camera_cursor_opacity"></block>
+						<block type="camera_rotation_reader"></block>
 					</category>
 
 
@@ -754,7 +761,13 @@
 					<block type="video_child"></block>
 					<block type="video_controller"></block>
 					<block type="videosphere360"></block>
-					
+				
+				<category name="Example" colour="#5C81A6">
+				    
+				    <block type="html" id="g}6:G4ODR/`m1VLM4tIM" x="-69" y="61"><statement name="content"><block type="head" id="Udl@dtG@6{wgJ]uvl-2}"><statement name="content"><block type="title" id=".Vu:`5HHMX#uFT=nxR`z"><statement name="content"><block type="plaintext" id="-`S^ryK?}*s94VARoPz4"><field name="content">Blockly Aframe HTML example</field></block></statement><next><block type="import_aframe" id="rj~6v@~C59R8=XN9A-}N"><field name="NAME">https://aframe.io/releases/1.0.4/aframe.min.js</field><next><block type="script_video_controll" id="+CxTqSx(M^MXjpLZ?e3g"><field name="SRC">YOUR-VIDEO-ID</field></block></next></block></next></block></statement><next><block type="body_attributes" id="#l]irD^akBgWWbrd8k1i"><value name="NAME"><block type="style" id="z%IeHi[G5XEyAH/Kljcd"><statement name="NAME"><block type="genericstyle" id="QaW5zx|[q5Bz{;G0iRKd"><field name="property">font-family</field><field name="value">sans-serif</field></block></statement></block></value><statement name="content"><block type="scene_create" id="II5JCIkq:kf=@OZd$pnf"><statement name="NAME"><block type="camera_3d_child" id="^TgLLMnN_oPWLEUIf:tU"><field name="DROPDOWN">camera</field><statement name="CHILD"><block type="entity_cursor" id="N,F|*0,6/n~7+jQ,;Fr)"></block></statement><next><block type="assets_list" id="DI/kDdu9.[6,DWWWEMHL"><statement name="assetslist"><block type="asset_img" id=".8x931|/n99@(zcl#l!O"><field name="IDNAME">play</field><field name="URL">play.png</field><next><block type="asset_img" id="A=xi4rKeb.a!CWqegaOi"><field name="IDNAME">pause</field><field name="URL">pause.png</field><next><block type="asset_video" id="gu;bK8_2[*.6kAOLRi_B"><field name="IDNAME">YOUR-VIDEO-ID</field><field name="URL">lagioconda.mp4</field><field name="Loop">TRUE</field></block></next></block></next></block></statement><next><block type="video_child" id="*Xiu8/4{D|Z6,geSh%=t"><field name="IDNAME">video_name</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="video_src" id="Ob$+LtXMJn~.8=ml~FLy"><field name="360_SRC">YOUR-VIDEO-ID</field><next><block type="posrotscale_3d_OLD" id="1~c)L@P*UIE64G*Lxx20"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">3</field><field name="POSROTSCALE_Z">-9</field><next><block type="dimension_3d" id=":#N:+LIBgiG,5nF#W0bg"><field name="DIMENSION">width</field><field name="DIMENSION_VALUE">8</field><next><block type="dimension_3d" id="iQb|y{D]SdW!Z^m59syh"><field name="DIMENSION">height</field><field name="DIMENSION_VALUE">4.5</field></block></next></block></next></block></next></block></statement><statement name="CHILD"><block type="video_controller" id="T_010]${F;FG{c#ziwJf"><field name="SRC">play</field><field name="POSX">0</field><field name="POSY">-3</field><field name="POSZ">0</field><field name="SCALEX">0.5</field><field name="SCALEY">0.5</field><field name="SCALEZ">1</field></block></statement></block></next></block></next></block></statement></block></statement></block></next></block></statement></block>
+				    
+				</category>
+						
 				</category>
 
 				<category name="Event" colour="#5C81A6"> 
@@ -776,7 +789,18 @@
 					<block type="entity_cursor"></block>
 					<block type="entity_cursor_vr"></block>
 				</category>
-
+           
+            <category name="AR" colour="#5C81A6">	
+			<block type="ar_marker"></block>
+            <block type="ar_pattern"></block>
+            <block type="ar_barcode"></block>
+            <block type="ar_gps"></block>
+            
+            <category name="Example" colour="#5C81A6">
+                     <block type="import_script" id="$jb1mIW]?:p|M/`r1h]p" x="-52" y="46"><field name="IMPORT">https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js</field></block><block type="import_script" id="|j*ZR+RTkII1J.498[/[" x="-59" y="105"><field name="IMPORT">https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js</field></block><block type="scene_create_AR" id="o${.Qu$^8,.r1QAt;y%4" x="-65" y="162"><field name="DEBUG">FALSE</field><field name="MATRIXCODE">3x3</field><statement name="NAME"><block type="ar_barcode" id="!-bLo9-jzV^JcS`6MEae"><field name="AR_VALUE">0</field><statement name="AR"><block type="primitive" id="zOlCo$ysT5J.7RBjF]2*"><field name="DROPDOWN">box</field><field name="IDNAME">Red_Box</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="color3d" id="54U1U*GE!ZMAk.J/U:P("><field name="COLOR3D">#ff0000</field><next><block type="posrotscale_3d_OLD" id="b:13`a2U257Y%^}z[BMV"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">1</field><field name="POSROTSCALE_Z">-3</field><next><block type="posrotscale_3d_OLD" id="*FaQ+JC6y/QrAaX/08yW"><field name="POSROTSCALE">rotation</field><field name="POSROTSCALE_X">2</field><field name="POSROTSCALE_Y">30</field><field name="POSROTSCALE_Z">35</field></block></next></block></next></block></statement></block></statement></block></statement></block><block type="scene_create_GPS" id="mQ_Z:/=T52WS%_wq-Ba8" x="-52" y="472"><field name="DEBUG">FALSE</field><statement name="NAME"><block type="primitive" id="-nkn]=IJ8`fAz36w$J2n"><field name="DROPDOWN">box</field><field name="IDNAME">Red_Box</field><field name="VISIBLE">TRUE</field><statement name="NAME"><block type="look_at" id=".N:xykV1[^O8{@*qdRVM"><field name="CAMERA_NAME">gps-camera</field><next><block type="color3d" id="|@ZttL|98Z*:hmxw;mC%"><field name="COLOR3D">#ff0000</field><next><block type="ar_gps" id="KZal$jp{COJQ{*kNMz^9"><field name="LAT">44.475299</field><field name="LONG">11.384117</field><next><block type="posrotscale_3d_OLD" id="5X@WSx9B6_w?ia.~Uo7i"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">2</field><field name="POSROTSCALE_Z">-2</field><next><block type="posrotscale_3d_OLD" id="`dt`~C:W|ajes;qK**fa"><field name="POSROTSCALE">rotation</field><field name="POSROTSCALE_X">2</field><field name="POSROTSCALE_Y">30</field><field name="POSROTSCALE_Z">35</field></block></next></block></next></block></next></block></next></block></statement><next><block type="camera_3d_child" id="L$~FSp,Q2c7Ornu,dlH!"><field name="DROPDOWN">camera</field><statement name="NAME"><block type="camera_name" id="/MZ0y.{gDpR~K/E+Fr@g"><field name="GPS_CAMERA">gps-camera</field><next><block type="camera_rotation_reader" id="5p,bW}J!,/r,3)uV|sp-"><field name="ROTATION-READER">rotation-reader</field></block></next></block></statement></block></next></block></statement></block>
+           	</category>
+           		
+            </category>	
 			</category>
 		</xml>
 
@@ -793,7 +817,7 @@
 		</script>
 
 		<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none">
-			<block type="html" id="9oFDR`IIn6rS=HtBc1=;" x="-137" y="13"><statement name="content"><block type="head" id="GcN`f+0y~dua46CQmnr|"><statement name="content"><block type="title" id="rB[~}$}00N3;aP6]xnDB"><statement name="content"><block type="plaintext" id="CjhokkH)~`2F##tpTkVK"><field name="content">Blockly Aframe HTML example</field></block></statement><next><block type="import_aframe" id="+*.`^K2f%Qcbji,@6N=Q"><field name="NAME">https://aframe.io/releases/1.0.4/aframe.min.js</field></block></next></block></statement><next><block type="body_attributes" id="PScP7X][kjt|f!8/L%#="><value name="NAME"><block type="style" id="m0}^Fb+}Ev,7[q@ztf#N"><statement name="NAME"><block type="genericstyle" id="6@F@,+j$;T5u{n4?uEUr"><field name="property">font-family</field><field name="value">sans-serif</field></block></statement></block></value><statement name="content"><block type="scene_create" id="q)vW=T-o8-nSc.*cMN=N"><statement name="NAME"><block type="assets_list" id="b%vi7P,};sye)ALiKPy."><statement name="assetslist"><block type="asset_video" id="F#89o`19k%q?9yeLi]7x"><field name="IDNAME">myvid</field><field name="URL">White_Lions.mp4</field><field name="Loop">TRUE</field></block></statement><next><block type="videosphere360" id="lV-KNNM*dH3[b/#)c9h."><field name="360_SRC">myvid</field></block></next></block></statement></block></statement></block></next></block></statement> </block>
+			<block type="html" id="9oFDR`IIn6rS=HtBc1=;" x="-188" y="25"><statement name="content"><block type="head" id="GcN`f+0y~dua46CQmnr|"><statement name="content"><block type="title" id="rB[~}$}00N3;aP6]xnDB"><statement name="content"><block type="plaintext" id="CjhokkH)~`2F##tpTkVK"><field name="content">Blockly Aframe HTML example</field></block></statement><next><block type="import_aframe" id="+*.`^K2f%Qcbji,@6N=Q"><field name="NAME">https://aframe.io/releases/1.0.4/aframe.min.js</field><next><block type="import_script" id="yMWhLuT^f?D5#L,{j#MP"><field name="IMPORT">https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js</field><next><block type="import_script" id="PIKVAwqw=?5mt`fR~/Ch"><field name="IMPORT">https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js</field></block></next></block></next></block></next></block></statement><next><block type="body_attributes" id="PScP7X][kjt|f!8/L%#="><value name="NAME"><block type="style" id="m0}^Fb+}Ev,7[q@ztf#N"><statement name="NAME"><block type="genericstyle" id="6@F@,+j$;T5u{n4?uEUr"><field name="property">font-family</field><field name="value">sans-serif</field></block></statement></block></value><statement name="content"><block type="scene_create_AR" id="(Z^2:v(R=X!,Ho?36Nkt"><field name="DEBUG">FALSE</field><field name="MATRIXCODE">3x3</field><statement name="NAME"><block type="assets_list" id="(BC68?$N^jo~d2=wpbQS"><statement name="assetslist"><block type="asset_item" id="V*$gYrg2w4UvfJ5*gcc}"><field name="IDNAME">default</field><field name="URL">9f3cd05e-96a7-47dd-aa50-99e9219ec134.dae</field></block></statement><next><block type="ar_barcode" id="bnAgxOC6+8EM]P;dL.8@"><field name="AR_VALUE">6</field><statement name="AR"><block type="extra_entity" id="[CxV@L75T]yV}Cezl=xX"><field name="TYPEDROP">dae</field><field name="SRCDROP">#</field><field name="SRCLINK">default</field><statement name="NAME"><block type="posrotscale_3d_OLD" id="6EUjrmdz$xL;^9=1;/_;"><field name="POSROTSCALE">position</field><field name="POSROTSCALE_X">0</field><field name="POSROTSCALE_Y">0</field><field name="POSROTSCALE_Z">4</field><next><block type="posrotscale_3d_OLD" id="gri1FLw:wjMl{ZqkO==H"><field name="POSROTSCALE">scale</field><field name="POSROTSCALE_X">0.3</field><field name="POSROTSCALE_Y">0.3</field><field name="POSROTSCALE_Z">0.3</field></block></next></block></statement></block></statement></block></next></block></statement></block></statement></block></next></block></statement></block>
 		</xml>
 
 
@@ -823,32 +847,48 @@
 
 			var workspace = Blockly.inject(blocklyArea, options);
 
-			var xml_text = localStorage.getItem('blockly-html-code');
-			if (xml_text) {
-				var xml = Blockly.Xml.textToDom(xml_text);
-				Blockly.Xml.domToWorkspace(xml, workspace);
+			//
+			function isSupported(getStorage) {
+			  try {
+				const key = "__some_random_key_you_are_not_going_to_use__";
+				getStorage().setItem(key, key);
+				getStorage().removeItem(key);
+				return true;
+			  } catch (e) {
+				return false;
+			  }
 			}
-			else {
-				/* === For backwards compability. Remove soon ===*/
-				var xml_text = localStorage.getItem('code');
+			
+			
+			//
+			if (isSupported(() => localStorage)) {
+				var xml_text = localStorage.getItem('blockly-html-code');
 				if (xml_text) {
 					var xml = Blockly.Xml.textToDom(xml_text);
 					Blockly.Xml.domToWorkspace(xml, workspace);
-					}
-				/* === ^^^ === */
+				}
 				else {
-						if (localStorage.getItem("blank-flag") === null || localStorage.getItem("blank-flag")=="false") {
-						var workspaceBlocks = document.getElementById("workspaceBlocks");
-						Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+					/* === For backwards compability. Remove soon ===*/
+					var xml_text = localStorage.getItem('code');
+					if (xml_text) {
+						var xml = Blockly.Xml.textToDom(xml_text);
+						Blockly.Xml.domToWorkspace(xml, workspace);
 						}
-						else {
-							var blankBlocks = document.getElementById("workspaceBlank");
-							Blockly.Xml.domToWorkspace(blankBlocks, workspace);
-							localStorage.setItem('blank-flag', 'false');
-						}
+					/* === ^^^ === */
+					else {
+							if (localStorage.getItem("blank-flag") === null || localStorage.getItem("blank-flag")=="false") {
+							var workspaceBlocks = document.getElementById("workspaceBlocks");
+							Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+							}
+							else {
+								var blankBlocks = document.getElementById("workspaceBlank");
+								Blockly.Xml.domToWorkspace(blankBlocks, workspace);
+								localStorage.setItem('blank-flag', 'false');
+							}
+					}
 				}
 			}
-
+			
 			Blockly.svgResize(workspace);
 
 			function myUpdateFunction(event) {
@@ -861,7 +901,9 @@
 				// Save Blocks
 				var xml = Blockly.Xml.workspaceToDom(workspace);
 				var xml_text = Blockly.Xml.domToText(xml);
-				localStorage.setItem('blockly-html-code', xml_text);
+				if (isSupported(() => localStorage)) {
+					localStorage.setItem('blockly-html-code', xml_text);
+				}
 			}
 			
 			
@@ -907,13 +949,14 @@
 
 			function clearLocalStorage() {
 			localStorage.clear();
-			window.location.reload(false); 
+			window.location.reload(true); 
 			}
 			document.getElementById("EraseLocalStorageButton").onclick = clearLocalStorage;
 
 		</script>
 		<script src="js/geoDB.js"></script>
 		<script src="js/model.js"></script>
+		<!-- <script src="js/arrow.js"></script> -->
 		<script>
 		
 			$(document).ready(function(){

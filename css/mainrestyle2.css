@@ -1,0 +1,167 @@
+/**** General Style ****/
+/*
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+*/
+
+/* MAIN CONTAINER */
+html, body {
+        padding: 0;
+        margin: 0;
+		background-color: #333;
+      }
+
+      
+
+	
+
+	
+	#modelArea {	opacity: 1;
+				background-color: LightSkyBlue;}
+	
+	
+	
+	#togglebutton {
+			position: relative;
+			float: left;
+			left: -10px;
+			background: green;
+			z-index: 2;
+			width: 25px;
+		}
+		
+	
+	#toggleBox {
+		
+	  position: relative;
+			float: left;
+			z-index: 1;
+			height: 100%;
+			width: 30%;
+	  }
+	
+	/*
+    #menugriditem{height: 2%;}
+    */
+	
+	#menubar { 
+	  font-family: sans-serif; font-size: 18px; /* padding: 5px 10px; 
+	  display: -ms-grid; display: grid; grid-template-columns: 25% 25% 25% 25%; background: #a9d0f7; height: 5%; */
+	  
+	  
+	  }
+	
+    #title        {
+	  width: 100%; background-color: #444; color:white; text-align:center; font-size: 20px; font-family: sans-serif; }
+      
+	#websiteFrame {
+		background: lightgrey;
+	  /*border: 5px solid #444;*/ }
+	  
+    #sourcecode   { 
+			 background: lightgrey; overflow: scroll; margin:0px; height: calc(100% - 5px);}
+
+    #website {	width: calc(100% - 5px); height: calc(100% - 5px);
+			}
+
+		
+
+
+
+
+      /* Edge hack, God I hate this browser */
+      _:-ms-lang(x),
+      #container {
+        width:98vw;
+      }
+	  /*
+	html, body{
+		font-family: 'Open Sans', sans-serif;
+		height: 100%;
+		background: #000000;
+		overflow: hidden;
+		margin:0;
+		padding:0;
+	}
+	*/
+	
+	
+	
+#modeldiv { 
+ }
+
+#modellist { 
+  list-style-type:circle;
+ }
+ 
+ #filedrag
+{
+	display: none;
+	font-weight: bold;
+	text-align: center;
+	padding: 1em 0;
+	margin: 1em 0;
+	color: #555;
+	border: 2px dashed #555;
+	border-radius: 7px;
+	cursor: default;
+}
+
+#filedrag.hover
+{
+	color: #f00;
+	border-color: #f00;
+	border-style: solid;
+	box-shadow: inset 0 3px 4px #888;
+}
+
+#fileButton {
+	display: none;
+	
+}
+
+.titleSidebarTop{
+	background: #09B6F1;
+}
+
+.centerText {
+	display: flex;
+	vertical-align:middle;
+    text-align:center;
+	background: lightblue;
+	justify-content: center;
+}
+
+/* TOOLBAR*/
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333; /*sfumatura scuro di grigio*/
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav span{
+  float: left;
+  display: block;
+  color: #f2f2f2; /*sfumatura molto chiaro di grigio*/
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav span:hover {
+  background-color: #ddd; /*sfumatura molto chiaro di grigio*/
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+
+
+
+
+
+
