@@ -52,17 +52,17 @@
 					</script>
 		</div>
 		<div id="container" class="grid-stack top">
-			<div id="leftcontainer" class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="6" data-gs-height="11" data-gs-no-move="yes" data-gs-no-resize="yes" data-gs-locked="yes">
+			<div id="leftcontainer" class="grid-stack-item" data-gs-x="0" data-gs-y="0" data-gs-width="6" data-gs-height="2" data-gs-no-move="yes" data-gs-no-resize="yes" data-gs-locked="yes">
 				<div class="grid-stack-item-content">
 					<div id="blocklyArea"></div>
 				</div>
 			</div>
 			
 			
-			<div id="rightcontainer" class="grid-stack-item" data-gs-x="6" data-gs-y="0" data-gs-width="6" data-gs-height="11" data-gs-no-resize="no">
+			<div id="rightcontainer" class="grid-stack-item" data-gs-x="6" data-gs-y="0" data-gs-width="6" data-gs-height="2" data-gs-no-resize="no">
 				
 				<div id="toggleBox">
-					<button type="button" id="togglebutton" class="slide-toggle">▶</button>
+					<button type="button" id="togglebutton" class="slide-toggle">◀</button>
 					<div id="modelArea">
 						<label class="centerText"> Tools Panel</label> </br>
 						</br>
@@ -90,13 +90,13 @@
 				
 				<div class="grid-stack-item-content">
 					<div class="grid-stack nested1">
-						<div class="grid-stack-item sub" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="6">
+						<div class="grid-stack-item sub" data-gs-x="0" data-gs-y="0" data-gs-width="12" data-gs-height="1">
 							<div class="grid-stack-item-content">
 								<div id="title">untitled web page</div>
 								<div id="websiteFrame" class="ui-widget-content"><iframe id="website" srcdoc="blob:http://localhost:8080"></iframe></div>
 							</div>
 						</div>
-						<div class="grid-stack-item sub" data-gs-x="0" data-gs-y="6" data-gs-width="12" data-gs-height="5">
+						<div class="grid-stack-item sub" data-gs-x="0" data-gs-y="1" data-gs-width="12" data-gs-height="1">
 							<div class="grid-stack-item-content">
 								<pre id="sourcecode">sum contnent</pre>
 							</div>
@@ -865,15 +865,20 @@
 		</xml>
 
 		<script type="text/javascript">
+		var h = window.innerHeight;
+		var cellH=h-24-10; // 
 		var nestOptions = {
 		  acceptWidgets: '.grid-stack-item.sub', 
 		  dragOut: true, // no let us drag them out!
+		  cellHeight: Math.floor(cellH/2-20),
+		  verticalMargin : 20,
 		  resizable: {	handles: 's'  }
 		};
 		GridStack.init({
-					  resizable: {
-						handles: 'e'
-					  }}, '.grid-stack.top');
+					  resizable: {	handles: 'e'  },
+					  cellHeight: Math.floor(cellH/2-20),
+					  verticalMargin : 20
+					  }, '.grid-stack.top');
 		var grid1 = GridStack.init(nestOptions, '.grid-stack.nested1');
 		
 		</script>
@@ -1067,12 +1072,12 @@
 					if($("#modelArea").css("z-index")=="1"){ //Closing
 						$("#modelArea").css("z-index","-1");
 						$("#toggleBox").css("width","1%");
-						document.getElementById("togglebutton").innerHTML = "◀"; //left-arrow
+						document.getElementById("togglebutton").innerHTML = "▶"; //right-arrow
 						$("#togglebutton").animate({width: '40px'});
 					}else{                                   // Opening
 						$("#modelArea").css("z-index","1");
 						$("#toggleBox").css("width","30%");
-						document.getElementById("togglebutton").innerHTML = "▶"; //right-arrow
+						document.getElementById("togglebutton").innerHTML = "◀"; //left-arrow
 						$("#togglebutton").animate({width: '25px'});
 					}
 				});

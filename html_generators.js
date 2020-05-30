@@ -609,7 +609,7 @@ HtmlGenerator['obj_entity'] = function(block) {
   var dropdown_mtldrop = block.getFieldValue('MTLDROP');
   var text_mtllink = block.getFieldValue('MTLLINK');
   // TODO: Assemble JavaScript into code variable.
-  var code ='<a-obj-model src="'+dropdown_objdrop+text_objlink+'" mtl="'+dropdown_mtldrop+text_mtllink+'"></a-obj-model>\n';
+  var code ='<a-obj-model src="'+dropdown_objdrop+text_objlink+'" mtl="'+dropdown_mtldrop+text_mtllink+'" '+statements_objname+'></a-obj-model>\n';
   return code;
 };
 
