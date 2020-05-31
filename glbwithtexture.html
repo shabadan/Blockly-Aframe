@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="origin-trial" charset="utf-8">
+    <title>Blockly Aframe HTML example</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="js/arrow.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body style="font-family: sans-serif;">
+    <a-scene>
+      <a-assets>
+      	<a-asset-item id="jac" src="asset/Alligator.glb"></a-asset-item>
+      </a-assets>
+      
+	  
+	  <a-entity 
+          id="jac"
+          gltf-model="#jac"
+          position="0 1 -2" scale="0.1 0.1 0.1">
+	  </a-entity>
+    </a-scene>
+  </body>
+</html>
