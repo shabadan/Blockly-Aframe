@@ -2920,7 +2920,24 @@ var AframeBlocks =
   "colour": 230,
   "tooltip": "",
   "helpUrl": ""
-}, 
+},
+
+{
+  "type": "open_end3d",
+  "message0": "open-ended = %1",
+  "args0": [
+    {
+      "type": "field_checkbox",
+      "name": "OPENEND",
+      "checked": true
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 230,
+  "tooltip": "",
+  "helpUrl": ""
+},    
  
 {
   "type": "side3d",

@@ -916,6 +916,13 @@ HtmlGenerator['side3d'] = function(block) {
   return code;
 };
 
+HtmlGenerator['open_end3d'] = function(block) {
+  var checkbox_openend = block.getFieldValue('OPENEND') == 'TRUE';
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'open-ended="'+checkbox_openend+'"\n';
+  return code;
+};
+
 HtmlGenerator['href_3d'] = function(block) {
   var text_href = block.getFieldValue('HREF');
   // TODO: Assemble JavaScript into code variable.
