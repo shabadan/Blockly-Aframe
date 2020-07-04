@@ -981,6 +981,14 @@ HtmlGenerator['animation_options'] = function(block) {
   return code;
 };
 
+HtmlGenerator['animation_multi'] = function(block) {
+  var text_animationname = block.getFieldValue('ANIMATIONNAME');
+  var statements_animation_multi = HtmlGenerator.statementToCode(block, 'ANIMATION_MULTI');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ' animation__"'+text_animationname+'" = "'+statements_animation_multi+'"';
+  return code;
+};
+
 HtmlGenerator['video_controller'] = function(block) {
   var text_src = block.getFieldValue('SRC');
   var number_posx = block.getFieldValue('POSX');
@@ -1100,12 +1108,20 @@ HtmlGenerator['animation_property_dir'] = function(block) {
   return code;
 };
 
+HtmlGenerator['animation_property_delay'] = function(block) {
+  var text_delay = block.getFieldValue('DELAY');
+  // TODO: Assemble JavaScript into code variable.
+  var code = ' delay: '+ text_delay +';\n';
+  return code;
+};
+
 HtmlGenerator['animation_property_dur'] = function(block) {
   var text_dur = block.getFieldValue('DUR');
   // TODO: Assemble JavaScript into code variable.
   var code = ' dur: '+ text_dur +';\n';
   return code;
 };
+
 
 HtmlGenerator['animation_property_liner'] = function(block) {
   var dropdown_eas = block.getFieldValue('EAS');

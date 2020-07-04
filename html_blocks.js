@@ -3230,6 +3230,28 @@ var AframeBlocks =
   "helpUrl": ""
 },
 
+
+{
+  "type": "animation_multi",
+  "message0": "Animation__ %1 %2",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "ANIMATIONNAME",
+      "text": "NAME"
+    },
+    {
+      "type": "input_statement",
+      "name": "ANIMATION_MULTI"
+    }
+  ],
+    
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""},
+    
 {
   "type": "animation_propety",
   "message0": "Property: %1 from:  X: %2 Y: %3 Z: %4 to:  X: %5 Y: %6 Z: %7 loop:  %8 dir:  %9 dur:  %10 easing:  %11",
@@ -3679,6 +3701,23 @@ var AframeBlocks =
   "tooltip": "",
   "helpUrl": ""
 },
+    
+{
+  "type": "animation_property_delay",
+  "message0": "Delay :  %1",
+  "args0": [
+    {
+      "type": "field_input",
+      "name": "DELAY",
+      "text": "1000"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},    
  
  {
   "type": "animation_property_liner",
