@@ -1,0 +1,201 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 2036,
+      "type": "VEC3",
+      "max": [
+        0.26959601044654846,
+        1.1776100397109985,
+        1.4206999540328979
+      ],
+      "min": [
+        -0.26959601044654846,
+        -0.0056979800574481487,
+        -1.4206999540328979
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 2036,
+      "type": "VEC3",
+      "max": [
+        0.999962568283081,
+        0.99983823299407959,
+        0.99943393468856812
+      ],
+      "min": [
+        -0.999962568283081,
+        -0.99998581409454346,
+        -0.99877780675888062
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 2036,
+      "type": "VEC4",
+      "max": [
+        0.99976474046707153,
+        0.99283581972122192,
+        0.99906927347183228,
+        1.0
+      ],
+      "min": [
+        -0.99976474046707153,
+        -0.99521684646606445,
+        -0.99996101856231689,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 2036,
+      "type": "VEC2",
+      "max": [
+        0.98785001039505,
+        0.9778519868850708
+      ],
+      "min": [
+        0.013813000172376633,
+        0.017358699813485146
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 9318,
+      "type": "SCALAR",
+      "max": [
+        2035.0
+      ],
+      "min": [
+        0.0
+      ]
+    }
+  ],
+  "asset": {
+    "generator": "Plattar UnityGLTF (2019.3.15f1)",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "Onca.bin",
+      "byteLength": 135000
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 24432
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 24432,
+      "byteLength": 24432
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 48864,
+      "byteLength": 32576
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 81440,
+      "byteLength": 16288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 97728,
+      "byteLength": 37272
+    }
+  ],
+  "images": [
+    {
+      "uri": "Onca_Diffuse.jpg",
+      "name": "Onca_Diffuse"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      },
+      "name": "Onca_Diffuse"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ],
+      "name": "_0"
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "translation": [
+        6.03216076,
+        4.48956442,
+        -6.454876
+      ],
+      "name": "Onca"
+    },
+    {
+      "mesh": 0,
+      "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "name": "_0"
+    }
+  ],
+  "samplers": [
+    {
+      "minFilter": 9729
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "Onca"
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0,
+      "name": "Onca_Diffuse"
+    }
+  ]
+}

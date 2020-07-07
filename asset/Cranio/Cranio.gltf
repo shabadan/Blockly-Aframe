@@ -1,0 +1,196 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 16640,
+      "type": "VEC3",
+      "max": [
+        0.18859300017356873,
+        0.29806700348854065,
+        0.23992800712585449
+      ],
+      "min": [
+        -0.18860599398612976,
+        -0.29811900854110718,
+        -0.24055199325084686
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 16640,
+      "type": "VEC3",
+      "max": [
+        0.99998128414154053,
+        0.99988222122192383,
+        0.99999105930328369
+      ],
+      "min": [
+        -0.99998044967651367,
+        -0.99999856948852539,
+        -0.99997878074646
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 16640,
+      "type": "VEC4",
+      "max": [
+        0.9999997615814209,
+        0.99977904558181763,
+        0.9999619722366333,
+        1.0
+      ],
+      "min": [
+        -0.9999997615814209,
+        -0.99985575675964355,
+        -0.99996566772460938,
+        -1.0
+      ]
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 16640,
+      "type": "VEC2",
+      "max": [
+        0.98940998315811157,
+        0.99167001247406006
+      ],
+      "min": [
+        0.0046100001782178879,
+        0.0081300102174282074
+      ]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 83784,
+      "type": "SCALAR",
+      "max": [
+        16639.0
+      ],
+      "min": [
+        0.0
+      ]
+    }
+  ],
+  "asset": {
+    "generator": "Plattar UnityGLTF (2019.3.15f1)",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "Cranio.bin",
+      "byteLength": 1133856
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 199680
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 199680,
+      "byteLength": 199680
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 399360,
+      "byteLength": 266240
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 665600,
+      "byteLength": 133120
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 798720,
+      "byteLength": 335136
+    }
+  ],
+  "images": [
+    {
+      "uri": "Cranio_diffuse.jpg",
+      "name": "Cranio_diffuse"
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      },
+      "name": "Cranio_diffuse"
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0
+        }
+      ],
+      "name": "_0"
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "name": "Cranio"
+    },
+    {
+      "mesh": 0,
+      "rotation": [
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ],
+      "name": "_0"
+    }
+  ],
+  "samplers": [
+    {
+      "minFilter": 9729
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        0
+      ],
+      "name": "Cranio"
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0,
+      "name": "Cranio_diffuse"
+    }
+  ]
+}
