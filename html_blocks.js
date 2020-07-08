@@ -1125,22 +1125,6 @@ var AframeBlocks =
   "helpUrl": ""
 },
 
-{
-  "type": "script_video_controll",
-  "message0": "Import video controll %1",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "SRC",
-      "text": "YOUR-VIDEO-ID"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 90,
-  "tooltip": "",
-  "helpUrl": ""
-},    
     
 {
   "type": "script_video_controll_NEW",
@@ -1176,63 +1160,10 @@ var AframeBlocks =
   "helpUrl": "https://aframe.io"
 },
     
-{
-  "type": "import_inspector",
-  "message0": "Import Inspector %1",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "NAME",
-      "text": "https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 90,
-  "tooltip": "",
-  "helpUrl": "https://aframe.io"
-},
- 
-{
-  "type": "import_event",
-  "message0": "Import A-Frame Event %1",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "NAME",
-      "text": "https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 90,
-  "tooltip": "",
-  "helpUrl": "https://aframe.io"
-},
-
-
-{
-  "type": "import_extra",
-  "message0": "Import A-Frame Extra %1",
-  "args0": [
-    {
-      "type": "field_input",
-      "name": "NAME",
-      "text": "https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"
-    }
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-  "colour": 90,
-  "tooltip": "",
-  "helpUrl": "https://aframe.io"
-},
-    
-    
  
 {
   "type": "scene_create",
-  "message0": "crea scena %1",
+  "message0": "Scene %1",
   "args0": [
     {
       "type": "input_statement",
@@ -1248,7 +1179,7 @@ var AframeBlocks =
     
 {
   "type": "scene_create_AR",
-  "message0": "crea AR scena debugUIEnabled %1 %2 matrixCodeType %3 %4 %5",
+  "message0": "AR scene debugUIEnabled %1 %2 matrixCodeType %3 %4 %5",
   "args0": [
     {
       "type": "field_checkbox",
@@ -1280,7 +1211,7 @@ var AframeBlocks =
 
 {
   "type": "scene_create_GPS",
-  "message0": "crea AR GPS %1 scena debugUIEnabled %2  %3",
+  "message0": "AR GPS %1 scene debugUIEnabled %2  %3",
   "args0": [
        {
       "type": "input_dummy"
@@ -1305,7 +1236,7 @@ var AframeBlocks =
     
 {
   "type": "scene_create_color",
-  "message0": "crea scena %1 %2 Background Color %3",
+  "message0": "Scene %1 %2 Background Color %3",
   "args0": [
     {
       "type": "input_statement",

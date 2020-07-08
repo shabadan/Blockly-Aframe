@@ -333,12 +333,6 @@ HtmlGenerator['import_script'] = function(block) {
   return code;
 };
 
-HtmlGenerator['script_video_controll'] = function(block) {
-  var text_src = block.getFieldValue('SRC');   
-  // TODO: Assemble JavaScript into code variable.
-  var code = '<script>\nAFRAME.registerComponent(\'play-pause\', {\ninit: function () {\nvar myVideo = document.querySelector(\'#'+text_src+'\');\n	var videoControls = document.querySelector( \'#videoControls\');\nthis.el.addEventListener(\'click\', function () {\nif (myVideo.paused) {\nmyVideo.play();\nvideoControls.setAttribute(\'src\', \'#pause\');\n} else {\nmyVideo.pause();\nvideoControls.setAttribute(\'src\', \'#play\');\n}\n});\n}\n});\n</script>' ;
-  return code;
-};
 
 HtmlGenerator['script_video_controll_NEW'] = function(block) {
   var text_src = block.getFieldValue('SRC');   
@@ -354,26 +348,6 @@ HtmlGenerator['import_aframe'] = function(block) {
   return code;
 };
 
-HtmlGenerator['import_inspector'] = function(block) {
-  var text_name = block.getFieldValue('NAME');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '<script src="'+text_name+'"></script>\n';
-  return code;
-};
-
-HtmlGenerator['import_event'] = function(block) {
-  var text_name = block.getFieldValue('NAME');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '<script src="'+text_name+'"></script>\n';
-  return code;
-};
-
-HtmlGenerator['import_extra'] = function(block) {
-  var text_name = block.getFieldValue('NAME');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '<script src="'+text_name+'"></script>\n';
-  return code;
-};
 
 HtmlGenerator['scene_create_AR'] = function(block) {
   //var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
